@@ -1,0 +1,12 @@
+coeftostring            Convert coefficients into standardized strings
+createTexreg            Create a texreg object
+extract                 Extract coefficients and GOF measures from a
+                        statistical object
+plotreg                 Create coefficient plots from statistical model
+                        output
+print.texregTable       Print the output of a screenreg, texreg, or
+                        htmlreg call
+texreg                  Convert regression output to LaTeX or HTML
+                        tables
+texreg-package          Conversion of statistical model output in R to
+                        LaTeX and HTML tables

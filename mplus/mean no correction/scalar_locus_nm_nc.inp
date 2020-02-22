@@ -1,0 +1,139 @@
+TITLE: Your title goes here
+
+DATA: FILE = data.dta;
+
+VARIABLE: 
+
+NAMES = audit1 bully0a bully0b bully0c bully0d bully0e bully0f bully0g adult0a
+     adult0b adult0c leisa0a leisa0b leisa0c leisa0d leisa0e leisa0f leisb0a leisb0b
+     leisb0c leisb0d samppsu sampstratum mode locus0a locus0b locus0c locus0d
+     ghq12_1 ghq12_2 ghq12_3 ghq12_4 ghq12_5 ghq12_6 ghq12_7 ghq12_8 ghq12_9
+     ghq12_10 ghq12_11 ghq12_12 audit2 audit3 designweight_combin; 
+
+MISSING=.;
+USEVARIABLES ARE locus0a 
+locus0b 
+locus0c 
+locus0d;
+CATEGORICAL ARE locus0a 
+locus0b 
+locus0c 
+locus0d;
+
+GROUPING IS mode (1=Web 2=Tel 3=Ftf);
+
+! WEIGHT IS designweight_combin;
+
+! STRATIFICATION IS sampstratum;
+
+! CLUSTER IS samppsu;
+
+ANALYSIS: 
+!TYPE IS COMPLEX;
+
+                ESTIMATOR = WLSMV;
+
+                ITERATIONS = 100000;
+
+                PARAMETERIZATION = THETA;
+
+! DIFFTEST = locus0a_metric.dat;
+
+Model:
+
+
+f1 BY locus0a@1
+locus0b (L2)
+locus0c (L3)
+locus0d (L4)
+;
+
+
+[locus0a$1] (t_locus0a_1);
+[locus0a$2] (t_locus0a_2);
+[locus0a$3] (t_locus0a_3);
+
+[locus0b$1] (t_locus0b_1);
+[locus0b$2] (t_locus0b_2);
+[locus0b$3] (t_locus0b_3);
+
+[locus0c$1] (t_locus0c_1);
+[locus0c$2] (t_locus0c_2);
+[locus0c$3] (t_locus0c_3);
+
+[locus0d$1] (t_locus0d_1);
+[locus0d$2] (t_locus0d_2);
+[locus0d$3] (t_locus0d_3);
+locus0a@1;
+locus0b@1;
+locus0c@1;
+locus0d@1;
+
+Model Tel:
+
+f1 BY locus0a@1
+locus0b (L2)
+locus0c (L3)
+locus0d (L4)
+;
+
+
+[locus0a$1] (t_locus0a_1);
+[locus0a$2] (t_locus0a_2);
+[locus0a$3] (t_locus0a_3);
+
+[locus0b$1] (t_locus0b_1);
+[locus0b$2] (t_locus0b_2);
+[locus0b$3] (t_locus0b_3);
+
+[locus0c$1] (t_locus0c_1);
+[locus0c$2] (t_locus0c_2);
+[locus0c$3] (t_locus0c_3);
+
+[locus0d$1] (t_locus0d_1);
+[locus0d$2] (t_locus0d_2);
+[locus0d$3] (t_locus0d_3);
+locus0a@1;
+locus0b@1;
+locus0c@1;
+locus0d@1;
+
+Model Ftf:
+
+f1 BY locus0a@1
+locus0b (L2)
+locus0c (L3)
+locus0d (L4)
+;
+
+
+[locus0a$1] (t_locus0a_1);
+[locus0a$2] (t_locus0a_2);
+[locus0a$3] (t_locus0a_3);
+
+[locus0b$1] (t_locus0b_1);
+[locus0b$2] (t_locus0b_2);
+[locus0b$3] (t_locus0b_3);
+
+[locus0c$1] (t_locus0c_1);
+[locus0c$2] (t_locus0c_2);
+[locus0c$3] (t_locus0c_3);
+
+[locus0d$1] (t_locus0d_1);
+[locus0d$2] (t_locus0d_2);
+[locus0d$3] (t_locus0d_3);
+locus0a@1;
+locus0b@1;
+locus0c@1;
+locus0d@1;
+
+!SAVEDATA: DIFFTEST IS locus0a_scalar.dat;
+
+OUTPUT: SAMPSTAT; 
+
+MODINDICES; 
+
+STD; 
+
+Plot: type = plot3;
+
