@@ -7,14 +7,14 @@
 #############################################################
 
 # clear working space
-rm(list = ls ())
+rm(list = ls())
 
 
 
 # Admin -------------------------------------------------------------------
 
 # folders for installed packages
-.libPaths(c(paste0("C:/Users/", Sys.getenv("USERNAME"), "/Dropbox (The University of Manchester)/R/package"),  .libPaths()))
+# .libPaths(c(paste0("C:/Users/", Sys.getenv("USERNAME"), "/Dropbox (The University of Manchester)/R/package"),  .libPaths()))
 
 
 
@@ -140,7 +140,7 @@ sfiles <- list.files("./mplus/special/",
 most_fit <- mplus_read_fit_list(mfiles)
 special_fit <- mplus_read_fit_list(sfiles)
 
-all_fit <- rbind(most_fit, special_fit) %>%
+all_fit <- bind_rows(most_fit, special_fit) %>%
   select(-Comp)
 
 
@@ -297,6 +297,33 @@ lat_stats_nc <- lat_stats_nc %>%
          Model = "No")
 
 
+
+
+
+rbind(lat_stats, lat_stats_nc) %>%
+  filter(Statistic == "Means", Model == "Yes") %>%
+  mutate(Variable = str_to_title(Variable),
+         Variable = str_replace(Variable, "Ghq","GHQ"),
+         Variable = str_replace(Variable, "Leisure","Leisure ")) %>%
+  ggplot(aes(Variable, est, color = Group)) +
+  geom_point(position = position_dodge(0.7)) +
+  geom_errorbar(aes(ymin = lci, ymax = uci),
+                width = 0,
+                position = position_dodge(0.7)) +
+  theme_bw(base_size = 18) +
+  labs(x = "Scale",
+       y = "Mean estimate compared to Web",
+       shape = "Selection correct",
+       linetype = "Selection correct")
+
+ggsave("./output/means_lv.png", dpi = 300)
+
+
+
+
+
+
+
 rbind(lat_stats, lat_stats_nc) %>%
   filter(Statistic == "Means") %>%
   mutate(Variable = str_to_title(Variable),
@@ -447,9 +474,6 @@ ggsave("./output/leisure_pred_prob_pq.png", dpi = 600)
 
 
 # graph with means with and without partial equivalence
-
-pqfiles
-
 
 scal_link <- str_subset(pqfiles[c(5, 10, 9, 11)], "scalar")
 
