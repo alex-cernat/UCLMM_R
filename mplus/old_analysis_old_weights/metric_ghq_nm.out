@@ -1,0 +1,1665 @@
+Mplus VERSION 8.3
+MUTHEN & MUTHEN
+08/23/2019   2:45 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE: Your title goes here
+
+  DATA: FILE = data.dta;
+
+  VARIABLE:
+
+  NAMES = audit1 bully0a bully0b bully0c bully0d bully0e bully0f bully0g adult0a
+       adult0b adult0c leisa0a leisa0b leisa0c leisa0d leisa0e leisa0f leisb0a leisb0b
+       leisb0c leisb0d samppsu sampstratum mode locus0a locus0b locus0c locus0d
+       ghq12_1 ghq12_2 ghq12_3 ghq12_4 ghq12_5 ghq12_6 ghq12_7 ghq12_8 ghq12_9
+       ghq12_10 ghq12_11 ghq12_12 audit2 audit3 designweight_combin;
+
+  MISSING=.;
+  USEVARIABLES ARE ghq12_1
+  ghq12_2
+  ghq12_3
+  ghq12_4
+  ghq12_5
+  ghq12_6
+  ghq12_7
+  ghq12_8
+  ghq12_9
+  ghq12_10
+  ghq12_11
+  ghq12_12;
+  CATEGORICAL ARE ghq12_1
+  ghq12_2
+  ghq12_3
+  ghq12_4
+  ghq12_5
+  ghq12_6
+  ghq12_7
+  ghq12_8
+  ghq12_9
+  ghq12_10
+  ghq12_11
+  ghq12_12;
+  GROUPING IS mode (1=Web 2=Tel 3=Ftf);
+  WEIGHT IS designweight_combin;
+
+                  STRATIFICATION IS sampstratum;
+
+                  CLUSTER IS samppsu;
+
+  ANALYSIS: TYPE IS COMPLEX;
+
+                  ESTIMATOR = WLSMV;
+
+                  ITERATIONS = 100000;
+
+                  PARAMETERIZATION = THETA;
+
+  DIFFTEST = ghq12_1_configural.dat;
+  Model:
+
+
+  f1 BY ghq12_1@1
+  ghq12_2 (L2)
+  ghq12_3 (L3)
+  ghq12_4 (L4)
+  ghq12_5 (L5)
+  ghq12_6 (L6)
+  ghq12_7 (L7)
+  ghq12_8 (L8)
+  ghq12_9 (L9)
+  ghq12_10 (L10)
+  ghq12_11 (L11)
+  ghq12_12 (L12)
+  ;
+
+
+  [ghq12_1$1] (t_ghq12_1_1);
+  [ghq12_1$2] (t_ghq12_1_2);
+  [ghq12_1$3] (t_ghq12_1_3);
+
+  [ghq12_2$1] (t_ghq12_2_1);
+  [ghq12_2$2] (t_ghq12_2_2_Web);
+  [ghq12_2$3] (t_ghq12_2_3_Web);
+
+  [ghq12_3$1] (t_ghq12_3_1);
+  [ghq12_3$2] (t_ghq12_3_2_Web);
+  [ghq12_3$3] (t_ghq12_3_3_Web);
+
+  [ghq12_4$1] (t_ghq12_4_1);
+  [ghq12_4$2] (t_ghq12_4_2_Web);
+  [ghq12_4$3] (t_ghq12_4_3_Web);
+
+  [ghq12_5$1] (t_ghq12_5_1);
+  [ghq12_5$2] (t_ghq12_5_2_Web);
+  [ghq12_5$3] (t_ghq12_5_3_Web);
+
+  [ghq12_6$1] (t_ghq12_6_1);
+  [ghq12_6$2] (t_ghq12_6_2_Web);
+  [ghq12_6$3] (t_ghq12_6_3_Web);
+
+  [ghq12_7$1] (t_ghq12_7_1);
+  [ghq12_7$2] (t_ghq12_7_2_Web);
+  [ghq12_7$3] (t_ghq12_7_3_Web);
+
+  [ghq12_8$1] (t_ghq12_8_1);
+  [ghq12_8$2] (t_ghq12_8_2_Web);
+  [ghq12_8$3] (t_ghq12_8_3_Web);
+
+  [ghq12_9$1] (t_ghq12_9_1);
+  [ghq12_9$2] (t_ghq12_9_2_Web);
+  [ghq12_9$3] (t_ghq12_9_3_Web);
+
+  [ghq12_10$1] (t_ghq12_10_1);
+  [ghq12_10$2] (t_ghq12_10_2_Web);
+  [ghq12_10$3] (t_ghq12_10_3_Web);
+
+  [ghq12_11$1] (t_ghq12_11_1);
+  [ghq12_11$2] (t_ghq12_11_2_Web);
+  [ghq12_11$3] (t_ghq12_11_3_Web);
+
+  [ghq12_12$1] (t_ghq12_12_1);
+  [ghq12_12$2] (t_ghq12_12_2_Web);
+  [ghq12_12$3] (t_ghq12_12_3_Web);
+  ghq12_1@1;
+  ghq12_2@1;
+  ghq12_3@1;
+  ghq12_4@1;
+  ghq12_5@1;
+  ghq12_6@1;
+  ghq12_7@1;
+  ghq12_8@1;
+  ghq12_9@1;
+  ghq12_10@1;
+  ghq12_11@1;
+  ghq12_12@1;
+
+  Model Tel:
+
+  f1 BY ghq12_1@1
+  ghq12_2 (L2)
+  ghq12_3 (L3)
+  ghq12_4 (L4)
+  ghq12_5 (L5)
+  ghq12_6 (L6)
+  ghq12_7 (L7)
+  ghq12_8 (L8)
+  ghq12_9 (L9)
+  ghq12_10 (L10)
+  ghq12_11 (L11)
+  ghq12_12 (L12)
+  ;
+
+
+  [ghq12_1$1] (t_ghq12_1_1);
+  [ghq12_1$2] (t_ghq12_1_2);
+  [ghq12_1$3] (t_ghq12_1_3);
+
+  [ghq12_2$1] (t_ghq12_2_1);
+  [ghq12_2$2] (t_ghq12_2_2_Tel);
+  [ghq12_2$3] (t_ghq12_2_3_Tel);
+
+  [ghq12_3$1] (t_ghq12_3_1);
+  [ghq12_3$2] (t_ghq12_3_2_Tel);
+  [ghq12_3$3] (t_ghq12_3_3_Tel);
+
+  [ghq12_4$1] (t_ghq12_4_1);
+  [ghq12_4$2] (t_ghq12_4_2_Tel);
+  [ghq12_4$3] (t_ghq12_4_3_Tel);
+
+  [ghq12_5$1] (t_ghq12_5_1);
+  [ghq12_5$2] (t_ghq12_5_2_Tel);
+  [ghq12_5$3] (t_ghq12_5_3_Tel);
+
+  [ghq12_6$1] (t_ghq12_6_1);
+  [ghq12_6$2] (t_ghq12_6_2_Tel);
+  [ghq12_6$3] (t_ghq12_6_3_Tel);
+
+  [ghq12_7$1] (t_ghq12_7_1);
+  [ghq12_7$2] (t_ghq12_7_2_Tel);
+  [ghq12_7$3] (t_ghq12_7_3_Tel);
+
+  [ghq12_8$1] (t_ghq12_8_1);
+  [ghq12_8$2] (t_ghq12_8_2_Tel);
+  [ghq12_8$3] (t_ghq12_8_3_Tel);
+
+  [ghq12_9$1] (t_ghq12_9_1);
+  [ghq12_9$2] (t_ghq12_9_2_Tel);
+  [ghq12_9$3] (t_ghq12_9_3_Tel);
+
+  [ghq12_10$1] (t_ghq12_10_1);
+  [ghq12_10$2] (t_ghq12_10_2_Tel);
+  [ghq12_10$3] (t_ghq12_10_3_Tel);
+
+  [ghq12_11$1] (t_ghq12_11_1);
+  [ghq12_11$2] (t_ghq12_11_2_Tel);
+  [ghq12_11$3] (t_ghq12_11_3_Tel);
+
+  [ghq12_12$1] (t_ghq12_12_1);
+  [ghq12_12$2] (t_ghq12_12_2_Tel);
+  [ghq12_12$3] (t_ghq12_12_3_Tel);
+  ghq12_1@1;
+  ghq12_2@1;
+  ghq12_3@1;
+  ghq12_4@1;
+  ghq12_5@1;
+  ghq12_6@1;
+  ghq12_7@1;
+  ghq12_8@1;
+  ghq12_9@1;
+  ghq12_10@1;
+  ghq12_11@1;
+  ghq12_12@1;
+
+  Model Ftf:
+
+  f1 BY ghq12_1@1
+  ghq12_2 (L2)
+  ghq12_3 (L3)
+  ghq12_4 (L4)
+  ghq12_5 (L5)
+  ghq12_6 (L6)
+  ghq12_7 (L7)
+  ghq12_8 (L8)
+  ghq12_9 (L9)
+  ghq12_10 (L10)
+  ghq12_11 (L11)
+  ghq12_12 (L12)
+  ;
+
+
+  [ghq12_1$1] (t_ghq12_1_1);
+  [ghq12_1$2] (t_ghq12_1_2);
+  [ghq12_1$3] (t_ghq12_1_3);
+
+  [ghq12_2$1] (t_ghq12_2_1);
+  [ghq12_2$2] (t_ghq12_2_2_Ftf);
+  [ghq12_2$3] (t_ghq12_2_3_Ftf);
+
+  [ghq12_3$1] (t_ghq12_3_1);
+  [ghq12_3$2] (t_ghq12_3_2_Ftf);
+  [ghq12_3$3] (t_ghq12_3_3_Ftf);
+
+  [ghq12_4$1] (t_ghq12_4_1);
+  [ghq12_4$2] (t_ghq12_4_2_Ftf);
+  [ghq12_4$3] (t_ghq12_4_3_Ftf);
+
+  [ghq12_5$1] (t_ghq12_5_1);
+  [ghq12_5$2] (t_ghq12_5_2_Ftf);
+  [ghq12_5$3] (t_ghq12_5_3_Ftf);
+
+  [ghq12_6$1] (t_ghq12_6_1);
+  [ghq12_6$2] (t_ghq12_6_2_Ftf);
+  [ghq12_6$3] (t_ghq12_6_3_Ftf);
+
+  [ghq12_7$1] (t_ghq12_7_1);
+  [ghq12_7$2] (t_ghq12_7_2_Ftf);
+  [ghq12_7$3] (t_ghq12_7_3_Ftf);
+
+  [ghq12_8$1] (t_ghq12_8_1);
+  [ghq12_8$2] (t_ghq12_8_2_Ftf);
+  [ghq12_8$3] (t_ghq12_8_3_Ftf);
+
+  [ghq12_9$1] (t_ghq12_9_1);
+  [ghq12_9$2] (t_ghq12_9_2_Ftf);
+  [ghq12_9$3] (t_ghq12_9_3_Ftf);
+
+  [ghq12_10$1] (t_ghq12_10_1);
+  [ghq12_10$2] (t_ghq12_10_2_Ftf);
+  [ghq12_10$3] (t_ghq12_10_3_Ftf);
+
+  [ghq12_11$1] (t_ghq12_11_1);
+  [ghq12_11$2] (t_ghq12_11_2_Ftf);
+  [ghq12_11$3] (t_ghq12_11_3_Ftf);
+
+  [ghq12_12$1] (t_ghq12_12_1);
+  [ghq12_12$2] (t_ghq12_12_2_Ftf);
+  [ghq12_12$3] (t_ghq12_12_3_Ftf);
+  ghq12_1@1;
+  ghq12_2@1;
+  ghq12_3@1;
+  ghq12_4@1;
+  ghq12_5@1;
+  ghq12_6@1;
+  ghq12_7@1;
+  ghq12_8@1;
+  ghq12_9@1;
+  ghq12_10@1;
+  ghq12_11@1;
+  ghq12_12@1;
+  SAVEDATA: DIFFTEST IS ghq12_1_metric.dat;
+  OUTPUT: SAMPSTAT;
+
+  MODINDICES;
+
+  STD;
+
+  Plot: type = plot3;
+
+
+
+
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  265
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+Your title goes here
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 3
+Number of observations
+   Group WEB                                                  4569
+   Group TEL                                                   646
+   Group FTF                                                  2089
+   Total sample size                                          7304
+
+Number of dependent variables                                   12
+Number of independent variables                                  0
+Number of continuous latent variables                            1
+
+Observed dependent variables
+
+  Binary and ordered categorical (ordinal)
+   GHQ12_1     GHQ12_2     GHQ12_3     GHQ12_4     GHQ12_5     GHQ12_6
+   GHQ12_7     GHQ12_8     GHQ12_9     GHQ12_10    GHQ12_11    GHQ12_12
+
+Continuous latent variables
+   F1
+
+Variables with special functions
+
+  Grouping variable     MODE
+  Stratification        SAMPSTRA
+  Cluster variable      SAMPPSU
+  Weight variable       DESIGNWE
+
+Estimator                                                    WLSMV
+Maximum number of iterations                                100000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Parameterization                                             THETA
+Link                                                        PROBIT
+
+Input data file(s)
+  data.dta
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+   Total number of strata                       37
+   Total number of clusters                    656
+
+   Group WEB
+     Number of missing data patterns            30
+     Number of strata                           37
+     Number of clusters                        650
+
+   Group TEL
+     Number of missing data patterns            15
+     Number of strata                           37
+     Number of clusters                        407
+
+   Group FTF
+     Number of missing data patterns             9
+     Number of strata                           36
+     Number of clusters                        609
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT FOR WEB
+
+
+           Covariance Coverage
+              GHQ12_1       GHQ12_2       GHQ12_3       GHQ12_4       GHQ12_5
+              ________      ________      ________      ________      ________
+ GHQ12_1        0.998
+ GHQ12_2        0.997         0.998
+ GHQ12_3        0.995         0.996         0.996
+ GHQ12_4        0.996         0.996         0.994         0.997
+ GHQ12_5        0.996         0.996         0.995         0.996         0.997
+ GHQ12_6        0.997         0.997         0.995         0.997         0.997
+ GHQ12_7        0.996         0.996         0.994         0.996         0.996
+ GHQ12_8        0.996         0.996         0.995         0.996         0.996
+ GHQ12_9        0.996         0.996         0.994         0.996         0.996
+ GHQ12_10       0.995         0.996         0.994         0.996         0.996
+ GHQ12_11       0.995         0.996         0.994         0.996         0.996
+ GHQ12_12       0.995         0.995         0.993         0.995         0.995
+
+
+           Covariance Coverage
+              GHQ12_6       GHQ12_7       GHQ12_8       GHQ12_9       GHQ12_10
+              ________      ________      ________      ________      ________
+ GHQ12_6        0.998
+ GHQ12_7        0.997         0.997
+ GHQ12_8        0.997         0.997         0.997
+ GHQ12_9        0.997         0.996         0.996         0.997
+ GHQ12_10       0.996         0.996         0.996         0.996         0.997
+ GHQ12_11       0.996         0.996         0.996         0.996         0.996
+ GHQ12_12       0.996         0.996         0.995         0.995         0.995
+
+
+           Covariance Coverage
+              GHQ12_11      GHQ12_12
+              ________      ________
+ GHQ12_11       0.997
+ GHQ12_12       0.996         0.996
+
+
+     PROPORTION OF DATA PRESENT FOR TEL
+
+
+           Covariance Coverage
+              GHQ12_1       GHQ12_2       GHQ12_3       GHQ12_4       GHQ12_5
+              ________      ________      ________      ________      ________
+ GHQ12_1        0.994
+ GHQ12_2        0.989         0.995
+ GHQ12_3        0.989         0.991         0.994
+ GHQ12_4        0.991         0.992         0.992         0.995
+ GHQ12_5        0.991         0.992         0.991         0.992         0.995
+ GHQ12_6        0.991         0.994         0.992         0.994         0.994
+ GHQ12_7        0.989         0.992         0.992         0.992         0.992
+ GHQ12_8        0.991         0.995         0.992         0.994         0.994
+ GHQ12_9        0.989         0.994         0.991         0.992         0.992
+ GHQ12_10       0.991         0.995         0.992         0.994         0.994
+ GHQ12_11       0.991         0.995         0.992         0.994         0.994
+ GHQ12_12       0.991         0.992         0.992         0.994         0.992
+
+
+           Covariance Coverage
+              GHQ12_6       GHQ12_7       GHQ12_8       GHQ12_9       GHQ12_10
+              ________      ________      ________      ________      ________
+ GHQ12_6        0.997
+ GHQ12_7        0.994         0.995
+ GHQ12_8        0.995         0.994         0.997
+ GHQ12_9        0.994         0.992         0.995         0.995
+ GHQ12_10       0.995         0.994         0.997         0.995         0.997
+ GHQ12_11       0.995         0.994         0.997         0.995         0.997
+ GHQ12_12       0.994         0.992         0.994         0.992         0.994
+
+
+           Covariance Coverage
+              GHQ12_11      GHQ12_12
+              ________      ________
+ GHQ12_11       0.997
+ GHQ12_12       0.994         0.995
+
+
+     PROPORTION OF DATA PRESENT FOR FTF
+
+
+           Covariance Coverage
+              GHQ12_1       GHQ12_2       GHQ12_3       GHQ12_4       GHQ12_5
+              ________      ________      ________      ________      ________
+ GHQ12_1        0.999
+ GHQ12_2        0.998         0.999
+ GHQ12_3        0.998         0.999         0.999
+ GHQ12_4        0.999         0.999         0.998         1.000
+ GHQ12_5        0.999         0.999         0.999         0.999         1.000
+ GHQ12_6        0.998         0.999         0.998         0.999         0.999
+ GHQ12_7        0.998         0.999         0.998         0.999         0.999
+ GHQ12_8        0.998         0.998         0.998         0.999         0.999
+ GHQ12_9        0.998         0.999         0.999         0.999         0.999
+ GHQ12_10       0.998         0.999         0.998         0.999         0.999
+ GHQ12_11       0.997         0.998         0.997         0.998         0.998
+ GHQ12_12       0.998         0.998         0.998         0.999         0.999
+
+
+           Covariance Coverage
+              GHQ12_6       GHQ12_7       GHQ12_8       GHQ12_9       GHQ12_10
+              ________      ________      ________      ________      ________
+ GHQ12_6        0.999
+ GHQ12_7        0.999         0.999
+ GHQ12_8        0.998         0.999         0.999
+ GHQ12_9        0.999         0.999         0.998         0.999
+ GHQ12_10       0.999         0.999         0.998         0.999         0.999
+ GHQ12_11       0.998         0.998         0.997         0.998         0.998
+ GHQ12_12       0.998         0.999         0.998         0.998         0.998
+
+
+           Covariance Coverage
+              GHQ12_11      GHQ12_12
+              ________      ________
+ GHQ12_11       0.998
+ GHQ12_12       0.998         0.999
+
+
+UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
+
+  Group WEB
+    GHQ12_1
+      Category 1    0.117          533.300
+      Category 2    0.680         3101.539
+      Category 3    0.172          785.408
+      Category 4    0.031          143.487
+    GHQ12_2
+      Category 1    0.241         1099.186
+      Category 2    0.492         2247.951
+      Category 3    0.197          899.652
+      Category 4    0.070          320.036
+    GHQ12_3
+      Category 1    0.157          714.744
+      Category 2    0.656         2988.150
+      Category 3    0.141          642.693
+      Category 4    0.047          212.448
+    GHQ12_4
+      Category 1    0.198          903.145
+      Category 2    0.704         3210.448
+      Category 3    0.073          333.622
+      Category 4    0.025          113.703
+    GHQ12_5
+      Category 1    0.137          622.983
+      Category 2    0.507         2315.223
+      Category 3    0.265         1210.232
+      Category 4    0.091          414.583
+    GHQ12_6
+      Category 1    0.266         1215.372
+      Category 2    0.536         2444.285
+      Category 3    0.147          672.856
+      Category 4    0.051          231.835
+    GHQ12_7
+      Category 1    0.098          445.621
+      Category 2    0.703         3207.112
+      Category 3    0.156          713.630
+      Category 4    0.043          196.138
+    GHQ12_8
+      Category 1    0.124          564.966
+      Category 2    0.732         3337.791
+      Category 3    0.110          503.653
+      Category 4    0.034          155.417
+    GHQ12_9
+      Category 1    0.314         1431.086
+      Category 2    0.414         1883.855
+      Category 3    0.188          857.185
+      Category 4    0.084          382.977
+    GHQ12_10
+      Category 1    0.350         1598.547
+      Category 2    0.396         1807.535
+      Category 3    0.174          795.856
+      Category 4    0.079          360.903
+    GHQ12_11
+      Category 1    0.595         2716.458
+      Category 2    0.259         1179.625
+      Category 3    0.097          441.925
+      Category 4    0.049          224.080
+    GHQ12_12
+      Category 1    0.187          851.692
+      Category 2    0.643         2932.104
+      Category 3    0.126          575.816
+      Category 4    0.043          197.913
+
+  Group TEL
+    GHQ12_1
+      Category 1    0.182          116.589
+      Category 2    0.636          407.193
+      Category 3    0.143           91.916
+      Category 4    0.039           24.887
+    GHQ12_2
+      Category 1    0.392          252.218
+      Category 2    0.381          245.616
+      Category 3    0.148           95.394
+      Category 4    0.079           50.840
+    GHQ12_3
+      Category 1    0.244          156.358
+      Category 2    0.621          398.299
+      Category 3    0.099           63.535
+      Category 4    0.036           22.756
+    GHQ12_4
+      Category 1    0.278          178.608
+      Category 2    0.674          433.203
+      Category 3    0.039           24.993
+      Category 4    0.010            6.282
+    GHQ12_5
+      Category 1    0.228          146.402
+      Category 2    0.494          317.359
+      Category 3    0.206          132.179
+      Category 4    0.072           46.232
+    GHQ12_6
+      Category 1    0.407          262.362
+      Category 2    0.432          278.293
+      Category 3    0.123           79.195
+      Category 4    0.038           24.614
+    GHQ12_7
+      Category 1    0.115           74.166
+      Category 2    0.689          442.871
+      Category 3    0.134           85.873
+      Category 4    0.062           39.922
+    GHQ12_8
+      Category 1    0.226          145.475
+      Category 2    0.684          440.825
+      Category 3    0.079           51.020
+      Category 4    0.011            6.923
+    GHQ12_9
+      Category 1    0.512          329.334
+      Category 2    0.285          183.153
+      Category 3    0.154           98.848
+      Category 4    0.050           31.847
+    GHQ12_10
+      Category 1    0.538          346.915
+      Category 2    0.314          201.988
+      Category 3    0.105           67.883
+      Category 4    0.043           27.457
+    GHQ12_11
+      Category 1    0.787          506.964
+      Category 2    0.143           92.372
+      Category 3    0.051           32.696
+      Category 4    0.019           12.211
+    GHQ12_12
+      Category 1    0.224          144.017
+      Category 2    0.673          432.564
+      Category 3    0.087           55.897
+      Category 4    0.016           10.142
+
+  Group FTF
+    GHQ12_1
+      Category 1    0.149          310.074
+      Category 2    0.665         1388.607
+      Category 3    0.149          311.159
+      Category 4    0.037           77.669
+    GHQ12_2
+      Category 1    0.254          530.476
+      Category 2    0.460          959.033
+      Category 3    0.198          411.849
+      Category 4    0.088          183.595
+    GHQ12_3
+      Category 1    0.195          406.980
+      Category 2    0.662         1380.654
+      Category 3    0.104          217.015
+      Category 4    0.038           79.760
+    GHQ12_4
+      Category 1    0.259          540.178
+      Category 2    0.649         1354.698
+      Category 3    0.074          155.288
+      Category 4    0.019           38.666
+    GHQ12_5
+      Category 1    0.178          371.486
+      Category 2    0.489         1019.449
+      Category 3    0.240          500.907
+      Category 4    0.093          193.929
+    GHQ12_6
+      Category 1    0.321          669.583
+      Category 2    0.469          977.258
+      Category 3    0.151          315.336
+      Category 4    0.059          122.606
+    GHQ12_7
+      Category 1    0.132          275.312
+      Category 2    0.665         1386.204
+      Category 3    0.157          327.444
+      Category 4    0.046           96.640
+    GHQ12_8
+      Category 1    0.189          394.006
+      Category 2    0.686         1430.332
+      Category 3    0.098          204.050
+      Category 4    0.027           57.005
+    GHQ12_9
+      Category 1    0.368          766.396
+      Category 2    0.363          756.680
+      Category 3    0.172          357.929
+      Category 4    0.098          203.948
+    GHQ12_10
+      Category 1    0.440          916.392
+      Category 2    0.322          671.211
+      Category 3    0.165          344.504
+      Category 4    0.073          152.676
+    GHQ12_11
+      Category 1    0.663         1383.868
+      Category 2    0.202          421.674
+      Category 3    0.090          188.039
+      Category 4    0.045           93.618
+    GHQ12_12
+      Category 1    0.223          465.180
+      Category 2    0.621         1296.493
+      Category 3    0.120          251.234
+      Category 4    0.036           75.260
+
+
+SAMPLE STATISTICS
+
+
+     ESTIMATED SAMPLE STATISTICS FOR WEB
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_1$      GHQ12_1$      GHQ12_1$      GHQ12_2$      GHQ12_2$
+              ________      ________      ________      ________      ________
+               -1.191         0.829         1.860        -0.704         0.622
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_2$      GHQ12_3$      GHQ12_3$      GHQ12_3$      GHQ12_4$
+              ________      ________      ________      ________      ________
+                1.475        -1.008         0.887         1.679        -0.849
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_4$      GHQ12_4$      GHQ12_5$      GHQ12_5$      GHQ12_5$
+              ________      ________      ________      ________      ________
+                1.293         1.961        -1.096         0.369         1.335
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_6$      GHQ12_6$      GHQ12_6$      GHQ12_7$      GHQ12_7$
+              ________      ________      ________      ________      ________
+               -0.624         0.848         1.637        -1.295         0.844
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_7$      GHQ12_8$      GHQ12_8$      GHQ12_8$      GHQ12_9$
+              ________      ________      ________      ________      ________
+                1.717        -1.156         1.060         1.824        -0.484
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_9$      GHQ12_9$      GHQ12_10      GHQ12_10      GHQ12_10
+              ________      ________      ________      ________      ________
+                0.606         1.378        -0.384         0.663         1.411
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_11      GHQ12_11      GHQ12_11      GHQ12_12      GHQ12_12
+              ________      ________      ________      ________      ________
+                0.242         1.054         1.653        -0.889         0.955
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_12
+              ________
+                1.712
+
+
+           CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              GHQ12_1       GHQ12_2       GHQ12_3       GHQ12_4       GHQ12_5
+              ________      ________      ________      ________      ________
+ GHQ12_1
+ GHQ12_2        0.446
+ GHQ12_3        0.547         0.333
+ GHQ12_4        0.520         0.285         0.596
+ GHQ12_5        0.459         0.677         0.322         0.290
+ GHQ12_6        0.482         0.581         0.468         0.424         0.632
+ GHQ12_7        0.580         0.450         0.523         0.463         0.502
+ GHQ12_8        0.428         0.324         0.463         0.496         0.337
+ GHQ12_9        0.509         0.681         0.475         0.384         0.634
+ GHQ12_10       0.518         0.594         0.516         0.449         0.549
+ GHQ12_11       0.491         0.552         0.557         0.475         0.516
+ GHQ12_12       0.568         0.467         0.576         0.501         0.483
+
+
+           CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              GHQ12_6       GHQ12_7       GHQ12_8       GHQ12_9       GHQ12_10
+              ________      ________      ________      ________      ________
+ GHQ12_7        0.522
+ GHQ12_8        0.447         0.543
+ GHQ12_9        0.700         0.564         0.491
+ GHQ12_10       0.667         0.520         0.507         0.784
+ GHQ12_11       0.659         0.501         0.523         0.792         0.825
+ GHQ12_12       0.535         0.628         0.589         0.701         0.604
+
+
+           CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              GHQ12_11      GHQ12_12
+              ________      ________
+ GHQ12_12       0.660
+
+
+     ESTIMATED SAMPLE STATISTICS FOR TEL
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_1$      GHQ12_1$      GHQ12_1$      GHQ12_2$      GHQ12_2$
+              ________      ________      ________      ________      ________
+               -0.908         0.906         1.764        -0.275         0.749
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_2$      GHQ12_3$      GHQ12_3$      GHQ12_3$      GHQ12_4$
+              ________      ________      ________      ________      ________
+                1.412        -0.694         1.105         1.805        -0.590
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_4$      GHQ12_4$      GHQ12_5$      GHQ12_5$      GHQ12_5$
+              ________      ________      ________      ________      ________
+                1.658         2.335        -0.746         0.589         1.461
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_6$      GHQ12_6$      GHQ12_6$      GHQ12_7$      GHQ12_7$
+              ________      ________      ________      ________      ________
+               -0.235         0.990         1.772        -1.198         0.857
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_7$      GHQ12_8$      GHQ12_8$      GHQ12_8$      GHQ12_9$
+              ________      ________      ________      ________      ________
+                1.537        -0.753         1.341         2.299         0.030
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_9$      GHQ12_9$      GHQ12_10      GHQ12_10      GHQ12_10
+              ________      ________      ________      ________      ________
+                0.830         1.650         0.097         1.045         1.721
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_11      GHQ12_11      GHQ12_11      GHQ12_12      GHQ12_12
+              ________      ________      ________      ________      ________
+                0.796         1.478         2.076        -0.758         1.266
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_12
+              ________
+                2.150
+
+
+           CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              GHQ12_1       GHQ12_2       GHQ12_3       GHQ12_4       GHQ12_5
+              ________      ________      ________      ________      ________
+ GHQ12_1
+ GHQ12_2        0.281
+ GHQ12_3        0.330         0.330
+ GHQ12_4        0.437         0.222         0.509
+ GHQ12_5        0.252         0.617         0.265         0.141
+ GHQ12_6        0.232         0.376         0.232         0.097         0.426
+ GHQ12_7        0.475         0.461         0.557         0.345         0.484
+ GHQ12_8        0.507         0.186         0.294         0.383         0.235
+ GHQ12_9        0.311         0.610         0.448         0.203         0.577
+ GHQ12_10       0.274         0.492         0.463         0.174         0.523
+ GHQ12_11       0.151         0.414         0.358         0.123         0.360
+ GHQ12_12       0.443         0.350         0.489         0.372         0.362
+
+
+           CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              GHQ12_6       GHQ12_7       GHQ12_8       GHQ12_9       GHQ12_10
+              ________      ________      ________      ________      ________
+ GHQ12_7        0.270
+ GHQ12_8        0.162         0.463
+ GHQ12_9        0.517         0.637         0.283
+ GHQ12_10       0.516         0.442         0.236         0.732
+ GHQ12_11       0.602         0.281        -0.002         0.667         0.662
+ GHQ12_12       0.359         0.567         0.441         0.506         0.516
+
+
+           CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              GHQ12_11      GHQ12_12
+              ________      ________
+ GHQ12_12       0.372
+
+
+     ESTIMATED SAMPLE STATISTICS FOR FTF
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_1$      GHQ12_1$      GHQ12_1$      GHQ12_2$      GHQ12_2$
+              ________      ________      ________      ________      ________
+               -1.043         0.892         1.784        -0.661         0.566
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_2$      GHQ12_3$      GHQ12_3$      GHQ12_3$      GHQ12_4$
+              ________      ________      ________      ________      ________
+                1.353        -0.859         1.070         1.771        -0.648
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_4$      GHQ12_4$      GHQ12_5$      GHQ12_5$      GHQ12_5$
+              ________      ________      ________      ________      ________
+                1.323         2.086        -0.923         0.431         1.323
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_6$      GHQ12_6$      GHQ12_6$      GHQ12_7$      GHQ12_7$
+              ________      ________      ________      ________      ________
+               -0.464         0.806         1.565        -1.117         0.830
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_7$      GHQ12_8$      GHQ12_8$      GHQ12_8$      GHQ12_9$
+              ________      ________      ________      ________      ________
+                1.681        -0.882         1.149         1.921        -0.338
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_9$      GHQ12_9$      GHQ12_10      GHQ12_10      GHQ12_10
+              ________      ________      ________      ________      ________
+                0.614         1.294        -0.152         0.711         1.452
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_11      GHQ12_11      GHQ12_11      GHQ12_12      GHQ12_12
+              ________      ________      ________      ________      ________
+                0.421         1.103         1.697        -0.763         1.010
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              GHQ12_12
+              ________
+                1.799
+
+
+           CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              GHQ12_1       GHQ12_2       GHQ12_3       GHQ12_4       GHQ12_5
+              ________      ________      ________      ________      ________
+ GHQ12_1
+ GHQ12_2        0.433
+ GHQ12_3        0.471         0.338
+ GHQ12_4        0.481         0.337         0.557
+ GHQ12_5        0.459         0.615         0.287         0.310
+ GHQ12_6        0.433         0.551         0.369         0.422         0.644
+ GHQ12_7        0.524         0.470         0.514         0.481         0.561
+ GHQ12_8        0.465         0.387         0.426         0.535         0.388
+ GHQ12_9        0.486         0.685         0.432         0.404         0.673
+ GHQ12_10       0.468         0.620         0.473         0.455         0.602
+ GHQ12_11       0.456         0.610         0.520         0.457         0.542
+ GHQ12_12       0.489         0.480         0.528         0.486         0.497
+
+
+           CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              GHQ12_6       GHQ12_7       GHQ12_8       GHQ12_9       GHQ12_10
+              ________      ________      ________      ________      ________
+ GHQ12_7        0.509
+ GHQ12_8        0.429         0.600
+ GHQ12_9        0.680         0.576         0.436
+ GHQ12_10       0.690         0.564         0.457         0.787
+ GHQ12_11       0.681         0.513         0.501         0.796         0.831
+ GHQ12_12       0.508         0.665         0.514         0.655         0.644
+
+
+           CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              GHQ12_11      GHQ12_12
+              ________      ________
+ GHQ12_12       0.663
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       96
+
+Chi-Square Test of Model Fit
+
+          Value                           1795.779*
+          Degrees of Freedom                   210
+          P-Value                           0.0000
+
+Chi-Square Contribution From Each Group
+
+          WEB                              910.649
+          TEL                              341.472
+          FTF                              543.658
+
+Chi-Square Test for Difference Testing
+
+          Value                             55.511*
+          Degrees of Freedom                    22
+          P-Value                           0.0001
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.  The DIFFTEST
+    option assumes the models are nested.  The NESTED option can be used to verify
+    that the models are nested.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.056
+          90 Percent C.I.                    0.053  0.058
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                0.968
+          TLI                                0.969
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                          49056.237
+          Degrees of Freedom                   198
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.067
+
+Optimum Function Value for Weighted Least-Squares Estimator
+
+          Value                     0.16569865D+00
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Group WEB
+
+ F1       BY
+    GHQ12_1            1.000      0.000    999.000    999.000
+    GHQ12_2            1.199      0.050     24.215      0.000
+    GHQ12_3            1.013      0.039     25.985      0.000
+    GHQ12_4            0.877      0.034     25.914      0.000
+    GHQ12_5            1.200      0.045     26.864      0.000
+    GHQ12_6            1.357      0.049     27.752      0.000
+    GHQ12_7            1.270      0.049     25.701      0.000
+    GHQ12_8            0.931      0.036     26.006      0.000
+    GHQ12_9            2.144      0.085     25.117      0.000
+    GHQ12_10           2.015      0.079     25.493      0.000
+    GHQ12_11           1.995      0.079     25.239      0.000
+    GHQ12_12           1.448      0.052     27.676      0.000
+
+ Means
+    F1                 0.000      0.000    999.000    999.000
+
+ Thresholds
+    GHQ12_1$1         -1.558      0.042    -37.293      0.000
+    GHQ12_1$2          1.012      0.036     28.178      0.000
+    GHQ12_1$3          2.214      0.056     39.341      0.000
+    GHQ12_2$1         -1.041      0.038    -27.710      0.000
+    GHQ12_2$2          0.894      0.047     19.000      0.000
+    GHQ12_2$3          2.122      0.068     31.039      0.000
+    GHQ12_3$1         -1.322      0.038    -34.750      0.000
+    GHQ12_3$2          1.177      0.047     25.116      0.000
+    GHQ12_3$3          2.229      0.070     31.901      0.000
+    GHQ12_4$1         -1.025      0.032    -32.375      0.000
+    GHQ12_4$2          1.620      0.053     30.745      0.000
+    GHQ12_4$3          2.460      0.092     26.683      0.000
+    GHQ12_5$1         -1.547      0.042    -36.403      0.000
+    GHQ12_5$2          0.530      0.042     12.518      0.000
+    GHQ12_5$3          1.922      0.061     31.541      0.000
+    GHQ12_6$1         -0.951      0.039    -24.372      0.000
+    GHQ12_6$2          1.306      0.048     27.033      0.000
+    GHQ12_6$3          2.521      0.068     36.914      0.000
+    GHQ12_7$1         -1.919      0.051    -37.884      0.000
+    GHQ12_7$2          1.252      0.050     24.997      0.000
+    GHQ12_7$3          2.547      0.088     28.893      0.000
+    GHQ12_8$1         -1.390      0.035    -39.627      0.000
+    GHQ12_8$2          1.360      0.049     27.769      0.000
+    GHQ12_8$3          2.338      0.080     29.175      0.000
+    GHQ12_9$1         -1.023      0.060    -17.108      0.000
+    GHQ12_9$2          1.273      0.066     19.181      0.000
+    GHQ12_9$3          2.897      0.094     30.704      0.000
+    GHQ12_10$1        -0.723      0.053    -13.716      0.000
+    GHQ12_10$2         1.329      0.065     20.315      0.000
+    GHQ12_10$3         2.828      0.086     32.778      0.000
+    GHQ12_11$1         0.475      0.053      8.902      0.000
+    GHQ12_11$2         2.096      0.078     26.918      0.000
+    GHQ12_11$3         3.289      0.107     30.823      0.000
+    GHQ12_12$1        -1.466      0.044    -33.108      0.000
+    GHQ12_12$2         1.528      0.056     27.364      0.000
+    GHQ12_12$3         2.739      0.086     32.025      0.000
+
+ Variances
+    F1                 0.744      0.051     14.483      0.000
+
+ Residual Variances
+    GHQ12_1            1.000      0.000    999.000    999.000
+    GHQ12_2            1.000      0.000    999.000    999.000
+    GHQ12_3            1.000      0.000    999.000    999.000
+    GHQ12_4            1.000      0.000    999.000    999.000
+    GHQ12_5            1.000      0.000    999.000    999.000
+    GHQ12_6            1.000      0.000    999.000    999.000
+    GHQ12_7            1.000      0.000    999.000    999.000
+    GHQ12_8            1.000      0.000    999.000    999.000
+    GHQ12_9            1.000      0.000    999.000    999.000
+    GHQ12_10           1.000      0.000    999.000    999.000
+    GHQ12_11           1.000      0.000    999.000    999.000
+    GHQ12_12           1.000      0.000    999.000    999.000
+
+Group TEL
+
+ F1       BY
+    GHQ12_1            1.000      0.000    999.000    999.000
+    GHQ12_2            1.199      0.050     24.215      0.000
+    GHQ12_3            1.013      0.039     25.985      0.000
+    GHQ12_4            0.877      0.034     25.914      0.000
+    GHQ12_5            1.200      0.045     26.864      0.000
+    GHQ12_6            1.357      0.049     27.752      0.000
+    GHQ12_7            1.270      0.049     25.701      0.000
+    GHQ12_8            0.931      0.036     26.006      0.000
+    GHQ12_9            2.144      0.085     25.117      0.000
+    GHQ12_10           2.015      0.079     25.493      0.000
+    GHQ12_11           1.995      0.079     25.239      0.000
+    GHQ12_12           1.448      0.052     27.676      0.000
+
+ Means
+    F1                -0.423      0.050     -8.404      0.000
+
+ Thresholds
+    GHQ12_1$1         -1.558      0.042    -37.293      0.000
+    GHQ12_1$2          1.012      0.036     28.178      0.000
+    GHQ12_1$3          2.214      0.056     39.341      0.000
+    GHQ12_2$1         -1.041      0.038    -27.710      0.000
+    GHQ12_2$2          0.445      0.097      4.583      0.000
+    GHQ12_2$3          1.287      0.138      9.349      0.000
+    GHQ12_3$1         -1.322      0.038    -34.750      0.000
+    GHQ12_3$2          0.898      0.105      8.571      0.000
+    GHQ12_3$3          1.733      0.220      7.870      0.000
+    GHQ12_4$1         -1.025      0.032    -32.375      0.000
+    GHQ12_4$2          1.542      0.106     14.599      0.000
+    GHQ12_4$3          2.325      0.168     13.842      0.000
+    GHQ12_5$1         -1.547      0.042    -36.403      0.000
+    GHQ12_5$2          0.242      0.084      2.879      0.004
+    GHQ12_5$3          1.350      0.126     10.680      0.000
+    GHQ12_6$1         -0.951      0.039    -24.372      0.000
+    GHQ12_6$2          0.748      0.127      5.884      0.000
+    GHQ12_6$3          1.794      0.248      7.248      0.000
+    GHQ12_7$1         -1.919      0.051    -37.884      0.000
+    GHQ12_7$2          0.577      0.102      5.649      0.000
+    GHQ12_7$3          1.463      0.193      7.576      0.000
+    GHQ12_8$1         -1.390      0.035    -39.627      0.000
+    GHQ12_8$2          1.176      0.128      9.212      0.000
+    GHQ12_8$3          2.301      0.180     12.759      0.000
+    GHQ12_9$1         -1.023      0.060    -17.108      0.000
+    GHQ12_9$2          0.528      0.135      3.903      0.000
+    GHQ12_9$3          1.952      0.259      7.531      0.000
+    GHQ12_10$1        -0.723      0.053    -13.716      0.000
+    GHQ12_10$2         0.884      0.142      6.234      0.000
+    GHQ12_10$3         2.012      0.287      7.021      0.000
+    GHQ12_11$1         0.475      0.053      8.902      0.000
+    GHQ12_11$2         1.590      0.243      6.542      0.000
+    GHQ12_11$3         2.547      0.370      6.882      0.000
+    GHQ12_12$1        -1.466      0.044    -33.108      0.000
+    GHQ12_12$2         1.131      0.124      9.122      0.000
+    GHQ12_12$3         2.360      0.254      9.305      0.000
+
+ Variances
+    F1                 0.430      0.045      9.519      0.000
+
+ Residual Variances
+    GHQ12_1            1.000      0.000    999.000    999.000
+    GHQ12_2            1.000      0.000    999.000    999.000
+    GHQ12_3            1.000      0.000    999.000    999.000
+    GHQ12_4            1.000      0.000    999.000    999.000
+    GHQ12_5            1.000      0.000    999.000    999.000
+    GHQ12_6            1.000      0.000    999.000    999.000
+    GHQ12_7            1.000      0.000    999.000    999.000
+    GHQ12_8            1.000      0.000    999.000    999.000
+    GHQ12_9            1.000      0.000    999.000    999.000
+    GHQ12_10           1.000      0.000    999.000    999.000
+    GHQ12_11           1.000      0.000    999.000    999.000
+    GHQ12_12           1.000      0.000    999.000    999.000
+
+Group FTF
+
+ F1       BY
+    GHQ12_1            1.000      0.000    999.000    999.000
+    GHQ12_2            1.199      0.050     24.215      0.000
+    GHQ12_3            1.013      0.039     25.985      0.000
+    GHQ12_4            0.877      0.034     25.914      0.000
+    GHQ12_5            1.200      0.045     26.864      0.000
+    GHQ12_6            1.357      0.049     27.752      0.000
+    GHQ12_7            1.270      0.049     25.701      0.000
+    GHQ12_8            0.931      0.036     26.006      0.000
+    GHQ12_9            2.144      0.085     25.117      0.000
+    GHQ12_10           2.015      0.079     25.493      0.000
+    GHQ12_11           1.995      0.079     25.239      0.000
+    GHQ12_12           1.448      0.052     27.676      0.000
+
+ Means
+    F1                -0.181      0.033     -5.457      0.000
+
+ Thresholds
+    GHQ12_1$1         -1.558      0.042    -37.293      0.000
+    GHQ12_1$2          1.012      0.036     28.178      0.000
+    GHQ12_1$3          2.214      0.056     39.341      0.000
+    GHQ12_2$1         -1.041      0.038    -27.710      0.000
+    GHQ12_2$2          0.594      0.057     10.484      0.000
+    GHQ12_2$3          1.718      0.070     24.384      0.000
+    GHQ12_3$1         -1.322      0.038    -34.750      0.000
+    GHQ12_3$2          1.230      0.057     21.558      0.000
+    GHQ12_3$3          2.157      0.087     24.908      0.000
+    GHQ12_4$1         -1.025      0.032    -32.375      0.000
+    GHQ12_4$2          1.495      0.059     25.494      0.000
+    GHQ12_4$3          2.446      0.103     23.647      0.000
+    GHQ12_5$1         -1.547      0.042    -36.403      0.000
+    GHQ12_5$2          0.399      0.051      7.760      0.000
+    GHQ12_5$3          1.676      0.070     24.100      0.000
+    GHQ12_6$1         -0.951      0.039    -24.372      0.000
+    GHQ12_6$2          0.988      0.064     15.373      0.000
+    GHQ12_6$3          2.148      0.087     24.646      0.000
+    GHQ12_7$1         -1.919      0.051    -37.884      0.000
+    GHQ12_7$2          0.994      0.060     16.695      0.000
+    GHQ12_7$3          2.250      0.090     24.909      0.000
+    GHQ12_8$1         -1.390      0.035    -39.627      0.000
+    GHQ12_8$2          1.299      0.052     24.847      0.000
+    GHQ12_8$3          2.286      0.091     24.987      0.000
+    GHQ12_9$1         -1.023      0.060    -17.108      0.000
+    GHQ12_9$2          0.894      0.080     11.135      0.000
+    GHQ12_9$3          2.311      0.105     21.991      0.000
+    GHQ12_10$1        -0.723      0.053    -13.716      0.000
+    GHQ12_10$2         1.050      0.076     13.806      0.000
+    GHQ12_10$3         2.521      0.107     23.599      0.000
+    GHQ12_11$1         0.475      0.053      8.902      0.000
+    GHQ12_11$2         1.816      0.085     21.341      0.000
+    GHQ12_11$3         2.989      0.121     24.766      0.000
+    GHQ12_12$1        -1.466      0.044    -33.108      0.000
+    GHQ12_12$2         1.342      0.067     19.936      0.000
+    GHQ12_12$3         2.595      0.103     25.161      0.000
+
+ Variances
+    F1                 0.728      0.055     13.207      0.000
+
+ Residual Variances
+    GHQ12_1            1.000      0.000    999.000    999.000
+    GHQ12_2            1.000      0.000    999.000    999.000
+    GHQ12_3            1.000      0.000    999.000    999.000
+    GHQ12_4            1.000      0.000    999.000    999.000
+    GHQ12_5            1.000      0.000    999.000    999.000
+    GHQ12_6            1.000      0.000    999.000    999.000
+    GHQ12_7            1.000      0.000    999.000    999.000
+    GHQ12_8            1.000      0.000    999.000    999.000
+    GHQ12_9            1.000      0.000    999.000    999.000
+    GHQ12_10           1.000      0.000    999.000    999.000
+    GHQ12_11           1.000      0.000    999.000    999.000
+    GHQ12_12           1.000      0.000    999.000    999.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STD Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Group WEB
+
+ F1       BY
+    GHQ12_1            0.862      0.030     28.966      0.000
+    GHQ12_2            1.034      0.032     32.584      0.000
+    GHQ12_3            0.873      0.029     29.795      0.000
+    GHQ12_4            0.756      0.026     28.759      0.000
+    GHQ12_5            1.035      0.031     33.320      0.000
+    GHQ12_6            1.170      0.036     32.489      0.000
+    GHQ12_7            1.095      0.037     29.935      0.000
+    GHQ12_8            0.803      0.025     32.131      0.000
+    GHQ12_9            1.849      0.053     34.670      0.000
+    GHQ12_10           1.737      0.049     35.279      0.000
+    GHQ12_11           1.720      0.056     30.576      0.000
+    GHQ12_12           1.248      0.036     34.686      0.000
+
+ Means
+    F1                 0.000      0.000    999.000    999.000
+
+ Thresholds
+    GHQ12_1$1         -1.558      0.042    -37.293      0.000
+    GHQ12_1$2          1.012      0.036     28.178      0.000
+    GHQ12_1$3          2.214      0.056     39.341      0.000
+    GHQ12_2$1         -1.041      0.038    -27.710      0.000
+    GHQ12_2$2          0.894      0.047     19.000      0.000
+    GHQ12_2$3          2.122      0.068     31.039      0.000
+    GHQ12_3$1         -1.322      0.038    -34.750      0.000
+    GHQ12_3$2          1.177      0.047     25.116      0.000
+    GHQ12_3$3          2.229      0.070     31.901      0.000
+    GHQ12_4$1         -1.025      0.032    -32.375      0.000
+    GHQ12_4$2          1.620      0.053     30.745      0.000
+    GHQ12_4$3          2.460      0.092     26.683      0.000
+    GHQ12_5$1         -1.547      0.042    -36.403      0.000
+    GHQ12_5$2          0.530      0.042     12.518      0.000
+    GHQ12_5$3          1.922      0.061     31.541      0.000
+    GHQ12_6$1         -0.951      0.039    -24.372      0.000
+    GHQ12_6$2          1.306      0.048     27.033      0.000
+    GHQ12_6$3          2.521      0.068     36.914      0.000
+    GHQ12_7$1         -1.919      0.051    -37.884      0.000
+    GHQ12_7$2          1.252      0.050     24.997      0.000
+    GHQ12_7$3          2.547      0.088     28.893      0.000
+    GHQ12_8$1         -1.390      0.035    -39.627      0.000
+    GHQ12_8$2          1.360      0.049     27.769      0.000
+    GHQ12_8$3          2.338      0.080     29.175      0.000
+    GHQ12_9$1         -1.023      0.060    -17.108      0.000
+    GHQ12_9$2          1.273      0.066     19.181      0.000
+    GHQ12_9$3          2.897      0.094     30.704      0.000
+    GHQ12_10$1        -0.723      0.053    -13.716      0.000
+    GHQ12_10$2         1.329      0.065     20.315      0.000
+    GHQ12_10$3         2.828      0.086     32.778      0.000
+    GHQ12_11$1         0.475      0.053      8.902      0.000
+    GHQ12_11$2         2.096      0.078     26.918      0.000
+    GHQ12_11$3         3.289      0.107     30.823      0.000
+    GHQ12_12$1        -1.466      0.044    -33.108      0.000
+    GHQ12_12$2         1.528      0.056     27.364      0.000
+    GHQ12_12$3         2.739      0.086     32.025      0.000
+
+ Variances
+    F1                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    GHQ12_1            1.000      0.000    999.000    999.000
+    GHQ12_2            1.000      0.000    999.000    999.000
+    GHQ12_3            1.000      0.000    999.000    999.000
+    GHQ12_4            1.000      0.000    999.000    999.000
+    GHQ12_5            1.000      0.000    999.000    999.000
+    GHQ12_6            1.000      0.000    999.000    999.000
+    GHQ12_7            1.000      0.000    999.000    999.000
+    GHQ12_8            1.000      0.000    999.000    999.000
+    GHQ12_9            1.000      0.000    999.000    999.000
+    GHQ12_10           1.000      0.000    999.000    999.000
+    GHQ12_11           1.000      0.000    999.000    999.000
+    GHQ12_12           1.000      0.000    999.000    999.000
+
+Group TEL
+
+ F1       BY
+    GHQ12_1            0.656      0.034     19.038      0.000
+    GHQ12_2            0.786      0.041     19.019      0.000
+    GHQ12_3            0.664      0.035     18.719      0.000
+    GHQ12_4            0.575      0.031     18.316      0.000
+    GHQ12_5            0.787      0.039     20.007      0.000
+    GHQ12_6            0.890      0.045     19.870      0.000
+    GHQ12_7            0.833      0.044     19.055      0.000
+    GHQ12_8            0.610      0.032     19.097      0.000
+    GHQ12_9            1.406      0.071     19.727      0.000
+    GHQ12_10           1.321      0.068     19.554      0.000
+    GHQ12_11           1.308      0.067     19.398      0.000
+    GHQ12_12           0.949      0.048     19.821      0.000
+
+ Means
+    F1                -0.645      0.070     -9.220      0.000
+
+ Thresholds
+    GHQ12_1$1         -1.558      0.042    -37.293      0.000
+    GHQ12_1$2          1.012      0.036     28.178      0.000
+    GHQ12_1$3          2.214      0.056     39.341      0.000
+    GHQ12_2$1         -1.041      0.038    -27.710      0.000
+    GHQ12_2$2          0.445      0.097      4.583      0.000
+    GHQ12_2$3          1.287      0.138      9.349      0.000
+    GHQ12_3$1         -1.322      0.038    -34.750      0.000
+    GHQ12_3$2          0.898      0.105      8.571      0.000
+    GHQ12_3$3          1.733      0.220      7.870      0.000
+    GHQ12_4$1         -1.025      0.032    -32.375      0.000
+    GHQ12_4$2          1.542      0.106     14.599      0.000
+    GHQ12_4$3          2.325      0.168     13.842      0.000
+    GHQ12_5$1         -1.547      0.042    -36.403      0.000
+    GHQ12_5$2          0.242      0.084      2.879      0.004
+    GHQ12_5$3          1.350      0.126     10.680      0.000
+    GHQ12_6$1         -0.951      0.039    -24.372      0.000
+    GHQ12_6$2          0.748      0.127      5.884      0.000
+    GHQ12_6$3          1.794      0.248      7.248      0.000
+    GHQ12_7$1         -1.919      0.051    -37.884      0.000
+    GHQ12_7$2          0.577      0.102      5.649      0.000
+    GHQ12_7$3          1.463      0.193      7.576      0.000
+    GHQ12_8$1         -1.390      0.035    -39.627      0.000
+    GHQ12_8$2          1.176      0.128      9.212      0.000
+    GHQ12_8$3          2.301      0.180     12.759      0.000
+    GHQ12_9$1         -1.023      0.060    -17.108      0.000
+    GHQ12_9$2          0.528      0.135      3.903      0.000
+    GHQ12_9$3          1.952      0.259      7.531      0.000
+    GHQ12_10$1        -0.723      0.053    -13.716      0.000
+    GHQ12_10$2         0.884      0.142      6.234      0.000
+    GHQ12_10$3         2.012      0.287      7.021      0.000
+    GHQ12_11$1         0.475      0.053      8.902      0.000
+    GHQ12_11$2         1.590      0.243      6.542      0.000
+    GHQ12_11$3         2.547      0.370      6.882      0.000
+    GHQ12_12$1        -1.466      0.044    -33.108      0.000
+    GHQ12_12$2         1.131      0.124      9.122      0.000
+    GHQ12_12$3         2.360      0.254      9.305      0.000
+
+ Variances
+    F1                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    GHQ12_1            1.000      0.000    999.000    999.000
+    GHQ12_2            1.000      0.000    999.000    999.000
+    GHQ12_3            1.000      0.000    999.000    999.000
+    GHQ12_4            1.000      0.000    999.000    999.000
+    GHQ12_5            1.000      0.000    999.000    999.000
+    GHQ12_6            1.000      0.000    999.000    999.000
+    GHQ12_7            1.000      0.000    999.000    999.000
+    GHQ12_8            1.000      0.000    999.000    999.000
+    GHQ12_9            1.000      0.000    999.000    999.000
+    GHQ12_10           1.000      0.000    999.000    999.000
+    GHQ12_11           1.000      0.000    999.000    999.000
+    GHQ12_12           1.000      0.000    999.000    999.000
+
+Group FTF
+
+ F1       BY
+    GHQ12_1            0.853      0.032     26.413      0.000
+    GHQ12_2            1.023      0.036     28.103      0.000
+    GHQ12_3            0.864      0.032     26.729      0.000
+    GHQ12_4            0.748      0.030     25.179      0.000
+    GHQ12_5            1.024      0.035     28.954      0.000
+    GHQ12_6            1.158      0.041     28.283      0.000
+    GHQ12_7            1.083      0.038     28.877      0.000
+    GHQ12_8            0.794      0.028     27.896      0.000
+    GHQ12_9            1.829      0.059     30.858      0.000
+    GHQ12_10           1.719      0.057     29.997      0.000
+    GHQ12_11           1.702      0.065     26.381      0.000
+    GHQ12_12           1.235      0.041     29.894      0.000
+
+ Means
+    F1                -0.212      0.039     -5.402      0.000
+
+ Thresholds
+    GHQ12_1$1         -1.558      0.042    -37.293      0.000
+    GHQ12_1$2          1.012      0.036     28.178      0.000
+    GHQ12_1$3          2.214      0.056     39.341      0.000
+    GHQ12_2$1         -1.041      0.038    -27.710      0.000
+    GHQ12_2$2          0.594      0.057     10.484      0.000
+    GHQ12_2$3          1.718      0.070     24.384      0.000
+    GHQ12_3$1         -1.322      0.038    -34.750      0.000
+    GHQ12_3$2          1.230      0.057     21.558      0.000
+    GHQ12_3$3          2.157      0.087     24.908      0.000
+    GHQ12_4$1         -1.025      0.032    -32.375      0.000
+    GHQ12_4$2          1.495      0.059     25.494      0.000
+    GHQ12_4$3          2.446      0.103     23.647      0.000
+    GHQ12_5$1         -1.547      0.042    -36.403      0.000
+    GHQ12_5$2          0.399      0.051      7.760      0.000
+    GHQ12_5$3          1.676      0.070     24.100      0.000
+    GHQ12_6$1         -0.951      0.039    -24.372      0.000
+    GHQ12_6$2          0.988      0.064     15.373      0.000
+    GHQ12_6$3          2.148      0.087     24.646      0.000
+    GHQ12_7$1         -1.919      0.051    -37.884      0.000
+    GHQ12_7$2          0.994      0.060     16.695      0.000
+    GHQ12_7$3          2.250      0.090     24.909      0.000
+    GHQ12_8$1         -1.390      0.035    -39.627      0.000
+    GHQ12_8$2          1.299      0.052     24.847      0.000
+    GHQ12_8$3          2.286      0.091     24.987      0.000
+    GHQ12_9$1         -1.023      0.060    -17.108      0.000
+    GHQ12_9$2          0.894      0.080     11.135      0.000
+    GHQ12_9$3          2.311      0.105     21.991      0.000
+    GHQ12_10$1        -0.723      0.053    -13.716      0.000
+    GHQ12_10$2         1.050      0.076     13.806      0.000
+    GHQ12_10$3         2.521      0.107     23.599      0.000
+    GHQ12_11$1         0.475      0.053      8.902      0.000
+    GHQ12_11$2         1.816      0.085     21.341      0.000
+    GHQ12_11$3         2.989      0.121     24.766      0.000
+    GHQ12_12$1        -1.466      0.044    -33.108      0.000
+    GHQ12_12$2         1.342      0.067     19.936      0.000
+    GHQ12_12$3         2.595      0.103     25.161      0.000
+
+ Variances
+    F1                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    GHQ12_1            1.000      0.000    999.000    999.000
+    GHQ12_2            1.000      0.000    999.000    999.000
+    GHQ12_3            1.000      0.000    999.000    999.000
+    GHQ12_4            1.000      0.000    999.000    999.000
+    GHQ12_5            1.000      0.000    999.000    999.000
+    GHQ12_6            1.000      0.000    999.000    999.000
+    GHQ12_7            1.000      0.000    999.000    999.000
+    GHQ12_8            1.000      0.000    999.000    999.000
+    GHQ12_9            1.000      0.000    999.000    999.000
+    GHQ12_10           1.000      0.000    999.000    999.000
+    GHQ12_11           1.000      0.000    999.000    999.000
+    GHQ12_12           1.000      0.000    999.000    999.000
+
+
+R-SQUARE
+
+Group WEB
+
+    Observed                                        Two-Tailed     Scale
+    Variable        Estimate       S.E.  Est./S.E.    P-Value     Factors
+
+    GHQ12_1            0.426      0.017     25.252      0.000      0.757
+    GHQ12_2            0.517      0.015     33.703      0.000      0.695
+    GHQ12_3            0.433      0.016     26.256      0.000      0.753
+    GHQ12_4            0.364      0.016     22.605      0.000      0.798
+    GHQ12_5            0.517      0.015     34.495      0.000      0.695
+    GHQ12_6            0.578      0.015     38.488      0.000      0.650
+    GHQ12_7            0.545      0.017     32.910      0.000      0.674
+    GHQ12_8            0.392      0.015     26.412      0.000      0.780
+    GHQ12_9            0.774      0.010     76.578      0.000      0.476
+    GHQ12_10           0.751      0.011     70.864      0.000      0.499
+    GHQ12_11           0.747      0.012     60.527      0.000      0.503
+    GHQ12_12           0.609      0.014     44.371      0.000      0.625
+
+Group TEL
+
+    Observed                                        Two-Tailed     Scale
+    Variable        Estimate       S.E.  Est./S.E.    P-Value     Factors
+
+    GHQ12_1            0.301      0.022     13.611      0.000      0.836
+    GHQ12_2            0.382      0.025     15.386      0.000      0.786
+    GHQ12_3            0.306      0.023     13.486      0.000      0.833
+    GHQ12_4            0.249      0.020     12.187      0.000      0.867
+    GHQ12_5            0.382      0.024     16.196      0.000      0.786
+    GHQ12_6            0.442      0.025     17.801      0.000      0.747
+    GHQ12_7            0.409      0.025     16.132      0.000      0.769
+    GHQ12_8            0.271      0.021     13.104      0.000      0.854
+    GHQ12_9            0.664      0.023     29.355      0.000      0.580
+    GHQ12_10           0.636      0.024     26.835      0.000      0.604
+    GHQ12_11           0.631      0.024     26.295      0.000      0.607
+    GHQ12_12           0.474      0.025     18.841      0.000      0.725
+
+Group FTF
+
+    Observed                                        Two-Tailed     Scale
+    Variable        Estimate       S.E.  Est./S.E.    P-Value     Factors
+
+    GHQ12_1            0.421      0.018     22.821      0.000      0.761
+    GHQ12_2            0.511      0.018     28.754      0.000      0.699
+    GHQ12_3            0.427      0.018     23.341      0.000      0.757
+    GHQ12_4            0.359      0.018     19.641      0.000      0.801
+    GHQ12_5            0.512      0.017     29.651      0.000      0.699
+    GHQ12_6            0.573      0.017     33.100      0.000      0.654
+    GHQ12_7            0.540      0.017     31.385      0.000      0.678
+    GHQ12_8            0.387      0.017     22.743      0.000      0.783
+    GHQ12_9            0.770      0.011     67.056      0.000      0.480
+    GHQ12_10           0.747      0.013     59.309      0.000      0.503
+    GHQ12_11           0.743      0.014     51.407      0.000      0.507
+    GHQ12_12           0.604      0.016     37.753      0.000      0.629
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.372E-03
+       (ratio of smallest to largest eigenvalue)
+
+
+MODEL MODIFICATION INDICES
+
+NOTE:  Modification indices for direct effects of observed dependent variables
+regressed on covariates and residual covariances among observed dependent
+variables may not be included.  To include these, request MODINDICES (ALL).
+
+Minimum M.I. value for printing the modification index    10.000
+
+                                   M.I.     E.P.C.  Std E.P.C.  StdYX E.P.C.
+Group WEB
+
+
+WITH Statements
+
+GHQ12_3  WITH GHQ12_1             32.633     0.221      0.221        0.221
+GHQ12_3  WITH GHQ12_2             21.798    -0.278     -0.278       -0.278
+GHQ12_4  WITH GHQ12_1             29.073     0.220      0.220        0.220
+GHQ12_4  WITH GHQ12_2             27.576    -0.279     -0.279       -0.279
+GHQ12_4  WITH GHQ12_3             96.152     0.356      0.356        0.356
+GHQ12_5  WITH GHQ12_2            105.767     0.374      0.374        0.374
+GHQ12_5  WITH GHQ12_3             31.799    -0.302     -0.302       -0.302
+GHQ12_5  WITH GHQ12_4             33.181    -0.273     -0.273       -0.273
+GHQ12_6  WITH GHQ12_5             26.996     0.211      0.211        0.211
+GHQ12_7  WITH GHQ12_1             21.423     0.206      0.206        0.206
+GHQ12_8  WITH GHQ12_2             20.508    -0.242     -0.242       -0.242
+GHQ12_8  WITH GHQ12_4             31.520     0.202      0.202        0.202
+GHQ12_8  WITH GHQ12_5             20.361    -0.219     -0.219       -0.219
+GHQ12_8  WITH GHQ12_7             12.290     0.163      0.163        0.163
+GHQ12_9  WITH GHQ12_3             15.968    -0.305     -0.305       -0.305
+GHQ12_9  WITH GHQ12_4             30.042    -0.407     -0.407       -0.407
+GHQ12_9  WITH GHQ12_7             14.252    -0.286     -0.286       -0.286
+GHQ12_10 WITH GHQ12_5             12.109    -0.230     -0.230       -0.230
+GHQ12_10 WITH GHQ12_7             23.225    -0.378     -0.378       -0.378
+GHQ12_11 WITH GHQ12_5             16.686    -0.319     -0.319       -0.319
+GHQ12_11 WITH GHQ12_7             26.997    -0.428     -0.428       -0.428
+GHQ12_11 WITH GHQ12_10            42.013     0.360      0.360        0.360
+GHQ12_12 WITH GHQ12_2             13.635    -0.229     -0.229       -0.229
+GHQ12_12 WITH GHQ12_3             10.438     0.144      0.144        0.144
+GHQ12_12 WITH GHQ12_5             11.382    -0.191     -0.191       -0.191
+GHQ12_12 WITH GHQ12_8             28.689     0.223      0.223        0.223
+GHQ12_12 WITH GHQ12_10            14.805    -0.253     -0.253       -0.253
+
+Variances/Residual Variances
+
+GHQ12_1                           18.403    -0.241     -0.241       -0.138
+
+Means/Intercepts/Thresholds
+
+[ F1       ]                     999.000     0.000      0.000        0.000
+
+Group TEL
+
+
+No modification indices above the minimum value.
+
+Group FTF
+
+
+WITH Statements
+
+GHQ12_4  WITH GHQ12_3             27.659     0.189      0.189        0.189
+GHQ12_5  WITH GHQ12_2             10.470     0.116      0.116        0.116
+GHQ12_5  WITH GHQ12_3             13.892    -0.197     -0.197       -0.197
+GHQ12_6  WITH GHQ12_5             12.536     0.142      0.142        0.142
+GHQ12_8  WITH GHQ12_4             24.717     0.178      0.178        0.178
+GHQ12_8  WITH GHQ12_7             33.023     0.265      0.265        0.265
+GHQ12_9  WITH GHQ12_3             13.019    -0.272     -0.272       -0.272
+GHQ12_9  WITH GHQ12_4             11.517    -0.249     -0.249       -0.249
+GHQ12_11 WITH GHQ12_7             11.872    -0.280     -0.280       -0.280
+GHQ12_11 WITH GHQ12_10            26.651     0.282      0.282        0.282
+GHQ12_12 WITH GHQ12_7             29.461     0.274      0.274        0.274
+
+
+
+SAMPLE STATISTICS FOR ESTIMATED FACTOR SCORES
+
+
+     SAMPLE STATISTICS
+
+
+           Means
+              F1            F1_SE
+              ________      ________
+               -0.087         0.248
+
+
+           Covariances
+              F1            F1_SE
+              ________      ________
+ F1             0.550
+ F1_SE         -0.015         0.001
+
+
+           Correlations
+              F1            F1_SE
+              ________      ________
+ F1             1.000
+ F1_SE         -0.601         1.000
+
+
+PLOT INFORMATION
+
+The following plots are available:
+
+  Histograms (sample values, estimated factor scores, estimated values, residuals)
+  Scatterplots (sample values, estimated factor scores, estimated values, residuals)
+  Sample proportions and estimated probabilities
+  Item characteristic curves
+  Information curves
+  Measurement parameter plots
+  Latent variable distribution plots
+
+SAVEDATA INFORMATION
+
+
+  Difference testing
+
+  Save file
+    ghq12_1_metric.dat
+  Save format      Free
+
+     Beginning Time:  14:45:12
+        Ending Time:  14:45:15
+       Elapsed Time:  00:00:03
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2019 Muthen & Muthen

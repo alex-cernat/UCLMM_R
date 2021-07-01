@@ -6,18 +6,16 @@ TITLE:
 DATA:
  FILE = data.dta;
 VARIABLE:
-NAMES = w8audit1 w8bullytype0a w8bullytype0b w8bullytype0c w8bullytype0d
-     w8bullytype0e w8bullytype0f w8bullytype0g w8adult0a w8adult0b w8adult0c
-     w8leisurea0a w8leisurea0b w8leisurea0c w8leisurea0d w8leisurea0e w8leisurea0f
-     w8leisureb0a w8leisureb0b w8leisureb0c w8leisureb0d samppsu sampstratum w8mode
-     w8locus0a w8locus0b w8locus0c w8locus0d w8ghq12_1 w8ghq12_2 w8ghq12_3 w8ghq12_4
-     w8ghq12_5 w8ghq12_6 w8ghq12_7 w8ghq12_8 w8ghq12_9 w8ghq12_10 w8ghq12_11
-     w8ghq12_12 w8audit2 w8audit3 designweight_combin;
+NAMES = audit1 bully0a bully0b bully0c bully0d bully0e bully0f bully0g adult0a
+     adult0b adult0c leisa0a leisa0b leisa0c leisa0d leisa0e leisa0f leisb0a leisb0b
+     leisb0c leisb0d designweight samppsu sampstratum mode locus0a locus0b locus0c
+     locus0d ghq_1 ghq_2 ghq_3 ghq_4 ghq_5 ghq_6 ghq_7 ghq_8 ghq_9 ghq_10 ghq_11
+     ghq_12 audit2 audit3 designweight_combin;
 MISSING=.;
-USEVARIABLES ARE w8audit1
-w8audit2
-w8audit3;
-GROUPING IS w8mode (1=Web 2=Tel 3=Ftf);
+USEVARIABLES ARE audit1
+audit2
+audit3;
+GROUPING IS mode (1=Web 2=Tel 3=Ftf);
 WEIGHT IS designweight_combin;
                 STRATIFICATION IS sampstratum;
                 CLUSTER IS samppsu;
@@ -28,35 +26,35 @@ OUTPUT:
 MODINDICES;
 STD;
 SAVEDATA:
- DIFFTEST IS w8audit1_configural.dat;
+ DIFFTEST IS audit1_configural.dat;
 PLOT:
  type = plot3;
 MODEL:
 [f1@0];
 f1@1;
-f1 BY w8audit1@1
-w8audit2 (L2_Web)
-w8audit3 (L3_Web)
+f1 BY audit1@1
+audit2 (L2_Web)
+audit3 (L3_Web)
 ;
-[w8audit1] (t_w8audit1_Web);
-[w8audit2] (t_w8audit2_Web);
-[w8audit3] (t_w8audit3_Web);
+[audit1] (t_audit1_Web);
+[audit2] (t_audit2_Web);
+[audit3] (t_audit3_Web);
 MODEL TEL:
-f1 BY w8audit1@1
-w8audit2 (L2_Tel)
-w8audit3 (L3_Tel)
+f1 BY audit1@1
+audit2 (L2_Tel)
+audit3 (L3_Tel)
 ;
-[w8audit1] (t_w8audit1_Tel);
-[w8audit2] (t_w8audit2_Tel);
-[w8audit3] (t_w8audit3_Tel);
+[audit1] (t_audit1_Tel);
+[audit2] (t_audit2_Tel);
+[audit3] (t_audit3_Tel);
 MODEL FTF:
-f1 BY w8audit1@1
-w8audit2 (L2_Ftf)
-w8audit3 (L3_Ftf)
+f1 BY audit1@1
+audit2 (L2_Ftf)
+audit3 (L3_Ftf)
 ;
-[w8audit1] (t_w8audit1_Ftf);
-[w8audit2] (t_w8audit2_Ftf);
-[w8audit3] (t_w8audit3_Ftf);
+[audit1] (t_audit1_Ftf);
+[audit2] (t_audit2_Ftf);
+[audit3] (t_audit3_Ftf);
 INPUT_END
 2
 0
@@ -72,64 +70,64 @@ FTF
 3
 1
 0
-w8audit1 w8audit2 w8audit3 f1
+audit1 audit2 audit3 f1
 1
 -1 -1 -1 0
 0
 1
 f1
-w8audit1 w8audit2 w8audit3
-1 1 f1 w8audit1    1.000    0.000
-1 1 f1 w8audit2    1.029    0.026
-91 1 f1 w8audit2 l2_web
-1 1 f1 w8audit3    1.337    0.020
-91 1 f1 w8audit3 l3_web
-4 1 w8audit1    0.627    0.025
-4 1 w8audit2    0.914    0.037
-4 1 w8audit3   -0.145    0.026
-5 1 f1    1.000    0.000
-1 2 f1 w8audit1    1.000    0.000
-1 2 f1 w8audit2    1.093    0.060
-91 2 f1 w8audit2 l2_tel
-1 2 f1 w8audit3    1.323    0.052
-91 2 f1 w8audit3 l3_tel
-4 2 w8audit1    0.612    0.060
-4 2 w8audit2    1.297    0.133
-4 2 w8audit3   -0.135    0.080
-5 2 f1    1.000    0.000
-1 3 f1 w8audit1    1.000    0.000
-1 3 f1 w8audit2    1.109    0.030
-91 3 f1 w8audit2 l2_ftf
-1 3 f1 w8audit3    1.344    0.022
-91 3 f1 w8audit3 l3_ftf
-4 3 w8audit1    0.662    0.036
-4 3 w8audit2    1.001    0.051
-4 3 w8audit3   -0.107    0.030
-5 3 f1    1.000    0.000
-31 1 f1 w8audit1    1.000    0.000
-31 1 f1 w8audit2    1.029    0.026
-91 1 f1 w8audit2 l2_web
-31 1 f1 w8audit3    1.337    0.020
-91 1 f1 w8audit3 l3_web
-34 1 w8audit1    0.627    0.025
-34 1 w8audit2    0.914    0.037
-34 1 w8audit3  999.000  999.000
-35 1 f1    1.000    0.000
-31 2 f1 w8audit1    1.000    0.000
-31 2 f1 w8audit2    1.093    0.060
-91 2 f1 w8audit2 l2_tel
-31 2 f1 w8audit3    1.323    0.052
-91 2 f1 w8audit3 l3_tel
-34 2 w8audit1    0.612    0.060
-34 2 w8audit2    1.297    0.133
-34 2 w8audit3  999.000  999.000
-35 2 f1    1.000    0.000
-31 3 f1 w8audit1    1.000    0.000
-31 3 f1 w8audit2    1.109    0.030
-91 3 f1 w8audit2 l2_ftf
-31 3 f1 w8audit3    1.344    0.022
-91 3 f1 w8audit3 l3_ftf
-34 3 w8audit1    0.662    0.036
-34 3 w8audit2    1.001    0.051
-34 3 w8audit3  999.000  999.000
-35 3 f1    1.000    0.000
+audit1 audit2 audit3
+1 1 f1 audit1 1.000 0.000
+1 1 f1 audit2 1.026 0.024
+91 1 f1 audit2 l2_web
+1 1 f1 audit3 1.329 0.020
+91 1 f1 audit3 l3_web
+4 1 audit1 0.613 0.023
+4 1 audit2 0.899 0.038
+4 1 audit3 -0.134 0.026
+5 1 f1 1.000 0.000
+1 2 f1 audit1 1.000 0.000
+1 2 f1 audit2 1.041 0.057
+91 2 f1 audit2 l2_tel
+1 2 f1 audit3 1.358 0.059
+91 2 f1 audit3 l3_tel
+4 2 audit1 0.617 0.072
+4 2 audit2 1.127 0.128
+4 2 audit3 -0.190 0.076
+5 2 f1 1.000 0.000
+1 3 f1 audit1 1.000 0.000
+1 3 f1 audit2 1.011 0.026
+91 3 f1 audit2 l2_ftf
+1 3 f1 audit3 1.326 0.020
+91 3 f1 audit3 l3_ftf
+4 3 audit1 0.684 0.033
+4 3 audit2 0.992 0.046
+4 3 audit3 -0.131 0.029
+5 3 f1 1.000 0.000
+31 1 f1 audit1 1.000 0.0000000001000
+31 1 f1 audit2 1.026 0.024
+91 1 f1 audit2 l2_web
+31 1 f1 audit3 1.329 0.020
+91 1 f1 audit3 l3_web
+34 1 audit1 0.613 0.023
+34 1 audit2 0.899 0.038
+34 1 audit3 999.000 999.000
+35 1 f1 1.000 0.0000000001000
+31 2 f1 audit1 1.000 0.0000000001000
+31 2 f1 audit2 1.041 0.057
+91 2 f1 audit2 l2_tel
+31 2 f1 audit3 1.358 0.059
+91 2 f1 audit3 l3_tel
+34 2 audit1 0.617 0.072
+34 2 audit2 1.127 0.128
+34 2 audit3 999.000 999.000
+35 2 f1 1.000 0.0000000001000
+31 3 f1 audit1 1.000 0.0000000001000
+31 3 f1 audit2 1.011 0.026
+91 3 f1 audit2 l2_ftf
+31 3 f1 audit3 1.326 0.020
+91 3 f1 audit3 l3_ftf
+34 3 audit1 0.684 0.033
+34 3 audit2 0.992 0.046
+34 3 audit3 999.000 999.000
+35 3 f1 1.000 0.0000000001000

@@ -1,0 +1,200 @@
+VERSION 1.1.0
+INPUT
+TITLE:
+ Your title goes here
+
+DATA:
+ FILE = data.dta;
+VARIABLE:
+NAMES = audit1 bully0a bully0b bully0c bully0d bully0e bully0f bully0g adult0a
+     adult0b adult0c leisa0a leisa0b leisa0c leisa0d leisa0e leisa0f leisb0a leisb0b
+     leisb0c leisb0d designweight samppsu sampstratum mode locus0a locus0b locus0c
+     locus0d ghq_1 ghq_2 ghq_3 ghq_4 ghq_5 ghq_6 ghq_7 ghq_8 ghq_9 ghq_10 ghq_11
+     ghq_12 audit2 audit3 designweight_combin;
+MISSING=.;
+USEVARIABLES ARE locus0a
+locus0b
+locus0c
+locus0d;
+CATEGORICAL ARE locus0a
+locus0b
+locus0c
+locus0d;
+GROUPING IS mode (1=Web 2=Tel 3=Ftf);
+WEIGHT IS designweight;
+                STRATIFICATION IS sampstratum;
+                CLUSTER IS samppsu;
+ANALYSIS:
+ TYPE IS COMPLEX;
+                ESTIMATOR = WLSMV;
+                ITERATIONS = 100000;
+                PARAMETERIZATION = THETA;
+DIFFTEST = locus0a_metric.dat;
+OUTPUT:
+ SAMPSTAT;
+MODINDICES;
+STD;
+SAVEDATA:
+ DIFFTEST IS locus0a_scalar.dat;
+PLOT:
+ type = plot3;
+MODEL:
+f1 BY locus0a@1
+locus0b (L2)
+locus0c (L3)
+locus0d (L4)
+;
+[locus0a$1] (t_locus0a_1);
+[locus0a$2] (t_locus0a_2);
+[locus0a$3] (t_locus0a_3);
+[locus0b$1] (t_locus0b_1);
+[locus0b$2] (t_locus0b_2);
+[locus0b$3] (t_locus0b_3);
+[locus0c$1] (t_locus0c_1);
+[locus0c$2] (t_locus0c_2);
+[locus0c$3] (t_locus0c_3);
+[locus0d$1] (t_locus0d_1);
+[locus0d$2] (t_locus0d_2);
+[locus0d$3] (t_locus0d_3);
+locus0a@1;
+locus0b@1;
+locus0c@1;
+locus0d@1;
+MODEL TEL:
+f1 BY locus0a@1
+locus0b (L2)
+locus0c (L3)
+locus0d (L4)
+;
+[locus0a$1] (t_locus0a_1);
+[locus0a$2] (t_locus0a_2);
+[locus0a$3] (t_locus0a_3);
+[locus0b$1] (t_locus0b_1);
+[locus0b$2] (t_locus0b_2);
+[locus0b$3] (t_locus0b_3);
+[locus0c$1] (t_locus0c_1);
+[locus0c$2] (t_locus0c_2);
+[locus0c$3] (t_locus0c_3);
+[locus0d$1] (t_locus0d_1);
+[locus0d$2] (t_locus0d_2);
+[locus0d$3] (t_locus0d_3);
+locus0a@1;
+locus0b@1;
+locus0c@1;
+locus0d@1;
+MODEL FTF:
+f1 BY locus0a@1
+locus0b (L2)
+locus0c (L3)
+locus0d (L4)
+;
+[locus0a$1] (t_locus0a_1);
+[locus0a$2] (t_locus0a_2);
+[locus0a$3] (t_locus0a_3);
+[locus0b$1] (t_locus0b_1);
+[locus0b$2] (t_locus0b_2);
+[locus0b$3] (t_locus0b_3);
+[locus0c$1] (t_locus0c_1);
+[locus0c$2] (t_locus0c_2);
+[locus0c$3] (t_locus0c_3);
+[locus0d$1] (t_locus0d_1);
+[locus0d$2] (t_locus0d_2);
+[locus0d$3] (t_locus0d_3);
+locus0a@1;
+locus0b@1;
+locus0c@1;
+locus0d@1;
+INPUT_END
+2
+0
+0
+2
+WLSMV
+1
+GENERAL
+3
+WEB
+TEL
+FTF
+4
+1
+0
+locus0a locus0b locus0c locus0d f1
+1
+-1 -1 -1 -1 0
+0
+1
+f1
+locus0a locus0b locus0c locus0d
+1 1 f1 locus0a 1.000 0.000
+1 1 f1 locus0b 1.206 0.073
+91 1 f1 locus0b l2
+1 1 f1 locus0c -0.389 0.032
+91 1 f1 locus0c l3
+1 1 f1 locus0d 1.245 0.076
+91 1 f1 locus0d l4
+4 1 locus0a 1.000 0.000
+4 1 locus0b 1.000 0.000
+4 1 locus0c 1.000 0.000
+4 1 locus0d 1.000 0.000
+5 1 f1 0.453 0.037
+1 2 f1 locus0a 1.000 0.000
+1 2 f1 locus0b 1.206 0.073
+91 2 f1 locus0b l2
+1 2 f1 locus0c -0.389 0.032
+91 2 f1 locus0c l3
+1 2 f1 locus0d 1.245 0.076
+91 2 f1 locus0d l4
+4 2 locus0a 1.000 0.000
+4 2 locus0b 1.000 0.000
+4 2 locus0c 1.000 0.000
+4 2 locus0d 1.000 0.000
+5 2 f1 0.383 0.050
+1 3 f1 locus0a 1.000 0.000
+1 3 f1 locus0b 1.206 0.073
+91 3 f1 locus0b l2
+1 3 f1 locus0c -0.389 0.032
+91 3 f1 locus0c l3
+1 3 f1 locus0d 1.245 0.076
+91 3 f1 locus0d l4
+4 3 locus0a 1.000 0.000
+4 3 locus0b 1.000 0.000
+4 3 locus0c 1.000 0.000
+4 3 locus0d 1.000 0.000
+5 3 f1 0.426 0.041
+31 1 f1 locus0a 0.673 0.028
+31 1 f1 locus0b 0.812 0.033
+91 1 f1 locus0b l2
+31 1 f1 locus0c -0.262 0.019
+91 1 f1 locus0c l3
+31 1 f1 locus0d 0.838 0.038
+91 1 f1 locus0d l4
+34 1 locus0a 1.000 0.0000000001000
+34 1 locus0b 1.000 0.0000000001000
+34 1 locus0c 1.000 0.0000000001000
+34 1 locus0d 1.000 0.0000000001000
+35 1 f1 1.000 0.0000000001000
+31 2 f1 locus0a 0.619 0.040
+31 2 f1 locus0b 0.746 0.050
+91 2 f1 locus0b l2
+31 2 f1 locus0c -0.240 0.022
+91 2 f1 locus0c l3
+31 2 f1 locus0d 0.770 0.052
+91 2 f1 locus0d l4
+34 2 locus0a 1.000 0.0000000001000
+34 2 locus0b 1.000 0.0000000001000
+34 2 locus0c 1.000 0.0000000001000
+34 2 locus0d 1.000 0.0000000001000
+35 2 f1 1.000 0.0000000001000
+31 3 f1 locus0a 0.653 0.031
+31 3 f1 locus0b 0.787 0.038
+91 3 f1 locus0b l2
+31 3 f1 locus0c -0.254 0.020
+91 3 f1 locus0c l3
+31 3 f1 locus0d 0.812 0.042
+91 3 f1 locus0d l4
+34 3 locus0a 1.000 0.0000000001000
+34 3 locus0b 1.000 0.0000000001000
+34 3 locus0c 1.000 0.0000000001000
+34 3 locus0d 1.000 0.0000000001000
+35 3 f1 1.000 0.0000000001000

@@ -1,0 +1,29 @@
+------Begin Mplus Model Run: 23Aug2019 14:44:30------
+Target directory: C:/Users/msassac6/Dropbox (The University of Manchester)/Papers/Joe S/UCLMM/UCLMM_R/mplus
+Run options:
+	Recursive (run models in subdirectories): FALSE
+	Show output on console: TRUE
+	Replace existing outfile: always
+------
+Currently running model: adult_nm.inp
+Currently running model: configural_adult_nm.inp
+Currently running model: configural_ghq_nm.inp
+Currently running model: configural_leisurea_nm.inp
+Currently running model: configural_leisureb_nm.inp
+Currently running model: configural_locus_nm.inp
+Currently running model: ghq_nm.inp
+Currently running model: leisurea_nm.inp
+Currently running model: leisureb_nm.inp
+Currently running model: locus_nm.inp
+Currently running model: metric_adult_nm.inp
+Currently running model: metric_ghq_nm.inp
+Currently running model: metric_leisurea_nm.inp
+Currently running model: metric_leisureb_nm.inp
+Currently running model: metric_locus_nm.inp
+Currently running model: scalar_adult_nm.inp
+Currently running model: scalar_ghq_nm.inp
+Currently running model: scalar_leisurea_nm.inp
+Currently running model: scalar_leisureb_nm.inp
+Currently running model: scalar_locus_nm.inp
+
+------End Mplus Model Run: 23Aug2019 14:45:46------

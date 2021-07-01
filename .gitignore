@@ -37,3 +37,5 @@ vignettes/*.pdf
 packrat/lib*/
 data/paper4data_v2.dta
 data/5545age_25_survey_questionnaire.pdf
+data.dta
+data.dta

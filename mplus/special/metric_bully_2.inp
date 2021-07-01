@@ -4,30 +4,28 @@ DATA: FILE = data.dta;
 
 VARIABLE: 
 
-NAMES = w8audit1 w8bullytype0a w8bullytype0b w8bullytype0c w8bullytype0d
-     w8bullytype0e w8bullytype0f w8bullytype0g w8adult0a w8adult0b w8adult0c
-     w8leisurea0a w8leisurea0b w8leisurea0c w8leisurea0d w8leisurea0e w8leisurea0f
-     w8leisureb0a w8leisureb0b w8leisureb0c w8leisureb0d samppsu sampstratum w8mode
-     w8locus0a w8locus0b w8locus0c w8locus0d w8ghq12_1 w8ghq12_2 w8ghq12_3 w8ghq12_4
-     w8ghq12_5 w8ghq12_6 w8ghq12_7 w8ghq12_8 w8ghq12_9 w8ghq12_10 w8ghq12_11
-     w8ghq12_12 w8audit2 w8audit3 designweight_combin; 
+NAMES = audit1 bully0a bully0b bully0c bully0d bully0e bully0f bully0g adult0a
+     adult0b adult0c leisa0a leisa0b leisa0c leisa0d leisa0e leisa0f leisb0a leisb0b
+     leisb0c leisb0d designweight samppsu sampstratum mode locus0a locus0b locus0c
+     locus0d ghq_1 ghq_2 ghq_3 ghq_4 ghq_5 ghq_6 ghq_7 ghq_8 ghq_9 ghq_10 ghq_11
+     ghq_12 audit2 audit3 designweight_combin; 
 
 MISSING=.;
-USEVARIABLES ARE w8bullytype0a 
-w8bullytype0b 
-w8bullytype0c 
-w8bullytype0d 
-w8bullytype0e 
-w8bullytype0f 
-w8bullytype0g;
-CATEGORICAL ARE w8bullytype0a 
-w8bullytype0b 
-w8bullytype0c 
-w8bullytype0d 
-w8bullytype0e 
-w8bullytype0f 
-w8bullytype0g;
-GROUPING IS w8mode (1=Web 2=Tel 3=Ftf);
+USEVARIABLES ARE bully0a 
+bully0b 
+bully0c 
+bully0d 
+bully0e 
+bully0f 
+bully0g;
+CATEGORICAL ARE bully0a 
+bully0b 
+bully0c 
+bully0d 
+bully0e 
+bully0f 
+bully0g;
+GROUPING IS mode (1=Web 2=Tel 3=Ftf);
 WEIGHT IS designweight_combin;
 
                 STRATIFICATION IS sampstratum;
@@ -42,7 +40,7 @@ ANALYSIS: TYPE IS COMPLEX;
 
                 PARAMETERIZATION = THETA;
 
-DIFFTEST = w8bullytype0a_configural.dat;
+DIFFTEST = bully0a_configural.dat;
 
 Model:
 
@@ -51,100 +49,100 @@ Model:
 f1@1;
 [f1@0];
 
-f1 BY w8bullytype0a@1
-w8bullytype0b (L2)
-w8bullytype0c (L3)
-w8bullytype0d (L4)
-w8bullytype0e (L5)
-w8bullytype0f (L6)
-w8bullytype0g (L7)
+f1 BY bully0a@1
+bully0b (L2)
+bully0c (L3)
+bully0d (L4)
+bully0e (L5)
+bully0f (L6)
+bully0g (L7)
 ;
 
 
-[w8bullytype0a$1] (t_w8bullytype0a);
-[w8bullytype0b$1] (t_w8bullytype0b_Web);
-[w8bullytype0c$1] (t_w8bullytype0c_Web);
-[w8bullytype0d$1] (t_w8bullytype0d_Web);
-[w8bullytype0e$1] (t_w8bullytype0e_Web);
-[w8bullytype0f$1] (t_w8bullytype0f_Web);
-[w8bullytype0g$1] (t_w8bullytype0g_Web);
+[bully0a$1] (t_bully0a);
+[bully0b$1] (t_bully0b_Web);
+[bully0c$1] (t_bully0c_Web);
+[bully0d$1] (t_bully0d_Web);
+[bully0e$1] (t_bully0e_Web);
+[bully0f$1] (t_bully0f_Web);
+[bully0g$1] (t_bully0g_Web);
 
 
-w8bullytype0a@1;
-w8bullytype0b@1;
-w8bullytype0c@1;
-w8bullytype0d@1;
-w8bullytype0e@1;
-w8bullytype0f@1;
-w8bullytype0g@1;
+bully0a@1;
+bully0b@1;
+bully0c@1;
+bully0d@1;
+bully0e@1;
+bully0f@1;
+bully0g@1;
 
 Model Tel:
 
-f1 BY w8bullytype0a@1
-w8bullytype0b (L2)
-w8bullytype0c (L3)
-w8bullytype0d (L4)
-w8bullytype0e (L5)
-w8bullytype0f (L6)
-w8bullytype0g (L7)
+f1 BY bully0a@1
+bully0b (L2)
+bully0c (L3)
+bully0d (L4)
+bully0e (L5)
+bully0f (L6)
+bully0g (L7)
 ;
 
 
-[w8bullytype0a$1] (t_w8bullytype0a);
-[w8bullytype0b$1] (t_w8bullytype0b_Tel);
-[w8bullytype0c$1] (t_w8bullytype0c_Tel);
-[w8bullytype0d$1] (t_w8bullytype0d_Tel);
-[w8bullytype0e$1] (t_w8bullytype0e_Tel);
-[w8bullytype0f$1] (t_w8bullytype0f_Tel);
-[w8bullytype0g$1] (t_w8bullytype0g_Tel);
+[bully0a$1] (t_bully0a);
+[bully0b$1] (t_bully0b_Tel);
+[bully0c$1] (t_bully0c_Tel);
+[bully0d$1] (t_bully0d_Tel);
+[bully0e$1] (t_bully0e_Tel);
+[bully0f$1] (t_bully0f_Tel);
+[bully0g$1] (t_bully0g_Tel);
 
 
-w8bullytype0a@1;
-w8bullytype0b@1;
-w8bullytype0c@1;
-w8bullytype0d@1;
-w8bullytype0e@1;
-w8bullytype0f@1;
-w8bullytype0g@1;
+bully0a@1;
+bully0b@1;
+bully0c@1;
+bully0d@1;
+bully0e@1;
+bully0f@1;
+bully0g@1;
 
 Model Ftf:
 
-f1 BY w8bullytype0a@1
-w8bullytype0b (L2)
-w8bullytype0c (L3)
-w8bullytype0d (L4)
-w8bullytype0e (L5)
-w8bullytype0f (L6)
-w8bullytype0g (L7)
+f1 BY bully0a@1
+bully0b (L2)
+bully0c (L3)
+bully0d (L4)
+bully0e (L5)
+bully0f (L6)
+bully0g (L7)
 ;
 
 
-[w8bullytype0a$1] (t_w8bullytype0a);
-[w8bullytype0b$1] (t_w8bullytype0b_F2f);
-[w8bullytype0c$1] (t_w8bullytype0c_F2f);
-[w8bullytype0d$1] (t_w8bullytype0d_F2f);
-[w8bullytype0e$1] (t_w8bullytype0e_F2f);
-[w8bullytype0f$1] (t_w8bullytype0f_F2f);
-[w8bullytype0g$1] (t_w8bullytype0g_F2f);
+[bully0a$1] (t_bully0a);
+[bully0b$1] (t_bully0b_F2f);
+[bully0c$1] (t_bully0c_F2f);
+[bully0d$1] (t_bully0d_F2f);
+[bully0e$1] (t_bully0e_F2f);
+[bully0f$1] (t_bully0f_F2f);
+[bully0g$1] (t_bully0g_F2f);
 
 
 
-w8bullytype0a@1;
-w8bullytype0b@1;
-w8bullytype0c@1;
-w8bullytype0d@1;
-w8bullytype0e@1;
-w8bullytype0f@1;
-w8bullytype0g@1;
+bully0a@1;
+bully0b@1;
+bully0c@1;
+bully0d@1;
+bully0e@1;
+bully0f@1;
+bully0g@1;
 
 
 
-SAVEDATA: DIFFTEST IS w8bullytype0a_metric.dat;
+SAVEDATA: DIFFTEST IS bully0a_metric.dat;
 OUTPUT: SAMPSTAT; 
 
 MODINDICES; 
 
 STD; 
 
-Plot: type = plot3;
+Plot: TYPE = plot3;
 

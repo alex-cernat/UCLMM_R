@@ -1,0 +1,265 @@
+VERSION 1.1.0
+INPUT
+TITLE:
+ Your title goes here
+
+DATA:
+ FILE = data.dta;
+VARIABLE:
+NAMES = audit1 bully0a bully0b bully0c bully0d bully0e bully0f bully0g adult0a
+     adult0b adult0c leisa0a leisa0b leisa0c leisa0d leisa0e leisa0f leisb0a leisb0b
+     leisb0c leisb0d designweight samppsu sampstratum mode locus0a locus0b locus0c
+     locus0d ghq_1 ghq_2 ghq_3 ghq_4 ghq_5 ghq_6 ghq_7 ghq_8 ghq_9 ghq_10 ghq_11
+     ghq_12 audit2 audit3 designweight_combin;
+MISSING=.;
+USEVARIABLES ARE bully0a
+bully0b
+bully0c
+bully0d
+bully0e
+bully0f
+bully0g;
+CATEGORICAL ARE bully0a
+bully0b
+bully0c
+bully0d
+bully0e
+bully0f
+bully0g;
+GROUPING IS mode (1=Web 2=Tel 3=Ftf);
+WEIGHT IS designweight;
+                STRATIFICATION IS sampstratum;
+                CLUSTER IS samppsu;
+ANALYSIS:
+ TYPE IS COMPLEX;
+                ESTIMATOR = WLSMV;
+                ITERATIONS = 100000;
+                PARAMETERIZATION = THETA;
+DIFFTEST = bully0a_configural.dat;
+OUTPUT:
+ SAMPSTAT;
+MODINDICES;
+STD;
+SAVEDATA:
+ DIFFTEST IS bully0a_metric.dat;
+PLOT:
+ TYPE = plot3;
+MODEL:
+f1@1;
+[f1@0];
+f1 BY bully0a@1
+bully0b (L2)
+bully0c (L3)
+bully0d (L4)
+bully0e (L5)
+bully0f (L6)
+bully0g (L7)
+;
+[bully0a$1] (t_bully0a);
+[bully0b$1] (t_bully0b_Web);
+[bully0c$1] (t_bully0c_Web);
+[bully0d$1] (t_bully0d_Web);
+[bully0e$1] (t_bully0e_Web);
+[bully0f$1] (t_bully0f_Web);
+[bully0g$1] (t_bully0g_Web);
+bully0a@1;
+bully0b@1;
+bully0c@1;
+bully0d@1;
+bully0e@1;
+bully0f@1;
+bully0g@1;
+MODEL TEL:
+f1 BY bully0a@1
+bully0b (L2)
+bully0c (L3)
+bully0d (L4)
+bully0e (L5)
+bully0f (L6)
+bully0g (L7)
+;
+[bully0a$1] (t_bully0a);
+[bully0b$1] (t_bully0b_Tel);
+[bully0c$1] (t_bully0c_Tel);
+[bully0d$1] (t_bully0d_Tel);
+[bully0e$1] (t_bully0e_Tel);
+[bully0f$1] (t_bully0f_Tel);
+[bully0g$1] (t_bully0g_Tel);
+bully0a@1;
+bully0b@1;
+bully0c@1;
+bully0d@1;
+bully0e@1;
+bully0f@1;
+bully0g@1;
+MODEL FTF:
+f1 BY bully0a@1
+bully0b (L2)
+bully0c (L3)
+bully0d (L4)
+bully0e (L5)
+bully0f (L6)
+bully0g (L7)
+;
+[bully0a$1] (t_bully0a);
+[bully0b$1] (t_bully0b_F2f);
+[bully0c$1] (t_bully0c_F2f);
+[bully0d$1] (t_bully0d_F2f);
+[bully0e$1] (t_bully0e_F2f);
+[bully0f$1] (t_bully0f_F2f);
+[bully0g$1] (t_bully0g_F2f);
+bully0a@1;
+bully0b@1;
+bully0c@1;
+bully0d@1;
+bully0e@1;
+bully0f@1;
+bully0g@1;
+INPUT_END
+2
+0
+0
+2
+WLSMV
+1
+GENERAL
+3
+WEB
+TEL
+FTF
+7
+1
+0
+bully0a bully0b bully0c bully0d bully0e bully0f bully0g f1
+1
+-1 -1 -1 -1 -1 -1 -1 0
+0
+1
+f1
+bully0a bully0b bully0c bully0d bully0e bully0f bully0g
+1 1 f1 bully0a 1.000 0.000
+1 1 f1 bully0b 2.668 0.348
+91 1 f1 bully0b l2
+1 1 f1 bully0c 0.926 0.059
+91 1 f1 bully0c l3
+1 1 f1 bully0d 1.366 0.086
+91 1 f1 bully0d l4
+1 1 f1 bully0e 1.448 0.127
+91 1 f1 bully0e l5
+1 1 f1 bully0f 0.714 0.049
+91 1 f1 bully0f l6
+1 1 f1 bully0g 0.645 0.052
+91 1 f1 bully0g l7
+4 1 bully0a 1.000 0.000
+4 1 bully0b 1.000 0.000
+4 1 bully0c 1.000 0.000
+4 1 bully0d 1.000 0.000
+4 1 bully0e 1.000 0.000
+4 1 bully0f 1.000 0.000
+4 1 bully0g 1.000 0.000
+5 1 f1 1.000 0.000
+1 2 f1 bully0a 1.000 0.000
+1 2 f1 bully0b 2.668 0.348
+91 2 f1 bully0b l2
+1 2 f1 bully0c 0.926 0.059
+91 2 f1 bully0c l3
+1 2 f1 bully0d 1.366 0.086
+91 2 f1 bully0d l4
+1 2 f1 bully0e 1.448 0.127
+91 2 f1 bully0e l5
+1 2 f1 bully0f 0.714 0.049
+91 2 f1 bully0f l6
+1 2 f1 bully0g 0.645 0.052
+91 2 f1 bully0g l7
+4 2 bully0a 1.000 0.000
+4 2 bully0b 1.000 0.000
+4 2 bully0c 1.000 0.000
+4 2 bully0d 1.000 0.000
+4 2 bully0e 1.000 0.000
+4 2 bully0f 1.000 0.000
+4 2 bully0g 1.000 0.000
+5 2 f1 1.000 0.000
+1 3 f1 bully0a 1.000 0.000
+1 3 f1 bully0b 2.668 0.348
+91 3 f1 bully0b l2
+1 3 f1 bully0c 0.926 0.059
+91 3 f1 bully0c l3
+1 3 f1 bully0d 1.366 0.086
+91 3 f1 bully0d l4
+1 3 f1 bully0e 1.448 0.127
+91 3 f1 bully0e l5
+1 3 f1 bully0f 0.714 0.049
+91 3 f1 bully0f l6
+1 3 f1 bully0g 0.645 0.052
+91 3 f1 bully0g l7
+4 3 bully0a 1.000 0.000
+4 3 bully0b 1.000 0.000
+4 3 bully0c 1.000 0.000
+4 3 bully0d 1.000 0.000
+4 3 bully0e 1.000 0.000
+4 3 bully0f 1.000 0.000
+4 3 bully0g 1.000 0.000
+5 3 f1 1.000 0.000
+31 1 f1 bully0a 1.000 0.0000000001000
+31 1 f1 bully0b 2.668 0.348
+91 1 f1 bully0b l2
+31 1 f1 bully0c 0.926 0.059
+91 1 f1 bully0c l3
+31 1 f1 bully0d 1.366 0.086
+91 1 f1 bully0d l4
+31 1 f1 bully0e 1.448 0.127
+91 1 f1 bully0e l5
+31 1 f1 bully0f 0.714 0.049
+91 1 f1 bully0f l6
+31 1 f1 bully0g 0.645 0.052
+91 1 f1 bully0g l7
+34 1 bully0a 1.000 0.0000000001000
+34 1 bully0b 1.000 0.0000000001000
+34 1 bully0c 1.000 0.0000000001000
+34 1 bully0d 1.000 0.0000000001000
+34 1 bully0e 1.000 0.0000000001000
+34 1 bully0f 1.000 0.0000000001000
+34 1 bully0g 1.000 0.0000000001000
+35 1 f1 1.000 0.0000000001000
+31 2 f1 bully0a 1.000 0.0000000001000
+31 2 f1 bully0b 2.668 0.348
+91 2 f1 bully0b l2
+31 2 f1 bully0c 0.926 0.059
+91 2 f1 bully0c l3
+31 2 f1 bully0d 1.366 0.086
+91 2 f1 bully0d l4
+31 2 f1 bully0e 1.448 0.127
+91 2 f1 bully0e l5
+31 2 f1 bully0f 0.714 0.049
+91 2 f1 bully0f l6
+31 2 f1 bully0g 0.645 0.052
+91 2 f1 bully0g l7
+34 2 bully0a 1.000 0.0000000001000
+34 2 bully0b 1.000 0.0000000001000
+34 2 bully0c 1.000 0.0000000001000
+34 2 bully0d 1.000 0.0000000001000
+34 2 bully0e 1.000 0.0000000001000
+34 2 bully0f 1.000 0.0000000001000
+34 2 bully0g 1.000 0.0000000001000
+35 2 f1 1.000 0.0000000001000
+31 3 f1 bully0a 1.000 0.0000000001000
+31 3 f1 bully0b 2.668 0.348
+91 3 f1 bully0b l2
+31 3 f1 bully0c 0.926 0.059
+91 3 f1 bully0c l3
+31 3 f1 bully0d 1.366 0.086
+91 3 f1 bully0d l4
+31 3 f1 bully0e 1.448 0.127
+91 3 f1 bully0e l5
+31 3 f1 bully0f 0.714 0.049
+91 3 f1 bully0f l6
+31 3 f1 bully0g 0.645 0.052
+91 3 f1 bully0g l7
+34 3 bully0a 1.000 0.0000000001000
+34 3 bully0b 1.000 0.0000000001000
+34 3 bully0c 1.000 0.0000000001000
+34 3 bully0d 1.000 0.0000000001000
+34 3 bully0e 1.000 0.0000000001000
+34 3 bully0f 1.000 0.0000000001000
+34 3 bully0g 1.000 0.0000000001000
+35 3 f1 1.000 0.0000000001000

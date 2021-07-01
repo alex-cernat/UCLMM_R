@@ -6,9 +6,9 @@ VARIABLE:
 
 NAMES = audit1 bully0a bully0b bully0c bully0d bully0e bully0f bully0g adult0a
      adult0b adult0c leisa0a leisa0b leisa0c leisa0d leisa0e leisa0f leisb0a leisb0b
-     leisb0c leisb0d samppsu sampstratum mode locus0a locus0b locus0c locus0d
-     ghq12_1 ghq12_2 ghq12_3 ghq12_4 ghq12_5 ghq12_6 ghq12_7 ghq12_8 ghq12_9
-     ghq12_10 ghq12_11 ghq12_12 audit2 audit3 designweight_combin; 
+     leisb0c leisb0d designweight samppsu sampstratum mode locus0a locus0b locus0c
+     locus0d ghq_1 ghq_2 ghq_3 ghq_4 ghq_5 ghq_6 ghq_7 ghq_8 ghq_9 ghq_10 ghq_11
+     ghq_12 audit2 audit3 designweight_combin; 
 
 MISSING=.;
 USEVARIABLES ARE leisb0a 
@@ -21,15 +21,13 @@ leisb0c
 leisb0d;
 GROUPING IS mode (1=Web 2=Tel 3=Ftf);
 
-! WEIGHT IS designweight_combin;
-
-! STRATIFICATION IS sampstratum;
-
-! CLUSTER IS samppsu;
+ WEIGHT IS designweight;
+ STRATIFICATION IS sampstratum;
+ CLUSTER IS samppsu;
 
 ANALYSIS: 
 
-! TYPE IS COMPLEX;
+ TYPE IS COMPLEX;
 
                 ESTIMATOR = WLSMV;
 

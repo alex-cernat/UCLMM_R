@@ -1,6 +1,6 @@
-Mplus VERSION 8.3
+Mplus VERSION 8.6
 MUTHEN & MUTHEN
-09/02/2019   9:02 AM
+07/01/2021   8:24 AM
 
 INPUT INSTRUCTIONS
 
@@ -12,9 +12,9 @@ INPUT INSTRUCTIONS
 
   NAMES = audit1 bully0a bully0b bully0c bully0d bully0e bully0f bully0g adult0a
        adult0b adult0c leisa0a leisa0b leisa0c leisa0d leisa0e leisa0f leisb0a leisb0b
-       leisb0c leisb0d samppsu sampstratum mode locus0a locus0b locus0c locus0d
-       ghq12_1 ghq12_2 ghq12_3 ghq12_4 ghq12_5 ghq12_6 ghq12_7 ghq12_8 ghq12_9
-       ghq12_10 ghq12_11 ghq12_12 audit2 audit3 designweight_combin;
+       leisb0c leisb0d designweight samppsu sampstratum mode locus0a locus0b locus0c
+       locus0d ghq_1 ghq_2 ghq_3 ghq_4 ghq_5 ghq_6 ghq_7 ghq_8 ghq_9 ghq_10 ghq_11
+       ghq_12 audit2 audit3 designweight_combin;
 
   MISSING=.;
   USEVARIABLES ARE locus0a
@@ -28,14 +28,14 @@ INPUT INSTRUCTIONS
 
   GROUPING IS mode (1=Web 2=Tel 3=Ftf);
 
-  ! WEIGHT IS designweight_combin;
+   WEIGHT IS designweight;
 
-  ! STRATIFICATION IS sampstratum;
+   STRATIFICATION IS sampstratum;
 
-  ! CLUSTER IS samppsu;
+   CLUSTER IS samppsu;
 
   ANALYSIS:
-  !TYPE IS COMPLEX;
+  TYPE IS COMPLEX;
 
                   ESTIMATOR = WLSMV;
 
@@ -180,6 +180,9 @@ Continuous latent variables
 Variables with special functions
 
   Grouping variable     MODE
+  Stratification        SAMPSTRA
+  Cluster variable      SAMPPSU
+  Weight variable       DESIGNWE
 
 Estimator                                                    WLSMV
 Maximum number of iterations                                100000
@@ -198,14 +201,23 @@ Input data format  FREE
 
 SUMMARY OF DATA
 
+   Total number of strata                       37
+   Total number of clusters                    656
+
    Group WEB
      Number of missing data patterns             6
+     Number of strata                           37
+     Number of clusters                        650
 
    Group TEL
      Number of missing data patterns            10
+     Number of strata                           37
+     Number of clusters                        407
 
    Group FTF
      Number of missing data patterns             5
+     Number of strata                           36
+     Number of clusters                        609
 
 
 COVARIANCE COVERAGE OF DATA
@@ -253,69 +265,69 @@ UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
 
   Group WEB
     LOCUS0A
-      Category 1    0.047          216.000
-      Category 2    0.353         1606.000
-      Category 3    0.520         2368.000
-      Category 4    0.080          365.000
+      Category 1    0.047          212.711
+      Category 2    0.361         1645.566
+      Category 3    0.514         2338.867
+      Category 4    0.078          357.452
     LOCUS0B
-      Category 1    0.079          359.000
-      Category 2    0.531         2422.000
-      Category 3    0.333         1517.000
-      Category 4    0.057          259.000
+      Category 1    0.081          368.088
+      Category 2    0.541         2463.526
+      Category 3    0.326         1485.326
+      Category 4    0.053          240.149
     LOCUS0C
-      Category 1    0.041          187.000
-      Category 2    0.298         1359.000
-      Category 3    0.567         2586.000
-      Category 4    0.093          425.000
+      Category 1    0.039          177.307
+      Category 2    0.292         1331.680
+      Category 3    0.582         2650.474
+      Category 4    0.087          397.790
     LOCUS0D
-      Category 1    0.248         1131.000
-      Category 2    0.641         2923.000
-      Category 3    0.100          455.000
-      Category 4    0.011           51.000
+      Category 1    0.232         1059.777
+      Category 2    0.657         2994.623
+      Category 3    0.102          466.085
+      Category 4    0.009           39.515
 
   Group TEL
     LOCUS0A
-      Category 1    0.061           38.000
-      Category 2    0.369          231.000
-      Category 3    0.449          281.000
-      Category 4    0.121           76.000
+      Category 1    0.059           37.472
+      Category 2    0.371          234.435
+      Category 3    0.454          286.862
+      Category 4    0.115           72.536
     LOCUS0B
-      Category 1    0.117           75.000
-      Category 2    0.527          337.000
-      Category 3    0.291          186.000
-      Category 4    0.066           42.000
+      Category 1    0.114           72.846
+      Category 2    0.541          347.116
+      Category 3    0.290          186.119
+      Category 4    0.055           35.587
     LOCUS0C
-      Category 1    0.030           19.000
-      Category 2    0.274          174.000
-      Category 3    0.604          384.000
-      Category 4    0.093           59.000
+      Category 1    0.027           17.129
+      Category 2    0.257          163.662
+      Category 3    0.623          396.993
+      Category 4    0.094           59.936
     LOCUS0D
-      Category 1    0.303          195.000
-      Category 2    0.639          411.000
-      Category 3    0.051           33.000
-      Category 4    0.006            4.000
+      Category 1    0.280          180.546
+      Category 2    0.660          424.959
+      Category 3    0.053           33.884
+      Category 4    0.007            4.584
 
   Group FTF
     LOCUS0A
-      Category 1    0.050          105.000
-      Category 2    0.374          781.000
-      Category 3    0.498         1039.000
-      Category 4    0.078          163.000
+      Category 1    0.044           90.824
+      Category 2    0.379          791.954
+      Category 3    0.503         1049.892
+      Category 4    0.074          154.947
     LOCUS0B
-      Category 1    0.105          219.000
-      Category 2    0.557         1161.000
-      Category 3    0.283          591.000
-      Category 4    0.055          115.000
+      Category 1    0.104          216.809
+      Category 2    0.572         1192.925
+      Category 3    0.277          578.032
+      Category 4    0.047           98.165
     LOCUS0C
-      Category 1    0.036           76.000
-      Category 2    0.278          580.000
-      Category 3    0.570         1190.000
-      Category 4    0.115          241.000
+      Category 1    0.033           69.499
+      Category 2    0.274          571.846
+      Category 3    0.579         1208.900
+      Category 4    0.113          235.987
     LOCUS0D
-      Category 1    0.358          748.000
-      Category 2    0.568         1185.000
-      Category 3    0.068          141.000
-      Category 4    0.007           14.000
+      Category 1    0.336          700.994
+      Category 2    0.588         1229.116
+      Category 3    0.071          148.083
+      Category 4    0.005           10.576
 
 
 SAMPLE STATISTICS
@@ -327,28 +339,28 @@ SAMPLE STATISTICS
            MEANS/INTERCEPTS/THRESHOLDS
               LOCUS0A$      LOCUS0A$      LOCUS0A$      LOCUS0B$      LOCUS0B$
               ________      ________      ________      ________      ________
-               -1.670        -0.253         1.404        -1.413         0.280
+               -1.678        -0.233         1.415        -1.400         0.309
 
 
            MEANS/INTERCEPTS/THRESHOLDS
               LOCUS0B$      LOCUS0C$      LOCUS0C$      LOCUS0C$      LOCUS0D$
               ________      ________      ________      ________      ________
-                1.582        -1.739        -0.414         1.321        -0.681
+                1.619        -1.764        -0.437         1.358        -0.731
 
 
            MEANS/INTERCEPTS/THRESHOLDS
               LOCUS0D$      LOCUS0D$
               ________      ________
-                1.221         2.284
+                1.222         2.380
 
 
            CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
               LOCUS0A       LOCUS0B       LOCUS0C       LOCUS0D
               ________      ________      ________      ________
  LOCUS0A
- LOCUS0B        0.381
- LOCUS0C       -0.078        -0.083
- LOCUS0D        0.317         0.370        -0.213
+ LOCUS0B        0.388
+ LOCUS0C       -0.123        -0.129
+ LOCUS0D        0.347         0.400        -0.242
 
 
      ESTIMATED SAMPLE STATISTICS FOR TEL
@@ -357,28 +369,28 @@ SAMPLE STATISTICS
            MEANS/INTERCEPTS/THRESHOLDS
               LOCUS0A$      LOCUS0A$      LOCUS0A$      LOCUS0B$      LOCUS0B$
               ________      ________      ________      ________      ________
-               -1.549        -0.177         1.168        -1.189         0.369
+               -1.560        -0.175         1.201        -1.208         0.397
 
 
            MEANS/INTERCEPTS/THRESHOLDS
               LOCUS0B$      LOCUS0C$      LOCUS0C$      LOCUS0C$      LOCUS0D$
               ________      ________      ________      ________      ________
-                1.509        -1.883        -0.514         1.324        -0.515
+                1.594        -1.929        -0.572         1.317        -0.582
 
 
            MEANS/INTERCEPTS/THRESHOLDS
               LOCUS0D$      LOCUS0D$
               ________      ________
-                1.576         2.499
+                1.557         2.451
 
 
            CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
               LOCUS0A       LOCUS0B       LOCUS0C       LOCUS0D
               ________      ________      ________      ________
  LOCUS0A
- LOCUS0B        0.274
- LOCUS0C       -0.039        -0.023
- LOCUS0D        0.265         0.234        -0.081
+ LOCUS0B        0.324
+ LOCUS0C       -0.074        -0.061
+ LOCUS0D        0.304         0.248        -0.155
 
 
      ESTIMATED SAMPLE STATISTICS FOR FTF
@@ -387,28 +399,33 @@ SAMPLE STATISTICS
            MEANS/INTERCEPTS/THRESHOLDS
               LOCUS0A$      LOCUS0A$      LOCUS0A$      LOCUS0B$      LOCUS0B$
               ________      ________      ________      ________      ________
-               -1.642        -0.191         1.418        -1.254         0.417
+               -1.711        -0.195         1.445        -1.259         0.456
 
 
            MEANS/INTERCEPTS/THRESHOLDS
               LOCUS0B$      LOCUS0C$      LOCUS0C$      LOCUS0C$      LOCUS0D$
               ________      ________      ________      ________      ________
-                1.597        -1.794        -0.484         1.198        -0.363
+                1.674        -1.834        -0.503         1.210        -0.424
 
 
            MEANS/INTERCEPTS/THRESHOLDS
               LOCUS0D$      LOCUS0D$
               ________      ________
-                1.445         2.473
+                1.433         2.571
 
 
            CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
               LOCUS0A       LOCUS0B       LOCUS0C       LOCUS0D
               ________      ________      ________      ________
  LOCUS0A
- LOCUS0B        0.330
- LOCUS0C       -0.048        -0.085
- LOCUS0D        0.302         0.367        -0.167
+ LOCUS0B        0.373
+ LOCUS0C       -0.072        -0.091
+ LOCUS0D        0.308         0.378        -0.214
+
+
+     THIS ANALYSIS MAY HAVE MULTIPLE SOLUTIONS.  EXPLORE THIS USING RANDOM STARTS,
+     FOR EXAMPLE, STARTS = 20.  USE A LARGE ENOUGH NUMBER OF STARTS SO THAT THE
+     BEST FIT FUNCTION VALUE IS REPLICATED SEVERAL TIMES.
 
 
 THE MODEL ESTIMATION TERMINATED NORMALLY
@@ -421,15 +438,15 @@ Number of Free Parameters                       20
 
 Chi-Square Test of Model Fit
 
-          Value                            201.272*
+          Value                            153.256*
           Degrees of Freedom                    34
           P-Value                           0.0000
 
 Chi-Square Contribution From Each Group
 
-          WEB                               98.806
-          TEL                               56.766
-          FTF                               45.699
+          WEB                               57.172
+          TEL                               44.687
+          FTF                               51.397
 
 *   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
     for chi-square difference testing in the regular way.  MLM, MLR and WLSM
@@ -438,28 +455,28 @@ Chi-Square Contribution From Each Group
 
 RMSEA (Root Mean Square Error Of Approximation)
 
-          Estimate                           0.045
-          90 Percent C.I.                    0.039  0.051
-          Probability RMSEA <= .05           0.911
+          Estimate                           0.038
+          90 Percent C.I.                    0.032  0.044
+          Probability RMSEA <= .05           0.999
 
 CFI/TLI
 
-          CFI                                0.940
-          TLI                                0.968
+          CFI                                0.956
+          TLI                                0.977
 
 Chi-Square Test of Model Fit for the Baseline Model
 
-          Value                           2802.207
+          Value                           2742.645
           Degrees of Freedom                    18
           P-Value                           0.0000
 
 SRMR (Standardized Root Mean Square Residual)
 
-          Value                              0.026
+          Value                              0.025
 
 Optimum Function Value for Weighted Least-Squares Estimator
 
-          Value                     0.12471667D-01
+          Value                     0.92974484D-02
 
 
 
@@ -472,29 +489,29 @@ Group WEB
 
  F1       BY
     LOCUS0A            1.000      0.000    999.000    999.000
-    LOCUS0B            1.219      0.073     16.801      0.000
-    LOCUS0C           -0.321      0.028    -11.300      0.000
-    LOCUS0D            1.251      0.072     17.377      0.000
+    LOCUS0B            1.206      0.073     16.624      0.000
+    LOCUS0C           -0.389      0.032    -12.193      0.000
+    LOCUS0D            1.245      0.076     16.479      0.000
 
  Means
     F1                 0.000      0.000    999.000    999.000
 
  Thresholds
-    LOCUS0A$1         -2.003      0.035    -57.030      0.000
-    LOCUS0A$2         -0.325      0.020    -16.520      0.000
-    LOCUS0A$3          1.574      0.029     54.811      0.000
-    LOCUS0B$1         -1.758      0.036    -48.491      0.000
-    LOCUS0B$2          0.345      0.021     16.164      0.000
-    LOCUS0B$3          1.919      0.038     50.317      0.000
-    LOCUS0C$1         -1.784      0.028    -64.402      0.000
-    LOCUS0C$2         -0.434      0.016    -27.550      0.000
-    LOCUS0C$3          1.327      0.021     63.356      0.000
-    LOCUS0D$1         -0.794      0.025    -31.360      0.000
-    LOCUS0D$2          1.596      0.035     45.884      0.000
-    LOCUS0D$3          2.924      0.067     43.438      0.000
+    LOCUS0A$1         -2.062      0.039    -52.698      0.000
+    LOCUS0A$2         -0.315      0.023    -13.701      0.000
+    LOCUS0A$3          1.630      0.031     53.116      0.000
+    LOCUS0B$1         -1.779      0.042    -42.675      0.000
+    LOCUS0B$2          0.395      0.026     14.951      0.000
+    LOCUS0B$3          2.029      0.043     47.674      0.000
+    LOCUS0C$1         -1.834      0.031    -59.823      0.000
+    LOCUS0C$2         -0.461      0.016    -28.456      0.000
+    LOCUS0C$3          1.373      0.024     56.601      0.000
+    LOCUS0D$1         -0.884      0.029    -30.326      0.000
+    LOCUS0D$2          1.624      0.038     42.639      0.000
+    LOCUS0D$3          3.098      0.078     39.851      0.000
 
  Variances
-    F1                 0.402      0.032     12.697      0.000
+    F1                 0.453      0.037     12.115      0.000
 
  Residual Variances
     LOCUS0A            1.000      0.000    999.000    999.000
@@ -506,29 +523,29 @@ Group TEL
 
  F1       BY
     LOCUS0A            1.000      0.000    999.000    999.000
-    LOCUS0B            1.219      0.073     16.801      0.000
-    LOCUS0C           -0.321      0.028    -11.300      0.000
-    LOCUS0D            1.251      0.072     17.377      0.000
+    LOCUS0B            1.206      0.073     16.624      0.000
+    LOCUS0C           -0.389      0.032    -12.193      0.000
+    LOCUS0D            1.245      0.076     16.479      0.000
 
  Means
-    F1                -0.105      0.034     -3.115      0.002
+    F1                -0.107      0.040     -2.663      0.008
 
  Thresholds
-    LOCUS0A$1         -2.003      0.035    -57.030      0.000
-    LOCUS0A$2         -0.325      0.020    -16.520      0.000
-    LOCUS0A$3          1.574      0.029     54.811      0.000
-    LOCUS0B$1         -1.758      0.036    -48.491      0.000
-    LOCUS0B$2          0.345      0.021     16.164      0.000
-    LOCUS0B$3          1.919      0.038     50.317      0.000
-    LOCUS0C$1         -1.784      0.028    -64.402      0.000
-    LOCUS0C$2         -0.434      0.016    -27.550      0.000
-    LOCUS0C$3          1.327      0.021     63.356      0.000
-    LOCUS0D$1         -0.794      0.025    -31.360      0.000
-    LOCUS0D$2          1.596      0.035     45.884      0.000
-    LOCUS0D$3          2.924      0.067     43.438      0.000
+    LOCUS0A$1         -2.062      0.039    -52.698      0.000
+    LOCUS0A$2         -0.315      0.023    -13.701      0.000
+    LOCUS0A$3          1.630      0.031     53.116      0.000
+    LOCUS0B$1         -1.779      0.042    -42.675      0.000
+    LOCUS0B$2          0.395      0.026     14.951      0.000
+    LOCUS0B$3          2.029      0.043     47.674      0.000
+    LOCUS0C$1         -1.834      0.031    -59.823      0.000
+    LOCUS0C$2         -0.461      0.016    -28.456      0.000
+    LOCUS0C$3          1.373      0.024     56.601      0.000
+    LOCUS0D$1         -0.884      0.029    -30.326      0.000
+    LOCUS0D$2          1.624      0.038     42.639      0.000
+    LOCUS0D$3          3.098      0.078     39.851      0.000
 
  Variances
-    F1                 0.327      0.042      7.766      0.000
+    F1                 0.383      0.050      7.685      0.000
 
  Residual Variances
     LOCUS0A            1.000      0.000    999.000    999.000
@@ -540,35 +557,41 @@ Group FTF
 
  F1       BY
     LOCUS0A            1.000      0.000    999.000    999.000
-    LOCUS0B            1.219      0.073     16.801      0.000
-    LOCUS0C           -0.321      0.028    -11.300      0.000
-    LOCUS0D            1.251      0.072     17.377      0.000
+    LOCUS0B            1.206      0.073     16.624      0.000
+    LOCUS0C           -0.389      0.032    -12.193      0.000
+    LOCUS0D            1.245      0.076     16.479      0.000
 
  Means
-    F1                -0.158      0.023     -6.746      0.000
+    F1                -0.152      0.028     -5.502      0.000
 
  Thresholds
-    LOCUS0A$1         -2.003      0.035    -57.030      0.000
-    LOCUS0A$2         -0.325      0.020    -16.520      0.000
-    LOCUS0A$3          1.574      0.029     54.811      0.000
-    LOCUS0B$1         -1.758      0.036    -48.491      0.000
-    LOCUS0B$2          0.345      0.021     16.164      0.000
-    LOCUS0B$3          1.919      0.038     50.317      0.000
-    LOCUS0C$1         -1.784      0.028    -64.402      0.000
-    LOCUS0C$2         -0.434      0.016    -27.550      0.000
-    LOCUS0C$3          1.327      0.021     63.356      0.000
-    LOCUS0D$1         -0.794      0.025    -31.360      0.000
-    LOCUS0D$2          1.596      0.035     45.884      0.000
-    LOCUS0D$3          2.924      0.067     43.438      0.000
+    LOCUS0A$1         -2.062      0.039    -52.698      0.000
+    LOCUS0A$2         -0.315      0.023    -13.701      0.000
+    LOCUS0A$3          1.630      0.031     53.116      0.000
+    LOCUS0B$1         -1.779      0.042    -42.675      0.000
+    LOCUS0B$2          0.395      0.026     14.951      0.000
+    LOCUS0B$3          2.029      0.043     47.674      0.000
+    LOCUS0C$1         -1.834      0.031    -59.823      0.000
+    LOCUS0C$2         -0.461      0.016    -28.456      0.000
+    LOCUS0C$3          1.373      0.024     56.601      0.000
+    LOCUS0D$1         -0.884      0.029    -30.326      0.000
+    LOCUS0D$2          1.624      0.038     42.639      0.000
+    LOCUS0D$3          3.098      0.078     39.851      0.000
 
  Variances
-    F1                 0.391      0.035     11.146      0.000
+    F1                 0.426      0.041     10.499      0.000
 
  Residual Variances
     LOCUS0A            1.000      0.000    999.000    999.000
     LOCUS0B            1.000      0.000    999.000    999.000
     LOCUS0C            1.000      0.000    999.000    999.000
     LOCUS0D            1.000      0.000    999.000    999.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.839E-02
+       (ratio of smallest to largest eigenvalue)
 
 
 STANDARDIZED MODEL RESULTS
@@ -582,27 +605,27 @@ STD Standardization
 Group WEB
 
  F1       BY
-    LOCUS0A            0.634      0.025     25.393      0.000
-    LOCUS0B            0.774      0.031     24.623      0.000
-    LOCUS0C           -0.203      0.016    -12.488      0.000
-    LOCUS0D            0.794      0.034     23.445      0.000
+    LOCUS0A            0.673      0.028     24.229      0.000
+    LOCUS0B            0.812      0.033     24.839      0.000
+    LOCUS0C           -0.262      0.019    -13.535      0.000
+    LOCUS0D            0.838      0.038     22.276      0.000
 
  Means
     F1                 0.000      0.000    999.000    999.000
 
  Thresholds
-    LOCUS0A$1         -2.003      0.035    -57.030      0.000
-    LOCUS0A$2         -0.325      0.020    -16.520      0.000
-    LOCUS0A$3          1.574      0.029     54.811      0.000
-    LOCUS0B$1         -1.758      0.036    -48.491      0.000
-    LOCUS0B$2          0.345      0.021     16.164      0.000
-    LOCUS0B$3          1.919      0.038     50.317      0.000
-    LOCUS0C$1         -1.784      0.028    -64.402      0.000
-    LOCUS0C$2         -0.434      0.016    -27.550      0.000
-    LOCUS0C$3          1.327      0.021     63.356      0.000
-    LOCUS0D$1         -0.794      0.025    -31.360      0.000
-    LOCUS0D$2          1.596      0.035     45.884      0.000
-    LOCUS0D$3          2.924      0.067     43.438      0.000
+    LOCUS0A$1         -2.062      0.039    -52.698      0.000
+    LOCUS0A$2         -0.315      0.023    -13.701      0.000
+    LOCUS0A$3          1.630      0.031     53.116      0.000
+    LOCUS0B$1         -1.779      0.042    -42.675      0.000
+    LOCUS0B$2          0.395      0.026     14.951      0.000
+    LOCUS0B$3          2.029      0.043     47.674      0.000
+    LOCUS0C$1         -1.834      0.031    -59.823      0.000
+    LOCUS0C$2         -0.461      0.016    -28.456      0.000
+    LOCUS0C$3          1.373      0.024     56.601      0.000
+    LOCUS0D$1         -0.884      0.029    -30.326      0.000
+    LOCUS0D$2          1.624      0.038     42.639      0.000
+    LOCUS0D$3          3.098      0.078     39.851      0.000
 
  Variances
     F1                 1.000      0.000    999.000    999.000
@@ -616,27 +639,27 @@ Group WEB
 Group TEL
 
  F1       BY
-    LOCUS0A            0.572      0.037     15.532      0.000
-    LOCUS0B            0.697      0.046     15.198      0.000
-    LOCUS0C           -0.183      0.017    -10.520      0.000
-    LOCUS0D            0.715      0.047     15.195      0.000
+    LOCUS0A            0.619      0.040     15.370      0.000
+    LOCUS0B            0.746      0.050     14.806      0.000
+    LOCUS0C           -0.240      0.022    -11.039      0.000
+    LOCUS0D            0.770      0.052     14.734      0.000
 
  Means
-    F1                -0.184      0.059     -3.096      0.002
+    F1                -0.172      0.064     -2.671      0.008
 
  Thresholds
-    LOCUS0A$1         -2.003      0.035    -57.030      0.000
-    LOCUS0A$2         -0.325      0.020    -16.520      0.000
-    LOCUS0A$3          1.574      0.029     54.811      0.000
-    LOCUS0B$1         -1.758      0.036    -48.491      0.000
-    LOCUS0B$2          0.345      0.021     16.164      0.000
-    LOCUS0B$3          1.919      0.038     50.317      0.000
-    LOCUS0C$1         -1.784      0.028    -64.402      0.000
-    LOCUS0C$2         -0.434      0.016    -27.550      0.000
-    LOCUS0C$3          1.327      0.021     63.356      0.000
-    LOCUS0D$1         -0.794      0.025    -31.360      0.000
-    LOCUS0D$2          1.596      0.035     45.884      0.000
-    LOCUS0D$3          2.924      0.067     43.438      0.000
+    LOCUS0A$1         -2.062      0.039    -52.698      0.000
+    LOCUS0A$2         -0.315      0.023    -13.701      0.000
+    LOCUS0A$3          1.630      0.031     53.116      0.000
+    LOCUS0B$1         -1.779      0.042    -42.675      0.000
+    LOCUS0B$2          0.395      0.026     14.951      0.000
+    LOCUS0B$3          2.029      0.043     47.674      0.000
+    LOCUS0C$1         -1.834      0.031    -59.823      0.000
+    LOCUS0C$2         -0.461      0.016    -28.456      0.000
+    LOCUS0C$3          1.373      0.024     56.601      0.000
+    LOCUS0D$1         -0.884      0.029    -30.326      0.000
+    LOCUS0D$2          1.624      0.038     42.639      0.000
+    LOCUS0D$3          3.098      0.078     39.851      0.000
 
  Variances
     F1                 1.000      0.000    999.000    999.000
@@ -650,27 +673,27 @@ Group TEL
 Group FTF
 
  F1       BY
-    LOCUS0A            0.625      0.028     22.292      0.000
-    LOCUS0B            0.763      0.035     21.668      0.000
-    LOCUS0C           -0.201      0.017    -12.083      0.000
-    LOCUS0D            0.782      0.038     20.714      0.000
+    LOCUS0A            0.653      0.031     20.999      0.000
+    LOCUS0B            0.787      0.038     20.726      0.000
+    LOCUS0C           -0.254      0.020    -12.609      0.000
+    LOCUS0D            0.812      0.042     19.210      0.000
 
  Means
-    F1                -0.252      0.037     -6.853      0.000
+    F1                -0.233      0.042     -5.609      0.000
 
  Thresholds
-    LOCUS0A$1         -2.003      0.035    -57.030      0.000
-    LOCUS0A$2         -0.325      0.020    -16.520      0.000
-    LOCUS0A$3          1.574      0.029     54.811      0.000
-    LOCUS0B$1         -1.758      0.036    -48.491      0.000
-    LOCUS0B$2          0.345      0.021     16.164      0.000
-    LOCUS0B$3          1.919      0.038     50.317      0.000
-    LOCUS0C$1         -1.784      0.028    -64.402      0.000
-    LOCUS0C$2         -0.434      0.016    -27.550      0.000
-    LOCUS0C$3          1.327      0.021     63.356      0.000
-    LOCUS0D$1         -0.794      0.025    -31.360      0.000
-    LOCUS0D$2          1.596      0.035     45.884      0.000
-    LOCUS0D$3          2.924      0.067     43.438      0.000
+    LOCUS0A$1         -2.062      0.039    -52.698      0.000
+    LOCUS0A$2         -0.315      0.023    -13.701      0.000
+    LOCUS0A$3          1.630      0.031     53.116      0.000
+    LOCUS0B$1         -1.779      0.042    -42.675      0.000
+    LOCUS0B$2          0.395      0.026     14.951      0.000
+    LOCUS0B$3          2.029      0.043     47.674      0.000
+    LOCUS0C$1         -1.834      0.031    -59.823      0.000
+    LOCUS0C$2         -0.461      0.016    -28.456      0.000
+    LOCUS0C$3          1.373      0.024     56.601      0.000
+    LOCUS0D$1         -0.884      0.029    -30.326      0.000
+    LOCUS0D$2          1.624      0.038     42.639      0.000
+    LOCUS0D$3          3.098      0.078     39.851      0.000
 
  Variances
     F1                 1.000      0.000    999.000    999.000
@@ -689,36 +712,30 @@ Group WEB
     Observed                                        Two-Tailed     Scale
     Variable        Estimate       S.E.  Est./S.E.    P-Value     Factors
 
-    LOCUS0A            0.287      0.016     17.807      0.000      0.844
-    LOCUS0B            0.374      0.019     19.678      0.000      0.791
-    LOCUS0C            0.040      0.006      6.502      0.000      0.980
-    LOCUS0D            0.386      0.020     19.105      0.000      0.783
+    LOCUS0A            0.312      0.018     17.607      0.000      0.829
+    LOCUS0B            0.398      0.019     20.615      0.000      0.776
+    LOCUS0C            0.064      0.009      7.231      0.000      0.967
+    LOCUS0D            0.413      0.022     18.964      0.000      0.766
 
 Group TEL
 
     Observed                                        Two-Tailed     Scale
     Variable        Estimate       S.E.  Est./S.E.    P-Value     Factors
 
-    LOCUS0A            0.246      0.024     10.305      0.000      0.868
-    LOCUS0B            0.327      0.029     11.292      0.000      0.820
-    LOCUS0C            0.033      0.006      5.437      0.000      0.984
-    LOCUS0D            0.338      0.029     11.484      0.000      0.813
+    LOCUS0A            0.277      0.026     10.627      0.000      0.850
+    LOCUS0B            0.358      0.031     11.528      0.000      0.801
+    LOCUS0C            0.055      0.009      5.838      0.000      0.972
+    LOCUS0D            0.372      0.032     11.738      0.000      0.792
 
 Group FTF
 
     Observed                                        Two-Tailed     Scale
     Variable        Estimate       S.E.  Est./S.E.    P-Value     Factors
 
-    LOCUS0A            0.281      0.018     15.505      0.000      0.848
-    LOCUS0B            0.368      0.021     17.135      0.000      0.795
-    LOCUS0C            0.039      0.006      6.284      0.000      0.980
-    LOCUS0D            0.380      0.023     16.696      0.000      0.788
-
-
-QUALITY OF NUMERICAL RESULTS
-
-     Condition Number for the Information Matrix              0.773E-02
-       (ratio of smallest to largest eigenvalue)
+    LOCUS0A            0.299      0.020     14.970      0.000      0.837
+    LOCUS0B            0.383      0.023     16.786      0.000      0.786
+    LOCUS0C            0.060      0.009      6.710      0.000      0.969
+    LOCUS0D            0.398      0.025     15.944      0.000      0.776
 
 
 MODEL MODIFICATION INDICES
@@ -735,20 +752,13 @@ Group WEB
 
 WITH Statements
 
-LOCUS0B  WITH LOCUS0A             30.196     0.145      0.145        0.145
-LOCUS0D  WITH LOCUS0C             48.028    -0.141     -0.141       -0.141
-
-Variances/Residual Variances
-
-LOCUS0B                           10.495    -0.146     -0.146       -0.092
+LOCUS0B  WITH LOCUS0A             11.178     0.096      0.096        0.096
+LOCUS0D  WITH LOCUS0C             29.183    -0.130     -0.130       -0.130
 
 Means/Intercepts/Thresholds
 
-[ LOCUS0A  ]                      14.859    -0.088     -0.088       -0.074
-[ LOCUS0D  ]                      21.055     0.126      0.126        0.099
 [ F1       ]                     999.000     0.000      0.000        0.000
-[ LOCUS0A$ ]                      14.067     0.097      0.097        0.082
-[ LOCUS0D$ ]                      17.730    -0.075     -0.075       -0.059
+[ LOCUS0D$ ]                      12.681    -0.070     -0.070       -0.054
 
 Group TEL
 
@@ -760,8 +770,7 @@ Group FTF
 
 Means/Intercepts/Thresholds
 
-[ LOCUS0D  ]                      13.386    -0.099     -0.099       -0.078
-[ LOCUS0D$ ]                      15.527     0.102      0.102        0.080
+[ LOCUS0D$ ]                      11.595     0.096      0.096        0.075
 
 
 
@@ -774,13 +783,13 @@ SAMPLE STATISTICS FOR ESTIMATED FACTOR SCORES
            Means
               F1            F1_SE
               ________      ________
-               -0.061         0.424
+               -0.051         0.437
 
 
            Covariances
               F1            F1_SE
               ________      ________
- F1             0.207
+ F1             0.249
  F1_SE         -0.001         0.000
 
 
@@ -788,7 +797,7 @@ SAMPLE STATISTICS FOR ESTIMATED FACTOR SCORES
               F1            F1_SE
               ________      ________
  F1             1.000
- F1_SE         -0.304         1.000
+ F1_SE         -0.287         1.000
 
 
 PLOT INFORMATION
@@ -811,9 +820,9 @@ DIAGRAM INFORMATION
   Diagram output
     c:\users\msassac6\dropbox (the university of manchester)\papers\joe s\uclmm\uclmm_r\mplus\mean no correction\scalar_
 
-     Beginning Time:  09:02:12
-        Ending Time:  09:02:13
-       Elapsed Time:  00:00:01
+     Beginning Time:  08:24:07
+        Ending Time:  08:24:07
+       Elapsed Time:  00:00:00
 
 
 
@@ -826,4 +835,4 @@ Fax: (310) 391-8971
 Web: www.StatModel.com
 Support: Support@StatModel.com
 
-Copyright (c) 1998-2019 Muthen & Muthen
+Copyright (c) 1998-2021 Muthen & Muthen

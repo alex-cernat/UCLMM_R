@@ -6,11 +6,11 @@ TITLE:
 DATA:
  FILE = data.dta;
 VARIABLE:
-NAMES = audit1 bully0a bully0b bully0c bully0d bully0e bully0f bully0g adult0a
+NAMES =  audit1 bully0a bully0b bully0c bully0d bully0e bully0f bully0g adult0a
      adult0b adult0c leisa0a leisa0b leisa0c leisa0d leisa0e leisa0f leisb0a leisb0b
-     leisb0c leisb0d samppsu sampstratum mode locus0a locus0b locus0c locus0d
-     ghq12_1 ghq12_2 ghq12_3 ghq12_4 ghq12_5 ghq12_6 ghq12_7 ghq12_8 ghq12_9
-     ghq12_10 ghq12_11 ghq12_12 audit2 audit3 designweight_combin;
+     leisb0c leisb0d designweight samppsu sampstratum mode locus0a locus0b locus0c
+     locus0d ghq_1 ghq_2 ghq_3 ghq_4 ghq_5 ghq_6 ghq_7 ghq_8 ghq_9 ghq_10 ghq_11
+     ghq_12 audit2 audit3 designweight_combin;
 MISSING=.;
 USEVARIABLES ARE leisa0a
 leisa0b
@@ -159,117 +159,117 @@ leisa0a leisa0b leisa0c leisa0d leisa0e leisa0f f1
 1
 f1
 leisa0a leisa0b leisa0c leisa0d leisa0e leisa0f
-1 1 f1 leisa0a    1.000    0.000
-1 1 f1 leisa0b    2.535    0.249
+1 1 f1 leisa0a 1.000 0.000
+1 1 f1 leisa0b 2.470 0.218
 91 1 f1 leisa0b l2_web
-1 1 f1 leisa0c    1.589    0.163
+1 1 f1 leisa0c 1.499 0.149
 91 1 f1 leisa0c l3_web
-1 1 f1 leisa0d    2.684    0.268
+1 1 f1 leisa0d 2.489 0.236
 91 1 f1 leisa0d l4_web
-1 1 f1 leisa0e    1.984    0.202
+1 1 f1 leisa0e 1.909 0.185
 91 1 f1 leisa0e l5_web
-1 1 f1 leisa0f    1.098    0.134
+1 1 f1 leisa0f 1.045 0.120
 91 1 f1 leisa0f l6_web
-4 1 leisa0a    1.000    0.000
-4 1 leisa0b    1.000    0.000
-4 1 leisa0c    1.000    0.000
-4 1 leisa0d    1.000    0.000
-4 1 leisa0e    1.000    0.000
-4 1 leisa0f    1.000    0.000
-5 1 f1    0.161    0.029
+4 1 leisa0a 1.000 0.000
+4 1 leisa0b 1.000 0.000
+4 1 leisa0c 1.000 0.000
+4 1 leisa0d 1.000 0.000
+4 1 leisa0e 1.000 0.000
+4 1 leisa0f 1.000 0.000
+5 1 f1 0.173 0.029
 95 1 f1 t_leisa0b_2_tel
-1 2 f1 leisa0a    1.000    0.000
-1 2 f1 leisa0b    1.501    0.254
+1 2 f1 leisa0a 1.000 0.000
+1 2 f1 leisa0b 1.952 0.439
 91 2 f1 leisa0b l2_tel
-1 2 f1 leisa0c    1.168    0.242
+1 2 f1 leisa0c 1.720 0.411
 91 2 f1 leisa0c l3_tel
-1 2 f1 leisa0d    1.546    0.268
+1 2 f1 leisa0d 1.929 0.444
 91 2 f1 leisa0d l4_tel
-1 2 f1 leisa0e    1.435    0.251
+1 2 f1 leisa0e 1.822 0.444
 91 2 f1 leisa0e l5_tel
-1 2 f1 leisa0f    0.553    0.174
+1 2 f1 leisa0f 0.878 0.250
 91 2 f1 leisa0f l6_tel
-4 2 leisa0a    1.000    0.000
-4 2 leisa0b    1.000    0.000
-4 2 leisa0c    1.000    0.000
-4 2 leisa0d    1.000    0.000
-4 2 leisa0e    1.000    0.000
-4 2 leisa0f    1.000    0.000
-5 2 f1    0.239    0.079
+4 2 leisa0a 1.000 0.000
+4 2 leisa0b 1.000 0.000
+4 2 leisa0c 1.000 0.000
+4 2 leisa0d 1.000 0.000
+4 2 leisa0e 1.000 0.000
+4 2 leisa0f 1.000 0.000
+5 2 f1 0.161 0.062
 95 2 f1 t_leisa0b_2_tel
-1 3 f1 leisa0a    1.000    0.000
-1 3 f1 leisa0b    1.541    0.161
+1 3 f1 leisa0a 1.000 0.000
+1 3 f1 leisa0b 1.619 0.163
 91 3 f1 leisa0b l2_ftf
-1 3 f1 leisa0c    0.945    0.112
+1 3 f1 leisa0c 1.099 0.124
 91 3 f1 leisa0c l3_ftf
-1 3 f1 leisa0d    1.429    0.165
+1 3 f1 leisa0d 1.494 0.167
 91 3 f1 leisa0d l4_ftf
-1 3 f1 leisa0e    1.063    0.123
+1 3 f1 leisa0e 1.290 0.133
 91 3 f1 leisa0e l5_ftf
-1 3 f1 leisa0f    0.852    0.105
+1 3 f1 leisa0f 0.872 0.107
 91 3 f1 leisa0f l6_ftf
-4 3 leisa0a    1.000    0.000
-4 3 leisa0b    1.000    0.000
-4 3 leisa0c    1.000    0.000
-4 3 leisa0d    1.000    0.000
-4 3 leisa0e    1.000    0.000
-4 3 leisa0f    1.000    0.000
-5 3 f1    0.329    0.058
+4 3 leisa0a 1.000 0.000
+4 3 leisa0b 1.000 0.000
+4 3 leisa0c 1.000 0.000
+4 3 leisa0d 1.000 0.000
+4 3 leisa0e 1.000 0.000
+4 3 leisa0f 1.000 0.000
+5 3 f1 0.260 0.045
 95 3 f1 t_leisa0b_2_tel
-31 1 f1 leisa0a    0.401    0.037
-31 1 f1 leisa0b    1.018    0.049
+31 1 f1 leisa0a 0.416 0.035
+31 1 f1 leisa0b 1.028 0.049
 91 1 f1 leisa0b l2_web
-31 1 f1 leisa0c    0.638    0.035
+31 1 f1 leisa0c 0.624 0.035
 91 1 f1 leisa0c l3_web
-31 1 f1 leisa0d    1.077    0.048
+31 1 f1 leisa0d 1.036 0.048
 91 1 f1 leisa0d l4_web
-31 1 f1 leisa0e    0.796    0.040
+31 1 f1 leisa0e 0.794 0.041
 91 1 f1 leisa0e l5_web
-31 1 f1 leisa0f    0.441    0.034
+31 1 f1 leisa0f 0.435 0.034
 91 1 f1 leisa0f l6_web
-34 1 leisa0a    1.000    0.000
-34 1 leisa0b    1.000    0.000
-34 1 leisa0c    1.000    0.000
-34 1 leisa0d    1.000    0.000
-34 1 leisa0e    1.000    0.000
-34 1 leisa0f    1.000    0.000
-35 1 f1    1.000    0.000
+34 1 leisa0a 1.000 0.0000000001000
+34 1 leisa0b 1.000 0.0000000001000
+34 1 leisa0c 1.000 0.0000000001000
+34 1 leisa0d 1.000 0.0000000001000
+34 1 leisa0e 1.000 0.0000000001000
+34 1 leisa0f 1.000 0.0000000001000
+35 1 f1 1.000 0.0000000001000
 95 1 f1 t_leisa0b_2_tel
-31 2 f1 leisa0a    0.489    0.081
-31 2 f1 leisa0b    0.734    0.074
+31 2 f1 leisa0a 0.402 0.077
+31 2 f1 leisa0b 0.784 0.068
 91 2 f1 leisa0b l2_tel
-31 2 f1 leisa0c    0.571    0.075
+31 2 f1 leisa0c 0.691 0.075
 91 2 f1 leisa0c l3_tel
-31 2 f1 leisa0d    0.756    0.089
+31 2 f1 leisa0d 0.775 0.084
 91 2 f1 leisa0d l4_tel
-31 2 f1 leisa0e    0.701    0.082
+31 2 f1 leisa0e 0.732 0.085
 91 2 f1 leisa0e l5_tel
-31 2 f1 leisa0f    0.270    0.072
+31 2 f1 leisa0f 0.352 0.071
 91 2 f1 leisa0f l6_tel
-34 2 leisa0a    1.000    0.000
-34 2 leisa0b    1.000    0.000
-34 2 leisa0c    1.000    0.000
-34 2 leisa0d    1.000    0.000
-34 2 leisa0e    1.000    0.000
-34 2 leisa0f    1.000    0.000
-35 2 f1    1.000    0.000
+34 2 leisa0a 1.000 0.0000000001000
+34 2 leisa0b 1.000 0.0000000001000
+34 2 leisa0c 1.000 0.0000000001000
+34 2 leisa0d 1.000 0.0000000001000
+34 2 leisa0e 1.000 0.0000000001000
+34 2 leisa0f 1.000 0.0000000001000
+35 2 f1 1.000 0.0000000001000
 95 2 f1 t_leisa0b_2_tel
-31 3 f1 leisa0a    0.573    0.051
-31 3 f1 leisa0b    0.884    0.055
+31 3 f1 leisa0a 0.509 0.044
+31 3 f1 leisa0b 0.825 0.047
 91 3 f1 leisa0b l2_ftf
-31 3 f1 leisa0c    0.542    0.045
+31 3 f1 leisa0c 0.560 0.040
 91 3 f1 leisa0c l3_ftf
-31 3 f1 leisa0d    0.819    0.061
+31 3 f1 leisa0d 0.761 0.050
 91 3 f1 leisa0d l4_ftf
-31 3 f1 leisa0e    0.609    0.047
+31 3 f1 leisa0e 0.657 0.041
 91 3 f1 leisa0e l5_ftf
-31 3 f1 leisa0f    0.489    0.048
+31 3 f1 leisa0f 0.444 0.038
 91 3 f1 leisa0f l6_ftf
-34 3 leisa0a    1.000    0.000
-34 3 leisa0b    1.000    0.000
-34 3 leisa0c    1.000    0.000
-34 3 leisa0d    1.000    0.000
-34 3 leisa0e    1.000    0.000
-34 3 leisa0f    1.000    0.000
-35 3 f1    1.000    0.000
+34 3 leisa0a 1.000 0.0000000001000
+34 3 leisa0b 1.000 0.0000000001000
+34 3 leisa0c 1.000 0.0000000001000
+34 3 leisa0d 1.000 0.0000000001000
+34 3 leisa0e 1.000 0.0000000001000
+34 3 leisa0f 1.000 0.0000000001000
+35 3 f1 1.000 0.0000000001000
 95 3 f1 t_leisa0b_2_tel

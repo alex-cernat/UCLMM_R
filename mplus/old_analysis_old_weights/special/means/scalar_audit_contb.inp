@@ -1,0 +1,70 @@
+TITLE: Your title goes here
+
+DATA: FILE = data.dta;
+
+VARIABLE: 
+
+NAMES = w8audit1 w8bullytype0a w8bullytype0b w8bullytype0c w8bullytype0d
+     w8bullytype0e w8bullytype0f w8bullytype0g w8adult0a w8adult0b w8adult0c
+     w8leisurea0a w8leisurea0b w8leisurea0c w8leisurea0d w8leisurea0e w8leisurea0f
+     w8leisureb0a w8leisureb0b w8leisureb0c w8leisureb0d samppsu sampstratum w8mode
+     w8locus0a w8locus0b w8locus0c w8locus0d w8ghq12_1 w8ghq12_2 w8ghq12_3 w8ghq12_4
+     w8ghq12_5 w8ghq12_6 w8ghq12_7 w8ghq12_8 w8ghq12_9 w8ghq12_10 w8ghq12_11
+     w8ghq12_12 w8audit2 w8audit3 designweight_combin; 
+
+MISSING=.;
+USEVARIABLES ARE w8audit1 
+w8audit2 
+w8audit3;
+
+GROUPING IS w8mode (1=Web 2=Tel 3=Ftf);
+WEIGHT IS designweight_combin;
+
+                STRATIFICATION IS sampstratum;
+
+                CLUSTER IS samppsu;
+
+ANALYSIS: TYPE IS COMPLEX;
+
+
+                ITERATIONS = 100000;
+
+DIFFTEST = w8audit1_metric.dat;
+
+Model:
+
+f1 BY w8audit1@1
+w8audit2 (L2)
+w8audit3 (L3)
+;
+
+
+[f1@0];
+f1;
+
+Model Tel:
+
+f1 BY w8audit1@1
+w8audit2 (L2)
+w8audit3 (L3)
+;
+
+[f1];
+
+Model Ftf:
+
+f1 BY w8audit1@1
+w8audit2 (L2)
+w8audit3 (L3)
+;
+[f1];
+
+SAVEDATA: DIFFTEST IS w8audit1_scalar.dat;
+OUTPUT: SAMPSTAT; 
+
+MODINDICES; 
+
+STD; 
+
+Plot: type = plot3;
+

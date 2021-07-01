@@ -1,0 +1,206 @@
+VERSION 1.1.0
+INPUT
+TITLE:
+ Your title goes here
+
+DATA:
+ FILE = data.dta;
+VARIABLE:
+NAMES = audit1 bully0a bully0b bully0c bully0d bully0e bully0f bully0g adult0a
+     adult0b adult0c leisa0a leisa0b leisa0c leisa0d leisa0e leisa0f leisb0a leisb0b
+     leisb0c leisb0d designweight samppsu sampstratum mode locus0a locus0b locus0c
+     locus0d ghq_1 ghq_2 ghq_3 ghq_4 ghq_5 ghq_6 ghq_7 ghq_8 ghq_9 ghq_10 ghq_11
+     ghq_12 audit2 audit3 designweight_combin;
+MISSING=.;
+USEVARIABLES ARE leisb0a
+leisb0b
+leisb0c
+leisb0d;
+CATEGORICAL ARE leisb0a
+leisb0b
+leisb0c
+leisb0d;
+GROUPING IS mode (1=Web 2=Tel 3=Ftf);
+WEIGHT IS designweight;
+                STRATIFICATION IS sampstratum;
+                CLUSTER IS samppsu;
+ANALYSIS:
+ TYPE IS COMPLEX;
+                ESTIMATOR = WLSMV;
+                ITERATIONS = 100000;
+                PARAMETERIZATION = THETA;
+DIFFTEST = leisb0a_configural.dat;
+OUTPUT:
+ SAMPSTAT;
+MODINDICES;
+STD;
+SAVEDATA:
+ DIFFTEST IS leisb0a_metric.dat;
+PLOT:
+ type = plot3;
+MODEL:
+f1 BY leisb0a@1
+leisb0b (L2)
+leisb0c (L3)
+leisb0d (L4)
+;
+[leisb0a$1] (t_leisb0a_1);
+[leisb0a$2] (t_leisb0a_2);
+[leisb0a$3] (t_leisb0a_3);
+[leisb0b$1] (t_leisb0b_1);
+[leisb0b$2] (t_leisb0b_2_Web);
+[leisb0b$3] (t_leisb0b_3_Web);
+[leisb0c$1] (t_leisb0c_1);
+[leisb0c$2] (t_leisb0c_2_Web);
+[leisb0c$3] (t_leisb0c_3_Web);
+[leisb0d$1] (t_leisb0d_1);
+[leisb0d$2] (t_leisb0d_2_Web);
+[leisb0d$3] (t_leisb0d_3_Web);
+leisb0a@1;
+leisb0b@1;
+leisb0c@1;
+leisb0d@1;
+MODEL TEL:
+f1 BY leisb0a@1
+leisb0b (L2)
+leisb0c (L3)
+leisb0d (L4)
+;
+[leisb0a$1] (t_leisb0a_1);
+[leisb0a$2] (t_leisb0a_2);
+[leisb0a$3] (t_leisb0a_3);
+[leisb0b$1] (t_leisb0b_1);
+[leisb0b$2] (t_leisb0b_2_Tel);
+[leisb0b$3] (t_leisb0b_3_Tel);
+[leisb0c$1] (t_leisb0c_1);
+[leisb0c$2] (t_leisb0c_2_Tel);
+[leisb0c$3] (t_leisb0c_3_Tel);
+[leisb0d$1] (t_leisb0d_1);
+[leisb0d$2] (t_leisb0d_2_Tel);
+[leisb0d$3] (t_leisb0d_3_Tel);
+leisb0a@1;
+leisb0b@1;
+leisb0c@1;
+leisb0d@1;
+MODEL FTF:
+f1 BY leisb0a@1
+leisb0b (L2)
+leisb0c (L3)
+leisb0d (L4)
+;
+[leisb0a$1] (t_leisb0a_1);
+[leisb0a$2] (t_leisb0a_2);
+[leisb0a$3] (t_leisb0a_3);
+[leisb0b$1] (t_leisb0b_1);
+[leisb0b$2] (t_leisb0b_2_Ftf);
+[leisb0b$3] (t_leisb0b_3_Ftf);
+[leisb0c$1] (t_leisb0c_1);
+[leisb0c$2] (t_leisb0c_2_Ftf);
+[leisb0c$3] (t_leisb0c_3_Ftf);
+[leisb0d$1] (t_leisb0d_1);
+[leisb0d$2] (t_leisb0d_2_Ftf);
+[leisb0d$3] (t_leisb0d_3_Ftf);
+leisb0a@1;
+leisb0b@1;
+leisb0c@1;
+leisb0d@1;
+INPUT_END
+2
+0
+0
+2
+WLSMV
+1
+GENERAL
+3
+WEB
+TEL
+FTF
+4
+1
+0
+leisb0a leisb0b leisb0c leisb0d f1
+1
+-1 -1 -1 -1 0
+0
+1
+f1
+leisb0a leisb0b leisb0c leisb0d
+1 1 f1 leisb0a 1.000 0.000
+1 1 f1 leisb0b 0.634 0.055
+91 1 f1 leisb0b l2
+1 1 f1 leisb0c 0.291 0.022
+91 1 f1 leisb0c l3
+1 1 f1 leisb0d 0.486 0.042
+91 1 f1 leisb0d l4
+4 1 leisb0a 1.000 0.000
+4 1 leisb0b 1.000 0.000
+4 1 leisb0c 1.000 0.000
+4 1 leisb0d 1.000 0.000
+5 1 f1 3.665 0.467
+95 1 f1 t_leisb0b_2_tel
+1 2 f1 leisb0a 1.000 0.000
+1 2 f1 leisb0b 0.634 0.055
+91 2 f1 leisb0b l2
+1 2 f1 leisb0c 0.291 0.022
+91 2 f1 leisb0c l3
+1 2 f1 leisb0d 0.486 0.042
+91 2 f1 leisb0d l4
+4 2 leisb0a 1.000 0.000
+4 2 leisb0b 1.000 0.000
+4 2 leisb0c 1.000 0.000
+4 2 leisb0d 1.000 0.000
+5 2 f1 2.708 0.495
+95 2 f1 t_leisb0b_2_tel
+1 3 f1 leisb0a 1.000 0.000
+1 3 f1 leisb0b 0.634 0.055
+91 3 f1 leisb0b l2
+1 3 f1 leisb0c 0.291 0.022
+91 3 f1 leisb0c l3
+1 3 f1 leisb0d 0.486 0.042
+91 3 f1 leisb0d l4
+4 3 leisb0a 1.000 0.000
+4 3 leisb0b 1.000 0.000
+4 3 leisb0c 1.000 0.000
+4 3 leisb0d 1.000 0.000
+5 3 f1 3.799 0.579
+95 3 f1 t_leisb0b_2_tel
+31 1 f1 leisb0a 1.914 0.122
+31 1 f1 leisb0b 1.214 0.048
+91 1 f1 leisb0b l2
+31 1 f1 leisb0c 0.557 0.024
+91 1 f1 leisb0c l3
+31 1 f1 leisb0d 0.931 0.044
+91 1 f1 leisb0d l4
+34 1 leisb0a 1.000 0.0000000001000
+34 1 leisb0b 1.000 0.0000000001000
+34 1 leisb0c 1.000 0.0000000001000
+34 1 leisb0d 1.000 0.0000000001000
+35 1 f1 1.000 0.0000000001000
+95 1 f1 t_leisb0b_2_tel
+31 2 f1 leisb0a 1.646 0.150
+31 2 f1 leisb0b 1.044 0.074
+91 2 f1 leisb0b l2
+31 2 f1 leisb0c 0.479 0.034
+91 2 f1 leisb0c l3
+31 2 f1 leisb0d 0.800 0.059
+91 2 f1 leisb0d l4
+34 2 leisb0a 1.000 0.0000000001000
+34 2 leisb0b 1.000 0.0000000001000
+34 2 leisb0c 1.000 0.0000000001000
+34 2 leisb0d 1.000 0.0000000001000
+35 2 f1 1.000 0.0000000001000
+95 2 f1 t_leisb0b_2_tel
+31 3 f1 leisb0a 1.949 0.148
+31 3 f1 leisb0b 1.236 0.063
+91 3 f1 leisb0b l2
+31 3 f1 leisb0c 0.567 0.028
+91 3 f1 leisb0c l3
+31 3 f1 leisb0d 0.948 0.055
+91 3 f1 leisb0d l4
+34 3 leisb0a 1.000 0.0000000001000
+34 3 leisb0b 1.000 0.0000000001000
+34 3 leisb0c 1.000 0.0000000001000
+34 3 leisb0d 1.000 0.0000000001000
+35 3 f1 1.000 0.0000000001000
+95 3 f1 t_leisb0b_2_tel

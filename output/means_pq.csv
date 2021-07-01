@@ -1,0 +1,7 @@
+est,Group,Scale,Model,lci,uci
+0,WEB,Leisure a,Full scalar,0,0
+-0.288,TEL,Leisure a,Full scalar,-0.44872,-0.12727999999999998
+0.044,FTF,Leisure a,Full scalar,-0.04615999999999999,0.13416
+0,WEB,Leisure a,Partial equivalence,0,0
+-0.337,TEL,Leisure a,Partial equivalence,-0.5036,-0.17040000000000002
+-0.013,FTF,Leisure a,Partial equivalence,-0.10708,0.08108

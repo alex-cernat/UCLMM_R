@@ -8,9 +8,9 @@ DATA:
 VARIABLE:
 NAMES = audit1 bully0a bully0b bully0c bully0d bully0e bully0f bully0g adult0a
      adult0b adult0c leisa0a leisa0b leisa0c leisa0d leisa0e leisa0f leisb0a leisb0b
-     leisb0c leisb0d samppsu sampstratum mode locus0a locus0b locus0c locus0d
-     ghq12_1 ghq12_2 ghq12_3 ghq12_4 ghq12_5 ghq12_6 ghq12_7 ghq12_8 ghq12_9
-     ghq12_10 ghq12_11 ghq12_12 audit2 audit3 designweight_combin;
+     leisb0c leisb0d designweight samppsu sampstratum mode locus0a locus0b locus0c
+     locus0d ghq_1 ghq_2 ghq_3 ghq_4 ghq_5 ghq_6 ghq_7 ghq_8 ghq_9 ghq_10 ghq_11
+     ghq_12 audit2 audit3 designweight_combin;
 MISSING=.;
 USEVARIABLES ARE leisb0a
 leisb0b
@@ -21,7 +21,11 @@ leisb0b
 leisb0c
 leisb0d;
 GROUPING IS mode (1=Web 2=Tel 3=Ftf);
+ WEIGHT IS designweight;
+ STRATIFICATION IS sampstratum;
+ CLUSTER IS samppsu;
 ANALYSIS:
+ TYPE IS COMPLEX;
                 ESTIMATOR = WLSMV;
                 ITERATIONS = 100000;
                 PARAMETERIZATION = THETA;
@@ -119,75 +123,75 @@ leisb0a leisb0b leisb0c leisb0d f1
 1
 f1
 leisb0a leisb0b leisb0c leisb0d
-1 1 f1 leisb0a    1.000    0.000
-1 1 f1 leisb0b    0.668    0.050
+1 1 f1 leisb0a 1.000 0.000
+1 1 f1 leisb0b 0.634 0.055
 91 1 f1 leisb0b l2
-1 1 f1 leisb0c    0.303    0.019
+1 1 f1 leisb0c 0.293 0.022
 91 1 f1 leisb0c l3
-1 1 f1 leisb0d    0.500    0.036
+1 1 f1 leisb0d 0.491 0.042
 91 1 f1 leisb0d l4
-4 1 leisb0a    1.000    0.000
-4 1 leisb0b    1.000    0.000
-4 1 leisb0c    1.000    0.000
-4 1 leisb0d    1.000    0.000
-5 1 f1    3.533    0.389
-1 2 f1 leisb0a    1.000    0.000
-1 2 f1 leisb0b    0.668    0.050
+4 1 leisb0a 1.000 0.000
+4 1 leisb0b 1.000 0.000
+4 1 leisb0c 1.000 0.000
+4 1 leisb0d 1.000 0.000
+5 1 f1 3.608 0.456
+1 2 f1 leisb0a 1.000 0.000
+1 2 f1 leisb0b 0.634 0.055
 91 2 f1 leisb0b l2
-1 2 f1 leisb0c    0.303    0.019
+1 2 f1 leisb0c 0.293 0.022
 91 2 f1 leisb0c l3
-1 2 f1 leisb0d    0.500    0.036
+1 2 f1 leisb0d 0.491 0.042
 91 2 f1 leisb0d l4
-4 2 leisb0a    1.000    0.000
-4 2 leisb0b    1.000    0.000
-4 2 leisb0c    1.000    0.000
-4 2 leisb0d    1.000    0.000
-5 2 f1    2.573    0.382
-1 3 f1 leisb0a    1.000    0.000
-1 3 f1 leisb0b    0.668    0.050
+4 2 leisb0a 1.000 0.000
+4 2 leisb0b 1.000 0.000
+4 2 leisb0c 1.000 0.000
+4 2 leisb0d 1.000 0.000
+5 2 f1 2.576 0.453
+1 3 f1 leisb0a 1.000 0.000
+1 3 f1 leisb0b 0.634 0.055
 91 3 f1 leisb0b l2
-1 3 f1 leisb0c    0.303    0.019
+1 3 f1 leisb0c 0.293 0.022
 91 3 f1 leisb0c l3
-1 3 f1 leisb0d    0.500    0.036
+1 3 f1 leisb0d 0.491 0.042
 91 3 f1 leisb0d l4
-4 3 leisb0a    1.000    0.000
-4 3 leisb0b    1.000    0.000
-4 3 leisb0c    1.000    0.000
-4 3 leisb0d    1.000    0.000
-5 3 f1    3.847    0.471
-31 1 f1 leisb0a    1.880    0.104
-31 1 f1 leisb0b    1.255    0.042
+4 3 leisb0a 1.000 0.000
+4 3 leisb0b 1.000 0.000
+4 3 leisb0c 1.000 0.000
+4 3 leisb0d 1.000 0.000
+5 3 f1 4.006 0.591
+31 1 f1 leisb0a 1.900 0.120
+31 1 f1 leisb0b 1.204 0.047
 91 1 f1 leisb0b l2
-31 1 f1 leisb0c    0.569    0.020
+31 1 f1 leisb0c 0.557 0.024
 91 1 f1 leisb0c l3
-31 1 f1 leisb0d    0.939    0.038
+31 1 f1 leisb0d 0.932 0.043
 91 1 f1 leisb0d l4
-34 1 leisb0a    1.000    0.000
-34 1 leisb0b    1.000    0.000
-34 1 leisb0c    1.000    0.000
-34 1 leisb0d    1.000    0.000
-35 1 f1    1.000    0.000
-31 2 f1 leisb0a    1.604    0.119
-31 2 f1 leisb0b    1.071    0.065
+34 1 leisb0a 1.000 0.0000000001000
+34 1 leisb0b 1.000 0.0000000001000
+34 1 leisb0c 1.000 0.0000000001000
+34 1 leisb0d 1.000 0.0000000001000
+35 1 f1 1.000 0.0000000001000
+31 2 f1 leisb0a 1.605 0.141
+31 2 f1 leisb0b 1.017 0.070
 91 2 f1 leisb0b l2
-31 2 f1 leisb0c    0.486    0.030
+31 2 f1 leisb0c 0.471 0.033
 91 2 f1 leisb0c l3
-31 2 f1 leisb0d    0.801    0.050
+31 2 f1 leisb0d 0.788 0.056
 91 2 f1 leisb0d l4
-34 2 leisb0a    1.000    0.000
-34 2 leisb0b    1.000    0.000
-34 2 leisb0c    1.000    0.000
-34 2 leisb0d    1.000    0.000
-35 2 f1    1.000    0.000
-31 3 f1 leisb0a    1.961    0.120
-31 3 f1 leisb0b    1.310    0.055
+34 2 leisb0a 1.000 0.0000000001000
+34 2 leisb0b 1.000 0.0000000001000
+34 2 leisb0c 1.000 0.0000000001000
+34 2 leisb0d 1.000 0.0000000001000
+35 2 f1 1.000 0.0000000001000
+31 3 f1 leisb0a 2.002 0.148
+31 3 f1 leisb0b 1.269 0.060
 91 3 f1 leisb0b l2
-31 3 f1 leisb0c    0.594    0.024
+31 3 f1 leisb0c 0.587 0.027
 91 3 f1 leisb0c l3
-31 3 f1 leisb0d    0.980    0.047
+31 3 f1 leisb0d 0.982 0.054
 91 3 f1 leisb0d l4
-34 3 leisb0a    1.000    0.000
-34 3 leisb0b    1.000    0.000
-34 3 leisb0c    1.000    0.000
-34 3 leisb0d    1.000    0.000
-35 3 f1    1.000    0.000
+34 3 leisb0a 1.000 0.0000000001000
+34 3 leisb0b 1.000 0.0000000001000
+34 3 leisb0c 1.000 0.0000000001000
+34 3 leisb0d 1.000 0.0000000001000
+35 3 f1 1.000 0.0000000001000

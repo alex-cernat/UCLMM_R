@@ -1,0 +1,751 @@
+Mplus VERSION 8.3
+MUTHEN & MUTHEN
+09/02/2019   8:56 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE: Your title goes here
+
+  DATA: FILE = data.dta;
+
+  VARIABLE:
+
+  NAMES = audit1 bully0a bully0b bully0c bully0d bully0e bully0f bully0g adult0a
+       adult0b adult0c leisa0a leisa0b leisa0c leisa0d leisa0e leisa0f leisb0a leisb0b
+       leisb0c leisb0d samppsu sampstratum mode locus0a locus0b locus0c locus0d
+       ghq12_1 ghq12_2 ghq12_3 ghq12_4 ghq12_5 ghq12_6 ghq12_7 ghq12_8 ghq12_9
+       ghq12_10 ghq12_11 ghq12_12 audit2 audit3 designweight_combin;
+
+  MISSING=.;
+  USEVARIABLES ARE adult0a
+  adult0b
+  adult0c;
+  CATEGORICAL ARE adult0a
+  adult0b
+  adult0c;
+  GROUPING IS mode (1=Web 2=Tel 3=Ftf);
+
+  ! WEIGHT IS designweight_combin;
+
+  ! STRATIFICATION IS sampstratum;
+
+  ! CLUSTER IS samppsu;
+
+  ANALYSIS:
+  !TYPE IS COMPLEX;
+
+                  ESTIMATOR = WLSMV;
+
+                  ITERATIONS = 100000;
+
+                  PARAMETERIZATION = THETA;
+
+  ! DIFFTEST = adult0a_metric.dat;
+  Model:
+
+
+  f1 BY adult0a@1
+  adult0b (L2)
+  adult0c (L3)
+  ;
+
+
+  [adult0a$1] (t_adult0a_1);
+  [adult0a$2] (t_adult0a_2);
+  [adult0a$3] (t_adult0a_3);
+
+  [adult0b$1] (t_adult0b_1);
+  [adult0b$2] (t_adult0b_2);
+  [adult0b$3] (t_adult0b_3);
+
+  [adult0c$1] (t_adult0c_1);
+  [adult0c$2] (t_adult0c_2);
+  [adult0c$3] (t_adult0c_3);
+  adult0a@1;
+  adult0b@1;
+  adult0c@1;
+
+  Model Tel:
+
+  f1 BY adult0a@1
+  adult0b (L2)
+  adult0c (L3)
+  ;
+
+
+  [adult0a$1] (t_adult0a_1);
+  [adult0a$2] (t_adult0a_2);
+  [adult0a$3] (t_adult0a_3);
+
+  [adult0b$1] (t_adult0b_1);
+  [adult0b$2] (t_adult0b_2);
+  [adult0b$3] (t_adult0b_3);
+
+  [adult0c$1] (t_adult0c_1);
+  [adult0c$2] (t_adult0c_2);
+  [adult0c$3] (t_adult0c_3);
+  adult0a@1;
+  adult0b@1;
+  adult0c@1;
+
+  Model Ftf:
+
+  f1 BY adult0a@1
+  adult0b (L2)
+  adult0c (L3)
+  ;
+
+
+  [adult0a$1] (t_adult0a_1);
+  [adult0a$2] (t_adult0a_2);
+  [adult0a$3] (t_adult0a_3);
+
+  [adult0b$1] (t_adult0b_1);
+  [adult0b$2] (t_adult0b_2);
+  [adult0b$3] (t_adult0b_3);
+
+  [adult0c$1] (t_adult0c_1);
+  [adult0c$2] (t_adult0c_2);
+  [adult0c$3] (t_adult0c_3);
+  adult0a@1;
+  adult0b@1;
+  adult0c@1;
+
+  !SAVEDATA: DIFFTEST IS adult0a_scalar.dat;
+
+  OUTPUT: SAMPSTAT;
+
+  MODINDICES;
+
+  STD;
+
+  Plot: type = plot3;
+
+
+
+
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  193
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+Your title goes here
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 3
+Number of observations
+   Group WEB                                                  4567
+   Group TEL                                                   648
+   Group FTF                                                  2161
+   Total sample size                                          7376
+
+Number of dependent variables                                    3
+Number of independent variables                                  0
+Number of continuous latent variables                            1
+
+Observed dependent variables
+
+  Binary and ordered categorical (ordinal)
+   ADULT0A     ADULT0B     ADULT0C
+
+Continuous latent variables
+   F1
+
+Variables with special functions
+
+  Grouping variable     MODE
+
+Estimator                                                    WLSMV
+Maximum number of iterations                                100000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Parameterization                                             THETA
+Link                                                        PROBIT
+
+Input data file(s)
+  data.dta
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+   Group WEB
+     Number of missing data patterns             5
+
+   Group TEL
+     Number of missing data patterns             2
+
+   Group FTF
+     Number of missing data patterns             1
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT FOR WEB
+
+
+           Covariance Coverage
+              ADULT0A       ADULT0B       ADULT0C
+              ________      ________      ________
+ ADULT0A        1.000
+ ADULT0B        0.999         0.999
+ ADULT0C        0.999         0.999         0.999
+
+
+     PROPORTION OF DATA PRESENT FOR TEL
+
+
+           Covariance Coverage
+              ADULT0A       ADULT0B       ADULT0C
+              ________      ________      ________
+ ADULT0A        1.000
+ ADULT0B        0.998         0.998
+ ADULT0C        1.000         0.998         1.000
+
+
+     PROPORTION OF DATA PRESENT FOR FTF
+
+
+           Covariance Coverage
+              ADULT0A       ADULT0B       ADULT0C
+              ________      ________      ________
+ ADULT0A        1.000
+ ADULT0B        1.000         1.000
+ ADULT0C        1.000         1.000         1.000
+
+
+UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
+
+  Group WEB
+    ADULT0A
+      Category 1    0.014           63.000
+      Category 2    0.131          599.000
+      Category 3    0.307         1403.000
+      Category 4    0.548         2501.000
+    ADULT0B
+      Category 1    0.039          180.000
+      Category 2    0.199          908.000
+      Category 3    0.434         1982.000
+      Category 4    0.327         1494.000
+    ADULT0C
+      Category 1    0.083          378.000
+      Category 2    0.241         1100.000
+      Category 3    0.405         1846.000
+      Category 4    0.271         1238.000
+
+  Group TEL
+    ADULT0A
+      Category 1    0.006            4.000
+      Category 2    0.102           66.000
+      Category 3    0.262          170.000
+      Category 4    0.630          408.000
+    ADULT0B
+      Category 1    0.022           14.000
+      Category 2    0.173          112.000
+      Category 3    0.427          276.000
+      Category 4    0.379          245.000
+    ADULT0C
+      Category 1    0.031           20.000
+      Category 2    0.227          147.000
+      Category 3    0.407          264.000
+      Category 4    0.335          217.000
+
+  Group FTF
+    ADULT0A
+      Category 1    0.015           33.000
+      Category 2    0.105          227.000
+      Category 3    0.255          550.000
+      Category 4    0.625         1351.000
+    ADULT0B
+      Category 1    0.029           62.000
+      Category 2    0.149          322.000
+      Category 3    0.369          797.000
+      Category 4    0.453          980.000
+    ADULT0C
+      Category 1    0.045           97.000
+      Category 2    0.208          450.000
+      Category 3    0.343          741.000
+      Category 4    0.404          873.000
+
+
+SAMPLE STATISTICS
+
+
+     ESTIMATED SAMPLE STATISTICS FOR WEB
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              ADULT0A$      ADULT0A$      ADULT0A$      ADULT0B$      ADULT0B$
+              ________      ________      ________      ________      ________
+               -2.203        -1.058        -0.120        -1.757        -0.711
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              ADULT0B$      ADULT0C$      ADULT0C$      ADULT0C$
+              ________      ________      ________      ________
+                0.447        -1.386        -0.457         0.609
+
+
+           CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              ADULT0A       ADULT0B       ADULT0C
+              ________      ________      ________
+ ADULT0A
+ ADULT0B        0.691
+ ADULT0C        0.714         0.596
+
+
+     ESTIMATED SAMPLE STATISTICS FOR TEL
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              ADULT0A$      ADULT0A$      ADULT0A$      ADULT0B$      ADULT0B$
+              ________      ________      ________      ________      ________
+               -2.502        -1.237        -0.331        -2.021        -0.861
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              ADULT0B$      ADULT0C$      ADULT0C$      ADULT0C$
+              ________      ________      ________      ________
+                0.309        -1.868        -0.650         0.426
+
+
+           CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              ADULT0A       ADULT0B       ADULT0C
+              ________      ________      ________
+ ADULT0A
+ ADULT0B        0.468
+ ADULT0C        0.509         0.445
+
+
+     ESTIMATED SAMPLE STATISTICS FOR FTF
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              ADULT0A$      ADULT0A$      ADULT0A$      ADULT0B$      ADULT0B$
+              ________      ________      ________      ________      ________
+               -2.163        -1.173        -0.319        -1.900        -0.924
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              ADULT0B$      ADULT0C$      ADULT0C$      ADULT0C$
+              ________      ________      ________      ________
+                0.117        -1.697        -0.665         0.243
+
+
+           CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              ADULT0A       ADULT0B       ADULT0C
+              ________      ________      ________
+ ADULT0A
+ ADULT0B        0.647
+ ADULT0C        0.659         0.575
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       16
+
+Chi-Square Test of Model Fit
+
+          Value                            137.324*
+          Degrees of Freedom                    20
+          P-Value                           0.0000
+
+Chi-Square Contribution From Each Group
+
+          WEB                               48.813
+          TEL                               29.268
+          FTF                               59.243
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.049
+          90 Percent C.I.                    0.041  0.057
+          Probability RMSEA <= .05           0.580
+
+CFI/TLI
+
+          CFI                                0.993
+          TLI                                0.997
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                          16330.766
+          Degrees of Freedom                     9
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.018
+
+Optimum Function Value for Weighted Least-Squares Estimator
+
+          Value                     0.64974438D-02
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Group WEB
+
+ F1       BY
+    ADULT0A            1.000      0.000    999.000    999.000
+    ADULT0B            0.615      0.028     22.062      0.000
+    ADULT0C            0.676      0.031     21.786      0.000
+
+ Means
+    F1                 0.000      0.000    999.000    999.000
+
+ Thresholds
+    ADULT0A$1         -4.464      0.132    -33.725      0.000
+    ADULT0A$2         -2.135      0.068    -31.198      0.000
+    ADULT0A$3         -0.224      0.038     -5.862      0.000
+    ADULT0B$1         -2.646      0.048    -55.260      0.000
+    ADULT0B$2         -1.073      0.030    -36.356      0.000
+    ADULT0B$3          0.627      0.027     23.482      0.000
+    ADULT0C$1         -2.284      0.045    -50.771      0.000
+    ADULT0C$2         -0.726      0.030    -24.578      0.000
+    ADULT0C$3          0.898      0.030     30.176      0.000
+
+ Variances
+    F1                 3.514      0.253     13.912      0.000
+
+ Residual Variances
+    ADULT0A            1.000      0.000    999.000    999.000
+    ADULT0B            1.000      0.000    999.000    999.000
+    ADULT0C            1.000      0.000    999.000    999.000
+
+Group TEL
+
+ F1       BY
+    ADULT0A            1.000      0.000    999.000    999.000
+    ADULT0B            0.615      0.028     22.062      0.000
+    ADULT0C            0.676      0.031     21.786      0.000
+
+ Means
+    F1                 0.276      0.078      3.560      0.000
+
+ Thresholds
+    ADULT0A$1         -4.464      0.132    -33.725      0.000
+    ADULT0A$2         -2.135      0.068    -31.198      0.000
+    ADULT0A$3         -0.224      0.038     -5.862      0.000
+    ADULT0B$1         -2.646      0.048    -55.260      0.000
+    ADULT0B$2         -1.073      0.030    -36.356      0.000
+    ADULT0B$3          0.627      0.027     23.482      0.000
+    ADULT0C$1         -2.284      0.045    -50.771      0.000
+    ADULT0C$2         -0.726      0.030    -24.578      0.000
+    ADULT0C$3          0.898      0.030     30.176      0.000
+
+ Variances
+    F1                 2.059      0.241      8.560      0.000
+
+ Residual Variances
+    ADULT0A            1.000      0.000    999.000    999.000
+    ADULT0B            1.000      0.000    999.000    999.000
+    ADULT0C            1.000      0.000    999.000    999.000
+
+Group FTF
+
+ F1       BY
+    ADULT0A            1.000      0.000    999.000    999.000
+    ADULT0B            0.615      0.028     22.062      0.000
+    ADULT0C            0.676      0.031     21.786      0.000
+
+ Means
+    F1                 0.570      0.063      9.072      0.000
+
+ Thresholds
+    ADULT0A$1         -4.464      0.132    -33.725      0.000
+    ADULT0A$2         -2.135      0.068    -31.198      0.000
+    ADULT0A$3         -0.224      0.038     -5.862      0.000
+    ADULT0B$1         -2.646      0.048    -55.260      0.000
+    ADULT0B$2         -1.073      0.030    -36.356      0.000
+    ADULT0B$3          0.627      0.027     23.482      0.000
+    ADULT0C$1         -2.284      0.045    -50.771      0.000
+    ADULT0C$2         -0.726      0.030    -24.578      0.000
+    ADULT0C$3          0.898      0.030     30.176      0.000
+
+ Variances
+    F1                 3.675      0.316     11.616      0.000
+
+ Residual Variances
+    ADULT0A            1.000      0.000    999.000    999.000
+    ADULT0B            1.000      0.000    999.000    999.000
+    ADULT0C            1.000      0.000    999.000    999.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STD Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Group WEB
+
+ F1       BY
+    ADULT0A            1.874      0.067     27.824      0.000
+    ADULT0B            1.153      0.030     38.366      0.000
+    ADULT0C            1.267      0.034     37.811      0.000
+
+ Means
+    F1                 0.000      0.000    999.000    999.000
+
+ Thresholds
+    ADULT0A$1         -4.464      0.132    -33.725      0.000
+    ADULT0A$2         -2.135      0.068    -31.198      0.000
+    ADULT0A$3         -0.224      0.038     -5.862      0.000
+    ADULT0B$1         -2.646      0.048    -55.260      0.000
+    ADULT0B$2         -1.073      0.030    -36.356      0.000
+    ADULT0B$3          0.627      0.027     23.482      0.000
+    ADULT0C$1         -2.284      0.045    -50.771      0.000
+    ADULT0C$2         -0.726      0.030    -24.578      0.000
+    ADULT0C$3          0.898      0.030     30.176      0.000
+
+ Variances
+    F1                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    ADULT0A            1.000      0.000    999.000    999.000
+    ADULT0B            1.000      0.000    999.000    999.000
+    ADULT0C            1.000      0.000    999.000    999.000
+
+Group TEL
+
+ F1       BY
+    ADULT0A            1.435      0.084     17.119      0.000
+    ADULT0B            0.883      0.044     19.916      0.000
+    ADULT0C            0.970      0.049     19.882      0.000
+
+ Means
+    F1                 0.192      0.052      3.684      0.000
+
+ Thresholds
+    ADULT0A$1         -4.464      0.132    -33.725      0.000
+    ADULT0A$2         -2.135      0.068    -31.198      0.000
+    ADULT0A$3         -0.224      0.038     -5.862      0.000
+    ADULT0B$1         -2.646      0.048    -55.260      0.000
+    ADULT0B$2         -1.073      0.030    -36.356      0.000
+    ADULT0B$3          0.627      0.027     23.482      0.000
+    ADULT0C$1         -2.284      0.045    -50.771      0.000
+    ADULT0C$2         -0.726      0.030    -24.578      0.000
+    ADULT0C$3          0.898      0.030     30.176      0.000
+
+ Variances
+    F1                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    ADULT0A            1.000      0.000    999.000    999.000
+    ADULT0B            1.000      0.000    999.000    999.000
+    ADULT0C            1.000      0.000    999.000    999.000
+
+Group FTF
+
+ F1       BY
+    ADULT0A            1.917      0.083     23.231      0.000
+    ADULT0B            1.180      0.038     31.197      0.000
+    ADULT0C            1.295      0.042     30.742      0.000
+
+ Means
+    F1                 0.297      0.030      9.915      0.000
+
+ Thresholds
+    ADULT0A$1         -4.464      0.132    -33.725      0.000
+    ADULT0A$2         -2.135      0.068    -31.198      0.000
+    ADULT0A$3         -0.224      0.038     -5.862      0.000
+    ADULT0B$1         -2.646      0.048    -55.260      0.000
+    ADULT0B$2         -1.073      0.030    -36.356      0.000
+    ADULT0B$3          0.627      0.027     23.482      0.000
+    ADULT0C$1         -2.284      0.045    -50.771      0.000
+    ADULT0C$2         -0.726      0.030    -24.578      0.000
+    ADULT0C$3          0.898      0.030     30.176      0.000
+
+ Variances
+    F1                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    ADULT0A            1.000      0.000    999.000    999.000
+    ADULT0B            1.000      0.000    999.000    999.000
+    ADULT0C            1.000      0.000    999.000    999.000
+
+
+R-SQUARE
+
+Group WEB
+
+    Observed                                        Two-Tailed     Scale
+    Variable        Estimate       S.E.  Est./S.E.    P-Value     Factors
+
+    ADULT0A            0.778      0.012     62.792      0.000      0.471
+    ADULT0B            0.571      0.013     44.702      0.000      0.655
+    ADULT0C            0.616      0.013     49.239      0.000      0.620
+
+Group TEL
+
+    Observed                                        Two-Tailed     Scale
+    Variable        Estimate       S.E.  Est./S.E.    P-Value     Factors
+
+    ADULT0A            0.673      0.026     26.184      0.000      0.572
+    ADULT0B            0.438      0.025     17.721      0.000      0.750
+    ADULT0C            0.485      0.025     19.288      0.000      0.718
+
+Group FTF
+
+    Observed                                        Two-Tailed     Scale
+    Variable        Estimate       S.E.  Est./S.E.    P-Value     Factors
+
+    ADULT0A            0.786      0.014     54.299      0.000      0.463
+    ADULT0B            0.582      0.016     37.300      0.000      0.647
+    ADULT0C            0.627      0.015     41.165      0.000      0.611
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.561E-03
+       (ratio of smallest to largest eigenvalue)
+
+
+MODEL MODIFICATION INDICES
+
+NOTE:  Modification indices for direct effects of observed dependent variables
+regressed on covariates and residual covariances among observed dependent
+variables may not be included.  To include these, request MODINDICES (ALL).
+
+Minimum M.I. value for printing the modification index    10.000
+
+                                   M.I.     E.P.C.  Std E.P.C.  StdYX E.P.C.
+Group WEB
+
+
+ON/BY Statements
+
+F1       ON F1       /
+F1       BY F1                   999.000     0.000      0.000        0.000
+
+WITH Statements
+
+ADULT0B  WITH ADULT0A             14.614     0.136      0.136        0.136
+ADULT0C  WITH ADULT0A             13.071     0.130      0.130        0.130
+
+Variances/Residual Variances
+
+ADULT0A                           46.078    -0.554     -0.554       -0.123
+ADULT0B                           13.872    -0.167     -0.167       -0.072
+
+Means/Intercepts/Thresholds
+
+[ ADULT0A  ]                      21.860     0.176      0.176        0.083
+[ ADULT0C  ]                      11.669    -0.086     -0.086       -0.053
+[ ADULT0A$ ]                      13.508    -0.145     -0.145       -0.068
+[ ADULT0C$ ]                      18.048     0.089      0.089        0.055
+
+Group TEL
+
+
+ON/BY Statements
+
+F1       ON F1       /
+F1       BY F1                   999.000     0.000      0.000        0.000
+
+Group FTF
+
+
+ON/BY Statements
+
+F1       ON F1       /
+F1       BY F1                   999.000     0.000      0.000        0.000
+
+Variances/Residual Variances
+
+ADULT0A                           20.016     0.356      0.356        0.076
+
+Means/Intercepts/Thresholds
+
+[ ADULT0A  ]                      15.903    -0.149     -0.149       -0.069
+
+
+
+SAMPLE STATISTICS FOR ESTIMATED FACTOR SCORES
+
+
+     SAMPLE STATISTICS
+
+
+           Means
+              F1            F1_SE
+              ________      ________
+                0.097         0.885
+
+
+           Covariances
+              F1            F1_SE
+              ________      ________
+ F1             2.381
+ F1_SE          0.198         0.025
+
+
+           Correlations
+              F1            F1_SE
+              ________      ________
+ F1             1.000
+ F1_SE          0.811         1.000
+
+
+PLOT INFORMATION
+
+The following plots are available:
+
+  Histograms (sample values, estimated factor scores, estimated values, residuals)
+  Scatterplots (sample values, estimated factor scores, estimated values, residuals)
+  Sample proportions and estimated probabilities
+  Item characteristic curves
+  Information curves
+  Measurement parameter plots
+  Latent variable distribution plots
+
+DIAGRAM INFORMATION
+
+  Use View Diagram under the Diagram menu in the Mplus Editor to view the diagram.
+  If running Mplus from the Mplus Diagrammer, the diagram opens automatically.
+
+  Diagram output
+    c:\users\msassac6\dropbox (the university of manchester)\papers\joe s\uclmm\uclmm_r\mplus\mean no correction\scalar_
+
+     Beginning Time:  08:56:08
+        Ending Time:  08:56:09
+       Elapsed Time:  00:00:01
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2019 Muthen & Muthen

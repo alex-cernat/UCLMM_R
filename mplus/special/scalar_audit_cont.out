@@ -1,6 +1,6 @@
-Mplus VERSION 8.3
+Mplus VERSION 8.6
 MUTHEN & MUTHEN
-08/09/2019  10:00 AM
+07/01/2021   7:40 AM
 
 INPUT INSTRUCTIONS
 
@@ -10,20 +10,18 @@ INPUT INSTRUCTIONS
 
   VARIABLE:
 
-  NAMES = w8audit1 w8bullytype0a w8bullytype0b w8bullytype0c w8bullytype0d
-       w8bullytype0e w8bullytype0f w8bullytype0g w8adult0a w8adult0b w8adult0c
-       w8leisurea0a w8leisurea0b w8leisurea0c w8leisurea0d w8leisurea0e w8leisurea0f
-       w8leisureb0a w8leisureb0b w8leisureb0c w8leisureb0d samppsu sampstratum w8mode
-       w8locus0a w8locus0b w8locus0c w8locus0d w8ghq12_1 w8ghq12_2 w8ghq12_3 w8ghq12_4
-       w8ghq12_5 w8ghq12_6 w8ghq12_7 w8ghq12_8 w8ghq12_9 w8ghq12_10 w8ghq12_11
-       w8ghq12_12 w8audit2 w8audit3 designweight_combin;
+  NAMES = audit1 bully0a bully0b bully0c bully0d bully0e bully0f bully0g adult0a
+       adult0b adult0c leisa0a leisa0b leisa0c leisa0d leisa0e leisa0f leisb0a leisb0b
+       leisb0c leisb0d designweight samppsu sampstratum mode locus0a locus0b locus0c
+       locus0d ghq_1 ghq_2 ghq_3 ghq_4 ghq_5 ghq_6 ghq_7 ghq_8 ghq_9 ghq_10 ghq_11
+       ghq_12 audit2 audit3 designweight_combin;
 
   MISSING=.;
-  USEVARIABLES ARE w8audit1
-  w8audit2
-  w8audit3;
+  USEVARIABLES ARE audit1
+  audit2
+  audit3;
 
-  GROUPING IS w8mode (1=Web 2=Tel 3=Ftf);
+  GROUPING IS mode (1=Web 2=Tel 3=Ftf);
   WEIGHT IS designweight_combin;
 
                   STRATIFICATION IS sampstratum;
@@ -35,13 +33,13 @@ INPUT INSTRUCTIONS
 
                   ITERATIONS = 100000;
 
-  DIFFTEST = w8audit1_metric.dat;
+  DIFFTEST = audit1_metric.dat;
   Model:
 
 
-  f1 BY w8audit1@1
-  w8audit2 (L2)
-  w8audit3 (L3)
+  f1 BY audit1@1
+  audit2 (L2)
+  audit3 (L3)
   ;
 
 
@@ -50,21 +48,21 @@ INPUT INSTRUCTIONS
 
   Model Tel:
 
-  f1 BY w8audit1@1
-  w8audit2 (L2)
-  w8audit3 (L3)
+  f1 BY audit1@1
+  audit2 (L2)
+  audit3 (L3)
   ;
 
 
   Model Ftf:
 
-  f1 BY w8audit1@1
-  w8audit2 (L2)
-  w8audit3 (L3)
+  f1 BY audit1@1
+  audit2 (L2)
+  audit3 (L3)
   ;
 
 
-  SAVEDATA: DIFFTEST IS w8audit1_scalar.dat;
+  SAVEDATA: DIFFTEST IS audit1_scalar.dat;
   OUTPUT: SAMPSTAT;
 
   MODINDICES;
@@ -104,14 +102,14 @@ Number of continuous latent variables                            1
 Observed dependent variables
 
   Continuous
-   W8AUDIT1    W8AUDIT2    W8AUDIT3
+   AUDIT1      AUDIT2      AUDIT3
 
 Continuous latent variables
    F1
 
 Variables with special functions
 
-  Grouping variable     W8MODE
+  Grouping variable     MODE
   Stratification        SAMPSTRA
   Cluster variable      SAMPPSU
   Weight variable       DESIGNWE
@@ -160,33 +158,33 @@ Minimum covariance coverage value   0.100
 
 
            Covariance Coverage
-              W8AUDIT1      W8AUDIT2      W8AUDIT3
+              AUDIT1        AUDIT2        AUDIT3
               ________      ________      ________
- W8AUDIT1       0.966
- W8AUDIT2       0.965         0.999
- W8AUDIT3       0.966         0.999         0.999
+ AUDIT1         0.966
+ AUDIT2         0.965         0.999
+ AUDIT3         0.966         0.999         0.999
 
 
      PROPORTION OF DATA PRESENT FOR TEL
 
 
            Covariance Coverage
-              W8AUDIT1      W8AUDIT2      W8AUDIT3
+              AUDIT1        AUDIT2        AUDIT3
               ________      ________      ________
- W8AUDIT1       0.958
- W8AUDIT2       0.957         0.999
- W8AUDIT3       0.955         0.996         0.997
+ AUDIT1         0.958
+ AUDIT2         0.957         0.999
+ AUDIT3         0.955         0.996         0.997
 
 
      PROPORTION OF DATA PRESENT FOR FTF
 
 
            Covariance Coverage
-              W8AUDIT1      W8AUDIT2      W8AUDIT3
+              AUDIT1        AUDIT2        AUDIT3
               ________      ________      ________
- W8AUDIT1       0.960
- W8AUDIT2       0.959         0.999
- W8AUDIT3       0.960         0.998         1.000
+ AUDIT1         0.960
+ AUDIT2         0.959         0.999
+ AUDIT3         0.960         0.998         1.000
 
 
 SAMPLE STATISTICS
@@ -196,78 +194,78 @@ SAMPLE STATISTICS
 
 
            Means
-              W8AUDIT1      W8AUDIT2      W8AUDIT3
+              AUDIT1        AUDIT2        AUDIT3
               ________      ________      ________
-                2.598         1.723         1.764
+                2.571         1.691         1.744
 
 
            Covariances
-              W8AUDIT1      W8AUDIT2      W8AUDIT3
+              AUDIT1        AUDIT2        AUDIT3
               ________      ________      ________
- W8AUDIT1       1.182
- W8AUDIT2       0.647         1.771
- W8AUDIT3       0.919         1.105         1.303
+ AUDIT1         1.186
+ AUDIT2         0.662         1.759
+ AUDIT3         0.930         1.105         1.308
 
 
            Correlations
-              W8AUDIT1      W8AUDIT2      W8AUDIT3
+              AUDIT1        AUDIT2        AUDIT3
               ________      ________      ________
- W8AUDIT1       1.000
- W8AUDIT2       0.447         1.000
- W8AUDIT3       0.741         0.728         1.000
+ AUDIT1         1.000
+ AUDIT2         0.458         1.000
+ AUDIT3         0.746         0.729         1.000
 
 
      ESTIMATED SAMPLE STATISTICS FOR TEL
 
 
            Means
-              W8AUDIT1      W8AUDIT2      W8AUDIT3
+              AUDIT1        AUDIT2        AUDIT3
               ________      ________      ________
-                2.671         1.888         1.753
+                2.577         1.791         1.717
 
 
            Covariances
-              W8AUDIT1      W8AUDIT2      W8AUDIT3
+              AUDIT1        AUDIT2        AUDIT3
               ________      ________      ________
- W8AUDIT1       1.315
- W8AUDIT2       0.813         2.341
- W8AUDIT3       1.047         1.256         1.394
+ AUDIT1         1.230
+ AUDIT2         0.695         2.030
+ AUDIT3         0.990         1.166         1.349
 
 
            Correlations
-              W8AUDIT1      W8AUDIT2      W8AUDIT3
+              AUDIT1        AUDIT2        AUDIT3
               ________      ________      ________
- W8AUDIT1       1.000
- W8AUDIT2       0.464         1.000
- W8AUDIT3       0.773         0.695         1.000
+ AUDIT1         1.000
+ AUDIT2         0.440         1.000
+ AUDIT3         0.769         0.705         1.000
 
 
      ESTIMATED SAMPLE STATISTICS FOR FTF
 
 
            Means
-              W8AUDIT1      W8AUDIT2      W8AUDIT3
+              AUDIT1        AUDIT2        AUDIT3
               ________      ________      ________
-                2.592         1.826         1.788
+                2.643         1.790         1.807
 
 
            Covariances
-              W8AUDIT1      W8AUDIT2      W8AUDIT3
+              AUDIT1        AUDIT2        AUDIT3
               ________      ________      ________
- W8AUDIT1       1.295
- W8AUDIT2       0.775         2.047
- W8AUDIT3       1.000         1.261         1.427
+ AUDIT1         1.266
+ AUDIT2         0.655         1.841
+ AUDIT3         0.942         1.106         1.330
 
 
            Correlations
-              W8AUDIT1      W8AUDIT2      W8AUDIT3
+              AUDIT1        AUDIT2        AUDIT3
               ________      ________      ________
- W8AUDIT1       1.000
- W8AUDIT2       0.476         1.000
- W8AUDIT3       0.736         0.738         1.000
+ AUDIT1         1.000
+ AUDIT2         0.429         1.000
+ AUDIT3         0.726         0.707         1.000
 
 
-     MAXIMUM LOG-LIKELIHOOD VALUE FOR THE UNRESTRICTED (H1) MODEL IS -30176.152
+     MAXIMUM LOG-LIKELIHOOD VALUE FOR THE UNRESTRICTED (H1) MODEL IS -29980.758
 
 
 UNIVARIATE SAMPLE STATISTICS
@@ -278,12 +276,12 @@ UNIVARIATE SAMPLE STATISTICS
          Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
         Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
 
-     W8AUDIT1              2.639       0.140       1.000   21.92%       1.000      2.000      3.000
-            4566.000       1.152      -0.729       5.000    3.26%       3.000      4.000
-     W8AUDIT2              1.724       0.650       0.000   24.58%       0.000      1.000      1.000
-            4720.000       1.774      -0.099       5.000    3.33%       2.000      2.000
-     W8AUDIT3              1.764      -0.044       0.000   24.57%       0.000      1.000      2.000
-            4722.000       1.304      -0.664       5.000    0.19%       2.000      3.000
+     AUDIT1                2.613       0.159       1.000   21.92%       1.000      2.000      3.000
+            4566.000       1.158      -0.712       5.000    3.26%       3.000      4.000
+     AUDIT2                1.692       0.654       0.000   24.58%       0.000      1.000      1.000
+            4720.000       1.762      -0.103       5.000    3.33%       2.000      2.000
+     AUDIT3                1.744      -0.052       0.000   24.57%       0.000      1.000      2.000
+            4722.000       1.309      -0.686       5.000    0.19%       2.000      3.000
 
 
      UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS FOR TEL
@@ -291,12 +289,12 @@ UNIVARIATE SAMPLE STATISTICS
          Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
         Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
 
-     W8AUDIT1              2.732      -0.074       1.000   24.26%       1.000      2.000      3.000
-             643.000       1.271      -0.930       5.000    3.27%       3.000      4.000
-     W8AUDIT2              1.888       0.501       0.000   27.46%       0.000      1.000      1.000
-             670.000       2.343      -0.741       5.000    5.22%       2.000      3.000
-     W8AUDIT3              1.752      -0.127       0.000   27.50%       0.000      1.000      2.000
-             669.000       1.395      -0.932       4.000    4.04%       2.000      3.000
+     AUDIT1                2.623       0.073       1.000   24.26%       1.000      2.000      3.000
+             643.000       1.201      -0.889       5.000    3.27%       3.000      4.000
+     AUDIT2                1.790       0.588       0.000   27.46%       0.000      1.000      1.000
+             670.000       2.031      -0.325       5.000    5.22%       2.000      3.000
+     AUDIT3                1.715      -0.033       0.000   27.50%       0.000      1.000      2.000
+             669.000       1.349      -0.793       4.000    4.04%       2.000      3.000
 
 
      UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS FOR FTF
@@ -304,12 +302,12 @@ UNIVARIATE SAMPLE STATISTICS
          Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
         Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
 
-     W8AUDIT1              2.640       0.216       1.000   24.92%       1.000      2.000      2.000
-            2087.000       1.263      -0.755       5.000    4.02%       3.000      4.000
-     W8AUDIT2              1.824       0.539       0.000   27.93%       0.000      1.000      1.000
-            2170.000       2.047      -0.475       5.000    4.47%       2.000      3.000
-     W8AUDIT3              1.788      -0.018       0.000   27.90%       0.000      1.000      2.000
-            2172.000       1.428      -0.710       5.000    0.28%       2.000      3.000
+     AUDIT1                2.679       0.169       1.000   24.92%       1.000      2.000      2.000
+            2087.000       1.240      -0.765       5.000    4.02%       3.000      4.000
+     AUDIT2                1.789       0.572       0.000   27.93%       0.000      1.000      1.000
+            2170.000       1.841      -0.288       5.000    4.47%       2.000      3.000
+     AUDIT3                1.807      -0.061       0.000   27.90%       0.000      1.000      2.000
+            2172.000       1.330      -0.633       5.000    0.28%       2.000      3.000
 
 
 THE MODEL ESTIMATION TERMINATED NORMALLY
@@ -319,7 +317,7 @@ THE MODEL ESTIMATION TERMINATED NORMALLY
      VARIANCE FOR AN OBSERVED VARIABLE, A CORRELATION GREATER OR EQUAL TO ONE
      BETWEEN TWO OBSERVED VARIABLES, OR A LINEAR DEPENDENCY AMONG MORE THAN TWO
      OBSERVED VARIABLES.  CHECK THE RESULTS SECTION FOR MORE INFORMATION.
-     PROBLEM INVOLVING VARIABLE W8AUDIT3.
+     PROBLEM INVOLVING VARIABLE AUDIT3.
 
 
      WARNING:  THE RESIDUAL COVARIANCE MATRIX (THETA) IN GROUP TEL IS NOT
@@ -327,7 +325,7 @@ THE MODEL ESTIMATION TERMINATED NORMALLY
      VARIANCE FOR AN OBSERVED VARIABLE, A CORRELATION GREATER OR EQUAL TO ONE
      BETWEEN TWO OBSERVED VARIABLES, OR A LINEAR DEPENDENCY AMONG MORE THAN TWO
      OBSERVED VARIABLES.  CHECK THE RESULTS SECTION FOR MORE INFORMATION.
-     PROBLEM INVOLVING VARIABLE W8AUDIT3.
+     PROBLEM INVOLVING VARIABLE AUDIT3.
 
 
      WARNING:  THE RESIDUAL COVARIANCE MATRIX (THETA) IN GROUP FTF IS NOT
@@ -335,7 +333,7 @@ THE MODEL ESTIMATION TERMINATED NORMALLY
      VARIANCE FOR AN OBSERVED VARIABLE, A CORRELATION GREATER OR EQUAL TO ONE
      BETWEEN TWO OBSERVED VARIABLES, OR A LINEAR DEPENDENCY AMONG MORE THAN TWO
      OBSERVED VARIABLES.  CHECK THE RESULTS SECTION FOR MORE INFORMATION.
-     PROBLEM INVOLVING VARIABLE W8AUDIT3.
+     PROBLEM INVOLVING VARIABLE AUDIT3.
 
 
 
@@ -346,33 +344,33 @@ Number of Free Parameters                       14
 
 Loglikelihood
 
-          H0 Value                      -30373.875
-          H0 Scaling Correction Factor      2.5979
+          H0 Value                      -30174.715
+          H0 Scaling Correction Factor      2.4262
             for MLR
-          H1 Value                      -30176.152
-          H1 Scaling Correction Factor      2.1886
+          H1 Value                      -29980.758
+          H1 Scaling Correction Factor      2.0949
             for MLR
 
 Information Criteria
 
-          Akaike (AIC)                   60775.750
-          Bayesian (BIC)                 60872.796
-          Sample-Size Adjusted BIC       60828.307
+          Akaike (AIC)                   60377.429
+          Bayesian (BIC)                 60474.475
+          Sample-Size Adjusted BIC       60429.986
             (n* = (n + 2) / 24)
 
 Chi-Square Test of Model Fit
 
-          Value                            226.238*
+          Value                            223.178*
           Degrees of Freedom                    13
           P-Value                           0.0000
-          Scaling Correction Factor         1.7479
+          Scaling Correction Factor         1.7381
             for MLR
 
 Chi-Square Contribution From Each Group
 
-          WEB                              154.427
-          TEL                               22.020
-          FTF                               49.790
+          WEB                              140.630
+          TEL                               21.471
+          FTF                               61.077
 
 *   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
     for chi-square difference testing in the regular way.  MLM, MLR and WLSM
@@ -381,24 +379,24 @@ Chi-Square Contribution From Each Group
 
 RMSEA (Root Mean Square Error Of Approximation)
 
-          Estimate                           0.081
-          90 Percent C.I.                    0.072  0.090
+          Estimate                           0.080
+          90 Percent C.I.                    0.071  0.089
           Probability RMSEA <= .05           0.000
 
 CFI/TLI
 
-          CFI                                0.948
-          TLI                                0.964
+          CFI                                0.953
+          TLI                                0.967
 
 Chi-Square Test of Model Fit for the Baseline Model
 
-          Value                           4121.825
+          Value                           4485.520
           Degrees of Freedom                     9
           P-Value                           0.0000
 
 SRMR (Standardized Root Mean Square Residual)
 
-          Value                              0.194
+          Value                              0.197
 
 
 
@@ -410,71 +408,77 @@ MODEL RESULTS
 Group WEB
 
  F1       BY
-    W8AUDIT1           1.000      0.000    999.000    999.000
-    W8AUDIT2           1.056      0.019     54.191      0.000
-    W8AUDIT3           1.337      0.014     92.721      0.000
+    AUDIT1             1.000      0.000    999.000    999.000
+    AUDIT2             1.024      0.018     57.985      0.000
+    AUDIT3             1.331      0.015     89.003      0.000
 
  Means
     F1                 0.000      0.000    999.000    999.000
 
  Intercepts
-    W8AUDIT1           2.596      0.021    121.244      0.000
-    W8AUDIT2           1.761      0.025     70.848      0.000
-    W8AUDIT3           1.769      0.022     81.494      0.000
+    AUDIT1             2.585      0.021    122.428      0.000
+    AUDIT2             1.725      0.024     71.982      0.000
+    AUDIT3             1.759      0.021     81.978      0.000
 
  Variances
     F1                 1.000      0.000    999.000    999.000
 
  Residual Variances
-    W8AUDIT1           0.619      0.024     26.156      0.000
-    W8AUDIT2           0.912      0.035     26.103      0.000
-    W8AUDIT3          -0.135      0.021     -6.336      0.000
+    AUDIT1             0.614      0.023     27.185      0.000
+    AUDIT2             0.901      0.036     25.028      0.000
+    AUDIT3            -0.137      0.022     -6.110      0.000
 
 Group TEL
 
  F1       BY
-    W8AUDIT1           1.000      0.000    999.000    999.000
-    W8AUDIT2           1.056      0.019     54.191      0.000
-    W8AUDIT3           1.337      0.014     92.721      0.000
+    AUDIT1             1.000      0.000    999.000    999.000
+    AUDIT2             1.024      0.018     57.985      0.000
+    AUDIT3             1.331      0.015     89.003      0.000
 
  Means
     F1                 0.000      0.000    999.000    999.000
 
  Intercepts
-    W8AUDIT1           2.596      0.021    121.244      0.000
-    W8AUDIT2           1.761      0.025     70.848      0.000
-    W8AUDIT3           1.769      0.022     81.494      0.000
+    AUDIT1             2.585      0.021    122.428      0.000
+    AUDIT2             1.725      0.024     71.982      0.000
+    AUDIT3             1.759      0.021     81.978      0.000
 
  Variances
     F1                 1.000      0.000    999.000    999.000
 
  Residual Variances
-    W8AUDIT1           0.636      0.052     12.254      0.000
-    W8AUDIT2           1.334      0.151      8.837      0.000
-    W8AUDIT3          -0.159      0.041     -3.925      0.000
+    AUDIT1             0.606      0.063      9.602      0.000
+    AUDIT2             1.118      0.115      9.678      0.000
+    AUDIT3            -0.165      0.044     -3.713      0.000
 
 Group FTF
 
  F1       BY
-    W8AUDIT1           1.000      0.000    999.000    999.000
-    W8AUDIT2           1.056      0.019     54.191      0.000
-    W8AUDIT3           1.337      0.014     92.721      0.000
+    AUDIT1             1.000      0.000    999.000    999.000
+    AUDIT2             1.024      0.018     57.985      0.000
+    AUDIT3             1.331      0.015     89.003      0.000
 
  Means
     F1                 0.000      0.000    999.000    999.000
 
  Intercepts
-    W8AUDIT1           2.596      0.021    121.244      0.000
-    W8AUDIT2           1.761      0.025     70.848      0.000
-    W8AUDIT3           1.769      0.022     81.494      0.000
+    AUDIT1             2.585      0.021    122.428      0.000
+    AUDIT2             1.725      0.024     71.982      0.000
+    AUDIT3             1.759      0.021     81.978      0.000
 
  Variances
     F1                 1.000      0.000    999.000    999.000
 
  Residual Variances
-    W8AUDIT1           0.676      0.035     19.037      0.000
-    W8AUDIT2           1.010      0.049     20.754      0.000
-    W8AUDIT3          -0.122      0.024     -5.139      0.000
+    AUDIT1             0.683      0.031     21.846      0.000
+    AUDIT2             0.994      0.044     22.739      0.000
+    AUDIT3            -0.131      0.023     -5.690      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.588E-02
+       (ratio of smallest to largest eigenvalue)
 
 
 STANDARDIZED MODEL RESULTS
@@ -488,71 +492,71 @@ STD Standardization
 Group WEB
 
  F1       BY
-    W8AUDIT1           1.000      0.000    999.000    999.000
-    W8AUDIT2           1.056      0.019     54.191      0.000
-    W8AUDIT3           1.337      0.014     92.721      0.000
+    AUDIT1             1.000      0.000    999.000    999.000
+    AUDIT2             1.024      0.018     57.985      0.000
+    AUDIT3             1.331      0.015     89.003      0.000
 
  Means
     F1                 0.000      0.000    999.000    999.000
 
  Intercepts
-    W8AUDIT1           2.596      0.021    121.244      0.000
-    W8AUDIT2           1.761      0.025     70.848      0.000
-    W8AUDIT3           1.769      0.022     81.494      0.000
+    AUDIT1             2.585      0.021    122.428      0.000
+    AUDIT2             1.725      0.024     71.982      0.000
+    AUDIT3             1.759      0.021     81.978      0.000
 
  Variances
     F1                 1.000      0.000    999.000    999.000
 
  Residual Variances
-    W8AUDIT1           0.619      0.024     26.156      0.000
-    W8AUDIT2           0.912      0.035     26.103      0.000
-    W8AUDIT3         999.000    999.000    999.000    999.000
+    AUDIT1             0.614      0.023     27.185      0.000
+    AUDIT2             0.901      0.036     25.028      0.000
+    AUDIT3           999.000    999.000    999.000    999.000
 
 Group TEL
 
  F1       BY
-    W8AUDIT1           1.000      0.000    999.000    999.000
-    W8AUDIT2           1.056      0.019     54.191      0.000
-    W8AUDIT3           1.337      0.014     92.721      0.000
+    AUDIT1             1.000      0.000    999.000    999.000
+    AUDIT2             1.024      0.018     57.985      0.000
+    AUDIT3             1.331      0.015     89.003      0.000
 
  Means
     F1                 0.000      0.000    999.000    999.000
 
  Intercepts
-    W8AUDIT1           2.596      0.021    121.244      0.000
-    W8AUDIT2           1.761      0.025     70.848      0.000
-    W8AUDIT3           1.769      0.022     81.494      0.000
+    AUDIT1             2.585      0.021    122.428      0.000
+    AUDIT2             1.725      0.024     71.982      0.000
+    AUDIT3             1.759      0.021     81.978      0.000
 
  Variances
     F1                 1.000      0.000    999.000    999.000
 
  Residual Variances
-    W8AUDIT1           0.636      0.052     12.254      0.000
-    W8AUDIT2           1.334      0.151      8.837      0.000
-    W8AUDIT3         999.000    999.000    999.000    999.000
+    AUDIT1             0.606      0.063      9.602      0.000
+    AUDIT2             1.118      0.115      9.678      0.000
+    AUDIT3           999.000    999.000    999.000    999.000
 
 Group FTF
 
  F1       BY
-    W8AUDIT1           1.000      0.000    999.000    999.000
-    W8AUDIT2           1.056      0.019     54.191      0.000
-    W8AUDIT3           1.337      0.014     92.721      0.000
+    AUDIT1             1.000      0.000    999.000    999.000
+    AUDIT2             1.024      0.018     57.985      0.000
+    AUDIT3             1.331      0.015     89.003      0.000
 
  Means
     F1                 0.000      0.000    999.000    999.000
 
  Intercepts
-    W8AUDIT1           2.596      0.021    121.244      0.000
-    W8AUDIT2           1.761      0.025     70.848      0.000
-    W8AUDIT3           1.769      0.022     81.494      0.000
+    AUDIT1             2.585      0.021    122.428      0.000
+    AUDIT2             1.725      0.024     71.982      0.000
+    AUDIT3             1.759      0.021     81.978      0.000
 
  Variances
     F1                 1.000      0.000    999.000    999.000
 
  Residual Variances
-    W8AUDIT1           0.676      0.035     19.037      0.000
-    W8AUDIT2           1.010      0.049     20.754      0.000
-    W8AUDIT3         999.000    999.000    999.000    999.000
+    AUDIT1             0.683      0.031     21.846      0.000
+    AUDIT2             0.994      0.044     22.739      0.000
+    AUDIT3           999.000    999.000    999.000    999.000
 
 
 R-SQUARE
@@ -562,33 +566,27 @@ Group WEB
     Observed                                        Two-Tailed
     Variable        Estimate       S.E.  Est./S.E.    P-Value
 
-    W8AUDIT1           0.618      0.009     68.424      0.000
-    W8AUDIT2           0.550      0.013     42.868      0.000
-    W8AUDIT3        Undefined   0.10814E+01
+    AUDIT1             0.620      0.009     71.454      0.000
+    AUDIT2             0.538      0.013     41.554      0.000
+    AUDIT3          Undefined   0.10835E+01
 
 Group TEL
 
     Observed                                        Two-Tailed
     Variable        Estimate       S.E.  Est./S.E.    P-Value
 
-    W8AUDIT1           0.611      0.019     31.510      0.000
-    W8AUDIT2           0.455      0.030     15.189      0.000
-    W8AUDIT3        Undefined   0.10978E+01
+    AUDIT1             0.623      0.024     25.448      0.000
+    AUDIT2             0.484      0.027     17.992      0.000
+    AUDIT3          Undefined   0.11026E+01
 
 Group FTF
 
     Observed                                        Two-Tailed
     Variable        Estimate       S.E.  Est./S.E.    P-Value
 
-    W8AUDIT1           0.597      0.013     47.217      0.000
-    W8AUDIT2           0.525      0.016     33.246      0.000
-    W8AUDIT3        Undefined   0.10732E+01
-
-
-QUALITY OF NUMERICAL RESULTS
-
-     Condition Number for the Information Matrix              0.412E-02
-       (ratio of smallest to largest eigenvalue)
+    AUDIT1             0.594      0.011     53.809      0.000
+    AUDIT2             0.513      0.014     36.622      0.000
+    AUDIT3          Undefined   0.10796E+01
 
 
 MODEL MODIFICATION INDICES
@@ -605,54 +603,45 @@ Group WEB
 
 BY Statements
 
-F1       BY W8AUDIT1              94.339    -0.192     -0.192       -0.151
+F1       BY AUDIT1                97.665    -0.195     -0.195       -0.154
 
 ON/BY Statements
 
 F1       ON F1       /
-F1       BY F1                    83.738    -0.159     -0.159       -0.159
+F1       BY F1                    75.081    -0.149     -0.149       -0.149
 
 WITH Statements
 
-W8AUDIT2 WITH W8AUDIT1            47.077    -0.177     -0.177       -0.235
-W8AUDIT3 WITH W8AUDIT1            28.410    -0.182     -0.182      999.000
-W8AUDIT3 WITH W8AUDIT2            29.231     0.182      0.182      999.000
+AUDIT2   WITH AUDIT1              34.847    -0.147     -0.147       -0.198
+AUDIT3   WITH AUDIT1              43.379    -0.224     -0.224      999.000
+AUDIT3   WITH AUDIT2              35.046     0.192      0.192      999.000
 
 Variances/Residual Variances
 
-F1                                83.738    -0.318     -0.318       -0.318
-
-Means/Intercepts/Thresholds
-
-[ W8AUDIT2 ]                      11.022    -0.033     -0.033       -0.023
+F1                                75.081    -0.299     -0.299       -0.299
 
 Group TEL
 
 
-Means/Intercepts/Thresholds
+BY Statements
 
-[ W8AUDIT3 ]                      10.753    -0.097     -0.097       -0.076
+F1       BY AUDIT1                11.094    -0.160     -0.160       -0.126
 
 Group FTF
 
 
 BY Statements
 
-F1       BY W8AUDIT1              37.015    -0.175     -0.175       -0.135
+F1       BY AUDIT1                34.366    -0.169     -0.169       -0.130
 
 ON/BY Statements
 
 F1       ON F1       /
-F1       BY F1                    13.556    -0.082     -0.082       -0.082
-
-WITH Statements
-
-W8AUDIT3 WITH W8AUDIT1            14.707    -0.153     -0.153      999.000
-W8AUDIT3 WITH W8AUDIT2            13.446     0.148      0.148      999.000
+F1       BY F1                    23.190    -0.106     -0.106       -0.106
 
 Variances/Residual Variances
 
-F1                                13.556    -0.163     -0.163       -0.163
+F1                                23.190    -0.213     -0.213       -0.213
 
 
 
@@ -665,13 +654,13 @@ SAMPLE STATISTICS FOR ESTIMATED FACTOR SCORES
            Means
               F1            F1_SE
               ________      ________
-               -0.133         0.000
+               -0.129         0.000
 
 
            Covariances
               F1            F1_SE
               ________      ________
- F1             0.954
+ F1             0.970
  F1_SE          0.000         0.000
 
 
@@ -699,9 +688,9 @@ DIAGRAM INFORMATION
   Diagram output
     c:\users\msassac6\dropbox (the university of manchester)\papers\joe s\uclmm\uclmm_r\mplus\special\scalar_audit_cont.
 
-     Beginning Time:  10:00:21
-        Ending Time:  10:00:22
-       Elapsed Time:  00:00:01
+     Beginning Time:  07:40:00
+        Ending Time:  07:40:00
+       Elapsed Time:  00:00:00
 
 
 
@@ -714,4 +703,4 @@ Fax: (310) 391-8971
 Web: www.StatModel.com
 Support: Support@StatModel.com
 
-Copyright (c) 1998-2019 Muthen & Muthen
+Copyright (c) 1998-2021 Muthen & Muthen

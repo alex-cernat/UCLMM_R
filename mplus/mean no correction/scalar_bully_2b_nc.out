@@ -1,6 +1,6 @@
-Mplus VERSION 8.3
+Mplus VERSION 8.6
 MUTHEN & MUTHEN
-09/02/2019   9:29 AM
+07/01/2021   8:26 AM
 
 INPUT INSTRUCTIONS
 
@@ -10,39 +10,38 @@ INPUT INSTRUCTIONS
 
   VARIABLE:
 
-  NAMES = w8audit1 w8bullytype0a w8bullytype0b w8bullytype0c w8bullytype0d
-       w8bullytype0e w8bullytype0f w8bullytype0g w8adult0a w8adult0b w8adult0c
-       w8leisurea0a w8leisurea0b w8leisurea0c w8leisurea0d w8leisurea0e w8leisurea0f
-       w8leisureb0a w8leisureb0b w8leisureb0c w8leisureb0d samppsu sampstratum w8mode
-       w8locus0a w8locus0b w8locus0c w8locus0d w8ghq12_1 w8ghq12_2 w8ghq12_3 w8ghq12_4
-       w8ghq12_5 w8ghq12_6 w8ghq12_7 w8ghq12_8 w8ghq12_9 w8ghq12_10 w8ghq12_11
-       w8ghq12_12 w8audit2 w8audit3 designweight_combin;
+  NAMES =  audit1 bully0a bully0b bully0c bully0d bully0e bully0f bully0g adult0a
+       adult0b adult0c leisa0a leisa0b leisa0c leisa0d leisa0e leisa0f leisb0a leisb0b
+       leisb0c leisb0d designweight samppsu sampstratum mode locus0a locus0b locus0c
+       locus0d ghq_1 ghq_2 ghq_3 ghq_4 ghq_5 ghq_6 ghq_7 ghq_8 ghq_9 ghq_10 ghq_11
+       ghq_12 audit2 audit3 designweight_combin;
 
   MISSING=.;
-  USEVARIABLES ARE w8bullytype0a
-  w8bullytype0b
-  w8bullytype0c
-  w8bullytype0d
-  w8bullytype0e
-  w8bullytype0f
-  w8bullytype0g;
-  CATEGORICAL ARE w8bullytype0a
-  w8bullytype0b
-  w8bullytype0c
-  w8bullytype0d
-  w8bullytype0e
-  w8bullytype0f
-  w8bullytype0g;
-  GROUPING IS w8mode (1=Web 2=Tel 3=Ftf);
-  ! WEIGHT IS designweight_combin;
+  USEVARIABLES ARE bully0a
+  bully0b
+  bully0c
+  bully0d
+  bully0e
+  bully0f
+  bully0g;
+  CATEGORICAL ARE bully0a
+  bully0b
+  bully0c
+  bully0d
+  bully0e
+  bully0f
+  bully0g;
+  GROUPING IS mode (1=Web 2=Tel 3=Ftf);
 
-  ! STRATIFICATION IS sampstratum;
+   WEIGHT IS designweight;
 
-  ! CLUSTER IS samppsu;
+   STRATIFICATION IS sampstratum;
+
+   CLUSTER IS samppsu;
 
   ANALYSIS:
 
-  ! TYPE IS COMPLEX;
+   type IS COMPLEX;
 
                   ESTIMATOR = WLSMV;
 
@@ -50,7 +49,7 @@ INPUT INSTRUCTIONS
 
                   PARAMETERIZATION = THETA;
 
-  ! DIFFTEST = w8bullytype0a_metric.dat;
+  ! DIFFTEST = bully0a_metric.dat;
 
   Model:
 
@@ -58,95 +57,95 @@ INPUT INSTRUCTIONS
   f1@1;
   [f1@0];
 
-  f1 BY w8bullytype0a@1
-  w8bullytype0b (L2)
-  w8bullytype0c (L3)
-  w8bullytype0d (L4)
-  w8bullytype0e (L5)
-  w8bullytype0f (L6)
-  w8bullytype0g (L7)
+  f1 BY bully0a@1
+  bully0b (L2)
+  bully0c (L3)
+  bully0d (L4)
+  bully0e (L5)
+  bully0f (L6)
+  bully0g (L7)
   ;
 
 
-  [w8bullytype0a$1] (t_w8bullytype0a);
-  [w8bullytype0b$1] (t_w8bullytype0b);
-  [w8bullytype0c$1] (t_w8bullytype0c);
-  [w8bullytype0d$1] (t_w8bullytype0d);
-  [w8bullytype0e$1] (t_w8bullytype0e);
-  [w8bullytype0f$1] (t_w8bullytype0f);
-  [w8bullytype0g$1] (t_w8bullytype0g);
+  [bully0a$1] (t_bully0a);
+  [bully0b$1] (t_bully0b);
+  [bully0c$1] (t_bully0c);
+  [bully0d$1] (t_bully0d);
+  [bully0e$1] (t_bully0e);
+  [bully0f$1] (t_bully0f);
+  [bully0g$1] (t_bully0g);
 
 
-  w8bullytype0a@1;
-  w8bullytype0b@1;
-  w8bullytype0c@1;
-  w8bullytype0d@1;
-  w8bullytype0e@1;
-  w8bullytype0f@1;
-  w8bullytype0g@1;
+  bully0a@1;
+  bully0b@1;
+  bully0c@1;
+  bully0d@1;
+  bully0e@1;
+  bully0f@1;
+  bully0g@1;
 
   Model Tel:
 
-  f1 BY w8bullytype0a@1
-  w8bullytype0b (L2)
-  w8bullytype0c (L3)
-  w8bullytype0d (L4)
-  w8bullytype0e (L5)
-  w8bullytype0f (L6)
-  w8bullytype0g (L7)
+  f1 BY bully0a@1
+  bully0b (L2)
+  bully0c (L3)
+  bully0d (L4)
+  bully0e (L5)
+  bully0f (L6)
+  bully0g (L7)
   ;
 
 
-  [w8bullytype0a$1] (t_w8bullytype0a);
-  [w8bullytype0b$1] (t_w8bullytype0b);
-  [w8bullytype0c$1] (t_w8bullytype0c);
-  [w8bullytype0d$1] (t_w8bullytype0d);
-  [w8bullytype0e$1] (t_w8bullytype0e);
-  [w8bullytype0f$1] (t_w8bullytype0f);
-  [w8bullytype0g$1] (t_w8bullytype0g);
+  [bully0a$1] (t_bully0a);
+  [bully0b$1] (t_bully0b);
+  [bully0c$1] (t_bully0c);
+  [bully0d$1] (t_bully0d);
+  [bully0e$1] (t_bully0e);
+  [bully0f$1] (t_bully0f);
+  [bully0g$1] (t_bully0g);
 
   [f1];
 
 
-  w8bullytype0a@1;
-  w8bullytype0b@1;
-  w8bullytype0c@1;
-  w8bullytype0d@1;
-  w8bullytype0e@1;
-  w8bullytype0f@1;
-  w8bullytype0g@1;
+  bully0a@1;
+  bully0b@1;
+  bully0c@1;
+  bully0d@1;
+  bully0e@1;
+  bully0f@1;
+  bully0g@1;
 
   Model Ftf:
 
-  f1 BY w8bullytype0a@1
-  w8bullytype0b (L2)
-  w8bullytype0c (L3)
-  w8bullytype0d (L4)
-  w8bullytype0e (L5)
-  w8bullytype0f (L6)
-  w8bullytype0g (L7)
+  f1 BY bully0a@1
+  bully0b (L2)
+  bully0c (L3)
+  bully0d (L4)
+  bully0e (L5)
+  bully0f (L6)
+  bully0g (L7)
   ;
 
 
-  [w8bullytype0a$1] (t_w8bullytype0a);
-  [w8bullytype0b$1] (t_w8bullytype0b);
-  [w8bullytype0c$1] (t_w8bullytype0c);
-  [w8bullytype0d$1] (t_w8bullytype0d);
-  [w8bullytype0e$1] (t_w8bullytype0e);
-  [w8bullytype0f$1] (t_w8bullytype0f);
-  [w8bullytype0g$1] (t_w8bullytype0g);
+  [bully0a$1] (t_bully0a);
+  [bully0b$1] (t_bully0b);
+  [bully0c$1] (t_bully0c);
+  [bully0d$1] (t_bully0d);
+  [bully0e$1] (t_bully0e);
+  [bully0f$1] (t_bully0f);
+  [bully0g$1] (t_bully0g);
 
   [f1];
 
-  w8bullytype0a@1;
-  w8bullytype0b@1;
-  w8bullytype0c@1;
-  w8bullytype0d@1;
-  w8bullytype0e@1;
-  w8bullytype0f@1;
-  w8bullytype0g@1;
+  bully0a@1;
+  bully0b@1;
+  bully0c@1;
+  bully0d@1;
+  bully0e@1;
+  bully0f@1;
+  bully0g@1;
 
-  ! SAVEDATA: DIFFTEST IS w8bullytype0a_scalar.dat;
+  ! SAVEDATA: DIFFTEST IS bully0a_scalar.dat;
   OUTPUT: SAMPSTAT;
 
   MODINDICES;
@@ -158,18 +157,11 @@ INPUT INSTRUCTIONS
 
 
 
-*** WARNING in VARIABLE command
-  Note that only the first 8 characters of variable names are used in the output.
-  Shorten variable names to avoid any confusion.
-*** WARNING in PLOT command
-  Note that only the first 8 characters of variable names are used in plots.
-  If variable names are not unique within the first 8 characters, problems
-  may occur.
 *** WARNING
   Data set contains cases with missing on all variables.
   These cases were not included in the analysis.
   Number of cases with missing on all variables:  379
-   3 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
 
 
 
@@ -191,15 +183,18 @@ Number of continuous latent variables                            1
 Observed dependent variables
 
   Binary and ordered categorical (ordinal)
-   W8BULLYT    W8BULLYT    W8BULLYT    W8BULLYT    W8BULLYT    W8BULLYT
-   W8BULLYT
+   BULLY0A     BULLY0B     BULLY0C     BULLY0D     BULLY0E     BULLY0F
+   BULLY0G
 
 Continuous latent variables
    F1
 
 Variables with special functions
 
-  Grouping variable     W8MODE
+  Grouping variable     MODE
+  Stratification        SAMPSTRA
+  Cluster variable      SAMPPSU
+  Weight variable       DESIGNWE
 
 Estimator                                                    WLSMV
 Maximum number of iterations                                100000
@@ -218,14 +213,23 @@ Input data format  FREE
 
 SUMMARY OF DATA
 
+   Total number of strata                       37
+   Total number of clusters                    656
+
    Group WEB
      Number of missing data patterns            19
+     Number of strata                           37
+     Number of clusters                        650
 
    Group TEL
      Number of missing data patterns             6
+     Number of strata                           37
+     Number of clusters                        404
 
    Group FTF
      Number of missing data patterns            20
+     Number of strata                           36
+     Number of clusters                        604
 
 
 COVARIANCE COVERAGE OF DATA
@@ -237,138 +241,138 @@ Minimum covariance coverage value   0.100
 
 
            Covariance Coverage
-              W8BULLYT      W8BULLYT      W8BULLYT      W8BULLYT      W8BULLYT
+              BULLY0A       BULLY0B       BULLY0C       BULLY0D       BULLY0E
               ________      ________      ________      ________      ________
- W8BULLYT       0.996
- W8BULLYT       0.991         0.992
- W8BULLYT       0.996         0.992         1.000
- W8BULLYT       0.996         0.991         0.999         0.999
- W8BULLYT       0.995         0.991         0.998         0.997         0.998
- W8BULLYT       0.995         0.991         0.998         0.997         0.997
- W8BULLYT       0.994         0.990         0.997         0.996         0.995
+ BULLY0A        0.996
+ BULLY0B        0.991         0.992
+ BULLY0C        0.996         0.992         1.000
+ BULLY0D        0.996         0.991         0.999         0.999
+ BULLY0E        0.995         0.991         0.998         0.997         0.998
+ BULLY0F        0.995         0.991         0.998         0.997         0.997
+ BULLY0G        0.994         0.990         0.997         0.996         0.995
 
 
            Covariance Coverage
-              W8BULLYT      W8BULLYT
+              BULLY0F       BULLY0G
               ________      ________
- W8BULLYT       0.998
- W8BULLYT       0.996         0.997
+ BULLY0F        0.998
+ BULLY0G        0.996         0.997
 
 
      PROPORTION OF DATA PRESENT FOR TEL
 
 
            Covariance Coverage
-              W8BULLYT      W8BULLYT      W8BULLYT      W8BULLYT      W8BULLYT
+              BULLY0A       BULLY0B       BULLY0C       BULLY0D       BULLY0E
               ________      ________      ________      ________      ________
- W8BULLYT       0.994
- W8BULLYT       0.992         0.998
- W8BULLYT       0.994         0.998         1.000
- W8BULLYT       0.991         0.995         0.997         0.997
- W8BULLYT       0.992         0.997         0.998         0.995         0.998
- W8BULLYT       0.992         0.997         0.998         0.995         0.997
- W8BULLYT       0.994         0.998         1.000         0.997         0.998
+ BULLY0A        0.994
+ BULLY0B        0.992         0.998
+ BULLY0C        0.994         0.998         1.000
+ BULLY0D        0.991         0.995         0.997         0.997
+ BULLY0E        0.992         0.997         0.998         0.995         0.998
+ BULLY0F        0.992         0.997         0.998         0.995         0.997
+ BULLY0G        0.994         0.998         1.000         0.997         0.998
 
 
            Covariance Coverage
-              W8BULLYT      W8BULLYT
+              BULLY0F       BULLY0G
               ________      ________
- W8BULLYT       0.998
- W8BULLYT       0.998         1.000
+ BULLY0F        0.998
+ BULLY0G        0.998         1.000
 
 
      PROPORTION OF DATA PRESENT FOR FTF
 
 
            Covariance Coverage
-              W8BULLYT      W8BULLYT      W8BULLYT      W8BULLYT      W8BULLYT
+              BULLY0A       BULLY0B       BULLY0C       BULLY0D       BULLY0E
               ________      ________      ________      ________      ________
- W8BULLYT       0.995
- W8BULLYT       0.989         0.992
- W8BULLYT       0.995         0.991         0.999
- W8BULLYT       0.993         0.990         0.997         0.997
- W8BULLYT       0.987         0.985         0.991         0.990         0.991
- W8BULLYT       0.992         0.989         0.996         0.994         0.990
- W8BULLYT       0.993         0.990         0.997         0.996         0.990
+ BULLY0A        0.995
+ BULLY0B        0.989         0.992
+ BULLY0C        0.995         0.991         0.999
+ BULLY0D        0.993         0.990         0.997         0.997
+ BULLY0E        0.987         0.985         0.991         0.990         0.991
+ BULLY0F        0.992         0.989         0.996         0.994         0.990
+ BULLY0G        0.993         0.990         0.997         0.996         0.990
 
 
            Covariance Coverage
-              W8BULLYT      W8BULLYT
+              BULLY0F       BULLY0G
               ________      ________
- W8BULLYT       0.997
- W8BULLYT       0.995         0.998
+ BULLY0F        0.997
+ BULLY0G        0.995         0.998
 
 
 UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
 
   Group WEB
-    W8BULLYT
-      Category 1    0.842         3807.000
-      Category 2    0.158          714.000
-    W8BULLYT
-      Category 1    0.846         3805.000
-      Category 2    0.154          694.000
-    W8BULLYT
-      Category 1    0.955         4332.000
-      Category 2    0.045          204.000
-    W8BULLYT
-      Category 1    0.940         4261.000
-      Category 2    0.060          270.000
-    W8BULLYT
-      Category 1    0.979         4435.000
-      Category 2    0.021           93.000
-    W8BULLYT
-      Category 1    0.934         4232.000
-      Category 2    0.066          298.000
-    W8BULLYT
-      Category 1    0.951         4302.000
-      Category 2    0.049          222.000
+    BULLY0A
+      Category 1    0.836         3778.587
+      Category 2    0.164          743.899
+    BULLY0B
+      Category 1    0.840         3782.416
+      Category 2    0.160          719.213
+    BULLY0C
+      Category 1    0.954         4325.827
+      Category 2    0.046          209.892
+    BULLY0D
+      Category 1    0.940         4257.711
+      Category 2    0.060          273.679
+    BULLY0E
+      Category 1    0.979         4432.155
+      Category 2    0.021           95.750
+    BULLY0F
+      Category 1    0.933         4226.756
+      Category 2    0.067          305.224
+    BULLY0G
+      Category 1    0.949         4295.077
+      Category 2    0.051          229.930
 
   Group TEL
-    W8BULLYT
-      Category 1    0.867          548.000
-      Category 2    0.133           84.000
-    W8BULLYT
-      Category 1    0.866          550.000
-      Category 2    0.134           85.000
-    W8BULLYT
-      Category 1    0.945          601.000
-      Category 2    0.055           35.000
-    W8BULLYT
-      Category 1    0.938          595.000
-      Category 2    0.062           39.000
-    W8BULLYT
-      Category 1    0.975          619.000
-      Category 2    0.025           16.000
-    W8BULLYT
-      Category 1    0.931          591.000
-      Category 2    0.069           44.000
-    W8BULLYT
-      Category 1    0.964          613.000
-      Category 2    0.036           23.000
+    BULLY0A
+      Category 1    0.859          542.610
+      Category 2    0.141           89.375
+    BULLY0B
+      Category 1    0.860          546.081
+      Category 2    0.140           88.551
+    BULLY0C
+      Category 1    0.937          595.696
+      Category 2    0.063           40.304
+    BULLY0D
+      Category 1    0.936          594.391
+      Category 2    0.064           40.942
+    BULLY0E
+      Category 1    0.976          620.513
+      Category 2    0.024           15.121
+    BULLY0F
+      Category 1    0.931          591.577
+      Category 2    0.069           44.001
+    BULLY0G
+      Category 1    0.959          609.919
+      Category 2    0.041           26.081
 
   Group FTF
-    W8BULLYT
-      Category 1    0.821         1648.000
-      Category 2    0.179          359.000
-    W8BULLYT
-      Category 1    0.809         1619.000
-      Category 2    0.191          381.000
-    W8BULLYT
-      Category 1    0.928         1870.000
-      Category 2    0.072          145.000
-    W8BULLYT
-      Category 1    0.912         1834.000
-      Category 2    0.088          177.000
-    W8BULLYT
-      Category 1    0.971         1942.000
-      Category 2    0.029           57.000
-    W8BULLYT
-      Category 1    0.919         1847.000
-      Category 2    0.081          163.000
-    W8BULLYT
-      Category 1    0.968         1947.000
-      Category 2    0.032           65.000
+    BULLY0A
+      Category 1    0.818         1642.057
+      Category 2    0.182          364.229
+    BULLY0B
+      Category 1    0.804         1606.924
+      Category 2    0.196          392.952
+    BULLY0C
+      Category 1    0.924         1861.043
+      Category 2    0.076          154.147
+    BULLY0D
+      Category 1    0.913         1837.542
+      Category 2    0.087          176.141
+    BULLY0E
+      Category 1    0.971         1942.394
+      Category 2    0.029           57.032
+    BULLY0F
+      Category 1    0.920         1848.848
+      Category 2    0.080          161.674
+    BULLY0G
+      Category 1    0.970         1955.170
+      Category 2    0.030           59.480
 
 
 SAMPLE STATISTICS
@@ -378,99 +382,99 @@ SAMPLE STATISTICS
 
 
            MEANS/INTERCEPTS/THRESHOLDS
-              W8BULLYT      W8BULLYT      W8BULLYT      W8BULLYT      W8BULLYT
+              BULLY0A$      BULLY0B$      BULLY0C$      BULLY0D$      BULLY0E$
               ________      ________      ________      ________      ________
-                1.003         1.018         1.696         1.558         2.043
+                0.976         0.995         1.682         1.551         2.031
 
 
            MEANS/INTERCEPTS/THRESHOLDS
-              W8BULLYT      W8BULLYT
+              BULLY0F$      BULLY0G$
               ________      ________
-                1.508         1.654
+                1.496         1.637
 
 
            CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
-              W8BULLYT      W8BULLYT      W8BULLYT      W8BULLYT      W8BULLYT
+              BULLY0A       BULLY0B       BULLY0C       BULLY0D       BULLY0E
               ________      ________      ________      ________      ________
- W8BULLYT
- W8BULLYT       0.789
- W8BULLYT       0.601         0.541
- W8BULLYT       0.630         0.616         0.535
- W8BULLYT       0.606         0.695         0.542         0.758
- W8BULLYT       0.396         0.421         0.492         0.474         0.416
- W8BULLYT       0.417         0.405         0.333         0.411         0.498
+ BULLY0A
+ BULLY0B        0.781
+ BULLY0C        0.573         0.517
+ BULLY0D        0.612         0.611         0.518
+ BULLY0E        0.593         0.718         0.515         0.755
+ BULLY0F        0.359         0.396         0.464         0.457         0.411
+ BULLY0G        0.424         0.404         0.328         0.397         0.526
 
 
            CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
-              W8BULLYT      W8BULLYT
+              BULLY0F       BULLY0G
               ________      ________
- W8BULLYT       0.392
+ BULLY0G        0.412
 
 
      ESTIMATED SAMPLE STATISTICS FOR TEL
 
 
            MEANS/INTERCEPTS/THRESHOLDS
-              W8BULLYT      W8BULLYT      W8BULLYT      W8BULLYT      W8BULLYT
+              BULLY0A$      BULLY0B$      BULLY0C$      BULLY0D$      BULLY0E$
               ________      ________      ________      ________      ________
-                1.113         1.108         1.598         1.542         1.957
+                1.074         1.082         1.527         1.519         1.981
 
 
            MEANS/INTERCEPTS/THRESHOLDS
-              W8BULLYT      W8BULLYT
+              BULLY0F$      BULLY0G$
               ________      ________
-                1.481         1.797
+                1.482         1.739
 
 
            CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
-              W8BULLYT      W8BULLYT      W8BULLYT      W8BULLYT      W8BULLYT
+              BULLY0A       BULLY0B       BULLY0C       BULLY0D       BULLY0E
               ________      ________      ________      ________      ________
- W8BULLYT
- W8BULLYT       0.769
- W8BULLYT       0.567         0.502
- W8BULLYT       0.491         0.603         0.560
- W8BULLYT       0.447         0.747         0.322         0.551
- W8BULLYT       0.379         0.444         0.483         0.448         0.384
- W8BULLYT       0.530         0.484         0.320         0.369         0.116
+ BULLY0A
+ BULLY0B        0.733
+ BULLY0C        0.579         0.462
+ BULLY0D        0.451         0.565         0.581
+ BULLY0E        0.419         0.733         0.203         0.552
+ BULLY0F        0.331         0.332         0.430         0.403         0.345
+ BULLY0G        0.418         0.406         0.357         0.438         0.178
 
 
            CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
-              W8BULLYT      W8BULLYT
+              BULLY0F       BULLY0G
               ________      ________
- W8BULLYT       0.056
+ BULLY0G        0.109
 
 
      ESTIMATED SAMPLE STATISTICS FOR FTF
 
 
            MEANS/INTERCEPTS/THRESHOLDS
-              W8BULLYT      W8BULLYT      W8BULLYT      W8BULLYT      W8BULLYT
+              BULLY0A$      BULLY0B$      BULLY0C$      BULLY0D$      BULLY0E$
               ________      ________      ________      ________      ________
-                0.920         0.876         1.461         1.353         1.903
+                0.909         0.854         1.429         1.356         1.903
 
 
            MEANS/INTERCEPTS/THRESHOLDS
-              W8BULLYT      W8BULLYT
+              BULLY0F$      BULLY0G$
               ________      ________
-                1.398         1.848
+                1.402         1.888
 
 
            CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
-              W8BULLYT      W8BULLYT      W8BULLYT      W8BULLYT      W8BULLYT
+              BULLY0A       BULLY0B       BULLY0C       BULLY0D       BULLY0E
               ________      ________      ________      ________      ________
- W8BULLYT
- W8BULLYT       0.755
- W8BULLYT       0.575         0.549
- W8BULLYT       0.633         0.740         0.672
- W8BULLYT       0.506         0.714         0.503         0.738
- W8BULLYT       0.556         0.569         0.446         0.595         0.534
- W8BULLYT       0.452         0.494         0.373         0.454         0.371
+ BULLY0A
+ BULLY0B        0.756
+ BULLY0C        0.553         0.566
+ BULLY0D        0.616         0.748         0.654
+ BULLY0E        0.530         0.682         0.567         0.757
+ BULLY0F        0.544         0.567         0.466         0.560         0.558
+ BULLY0G        0.466         0.517         0.411         0.460         0.350
 
 
            CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
-              W8BULLYT      W8BULLYT
+              BULLY0F       BULLY0G
               ________      ________
- W8BULLYT       0.405
+ BULLY0G        0.448
 
 
 THE MODEL ESTIMATION TERMINATED NORMALLY
@@ -483,15 +487,15 @@ Number of Free Parameters                       15
 
 Chi-Square Test of Model Fit
 
-          Value                            269.738*
+          Value                            224.349*
           Degrees of Freedom                    69
           P-Value                           0.0000
 
 Chi-Square Contribution From Each Group
 
-          WEB                              166.050
-          TEL                               29.918
-          FTF                               73.770
+          WEB                              132.549
+          TEL                               27.096
+          FTF                               64.704
 
 *   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
     for chi-square difference testing in the regular way.  MLM, MLR and WLSM
@@ -500,8 +504,8 @@ Chi-Square Contribution From Each Group
 
 RMSEA (Root Mean Square Error Of Approximation)
 
-          Estimate                           0.035
-          90 Percent C.I.                    0.031  0.039
+          Estimate                           0.031
+          90 Percent C.I.                    0.026  0.035
           Probability RMSEA <= .05           1.000
 
 CFI/TLI
@@ -511,17 +515,17 @@ CFI/TLI
 
 Chi-Square Test of Model Fit for the Baseline Model
 
-          Value                           8951.402
+          Value                           6889.881
           Degrees of Freedom                    63
           P-Value                           0.0000
 
 SRMR (Standardized Root Mean Square Residual)
 
-          Value                              0.066
+          Value                              0.069
 
 Optimum Function Value for Weighted Least-Squares Estimator
 
-          Value                     0.20141367D-01
+          Value                     0.16991676D-01
 
 
 
@@ -533,135 +537,144 @@ MODEL RESULTS
 Group WEB
 
  F1       BY
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         2.822      0.356      7.934      0.000
-    W8BULLYTYP         0.969      0.059     16.552      0.000
-    W8BULLYTYP         1.403      0.081     17.393      0.000
-    W8BULLYTYP         1.379      0.105     13.087      0.000
-    W8BULLYTYP         0.746      0.045     16.692      0.000
-    W8BULLYTYP         0.619      0.046     13.482      0.000
+    BULLY0A            1.000      0.000    999.000    999.000
+    BULLY0B            2.671      0.349      7.664      0.000
+    BULLY0C            0.931      0.060     15.649      0.000
+    BULLY0D            1.370      0.087     15.809      0.000
+    BULLY0E            1.445      0.126     11.467      0.000
+    BULLY0F            0.714      0.049     14.720      0.000
+    BULLY0G            0.637      0.051     12.388      0.000
 
  Means
     F1                 0.000      0.000    999.000    999.000
 
  Thresholds
-    W8BULLYT$1         1.440      0.029     50.461      0.000
-    W8BULLYT$1         3.070      0.346      8.878      0.000
-    W8BULLYT$1         2.287      0.073     31.539      0.000
-    W8BULLYT$1         2.636      0.105     25.189      0.000
-    W8BULLYT$1         3.456      0.172     20.072      0.000
-    W8BULLYT$1         1.871      0.048     38.981      0.000
-    W8BULLYT$1         2.033      0.050     40.681      0.000
+    BULLY0A$1          1.407      0.032     44.446      0.000
+    BULLY0B$1          2.855      0.328      8.717      0.000
+    BULLY0C$1          2.210      0.074     29.758      0.000
+    BULLY0D$1          2.581      0.114     22.694      0.000
+    BULLY0E$1          3.557      0.206     17.260      0.000
+    BULLY0F$1          1.833      0.053     34.345      0.000
+    BULLY0G$1          2.043      0.057     35.660      0.000
 
  Variances
     F1                 1.000      0.000    999.000    999.000
 
  Residual Variances
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
+    BULLY0A            1.000      0.000    999.000    999.000
+    BULLY0B            1.000      0.000    999.000    999.000
+    BULLY0C            1.000      0.000    999.000    999.000
+    BULLY0D            1.000      0.000    999.000    999.000
+    BULLY0E            1.000      0.000    999.000    999.000
+    BULLY0F            1.000      0.000    999.000    999.000
+    BULLY0G            1.000      0.000    999.000    999.000
 
 Group TEL
 
  F1       BY
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         2.822      0.356      7.934      0.000
-    W8BULLYTYP         0.969      0.059     16.552      0.000
-    W8BULLYTYP         1.403      0.081     17.393      0.000
-    W8BULLYTYP         1.379      0.105     13.087      0.000
-    W8BULLYTYP         0.746      0.045     16.692      0.000
-    W8BULLYTYP         0.619      0.046     13.482      0.000
+    BULLY0A            1.000      0.000    999.000    999.000
+    BULLY0B            2.671      0.349      7.664      0.000
+    BULLY0C            0.931      0.060     15.649      0.000
+    BULLY0D            1.370      0.087     15.809      0.000
+    BULLY0E            1.445      0.126     11.467      0.000
+    BULLY0F            0.714      0.049     14.720      0.000
+    BULLY0G            0.637      0.051     12.388      0.000
 
  Means
-    F1                -0.045      0.061     -0.733      0.464
+    F1                -0.030      0.067     -0.443      0.658
 
  Thresholds
-    W8BULLYT$1         1.440      0.029     50.461      0.000
-    W8BULLYT$1         3.070      0.346      8.878      0.000
-    W8BULLYT$1         2.287      0.073     31.539      0.000
-    W8BULLYT$1         2.636      0.105     25.189      0.000
-    W8BULLYT$1         3.456      0.172     20.072      0.000
-    W8BULLYT$1         1.871      0.048     38.981      0.000
-    W8BULLYT$1         2.033      0.050     40.681      0.000
+    BULLY0A$1          1.407      0.032     44.446      0.000
+    BULLY0B$1          2.855      0.328      8.717      0.000
+    BULLY0C$1          2.210      0.074     29.758      0.000
+    BULLY0D$1          2.581      0.114     22.694      0.000
+    BULLY0E$1          3.557      0.206     17.260      0.000
+    BULLY0F$1          1.833      0.053     34.345      0.000
+    BULLY0G$1          2.043      0.057     35.660      0.000
 
  Variances
     F1                 1.000      0.000    999.000    999.000
 
  Residual Variances
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
+    BULLY0A            1.000      0.000    999.000    999.000
+    BULLY0B            1.000      0.000    999.000    999.000
+    BULLY0C            1.000      0.000    999.000    999.000
+    BULLY0D            1.000      0.000    999.000    999.000
+    BULLY0E            1.000      0.000    999.000    999.000
+    BULLY0F            1.000      0.000    999.000    999.000
+    BULLY0G            1.000      0.000    999.000    999.000
 
 Group FTF
 
  F1       BY
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         2.822      0.356      7.934      0.000
-    W8BULLYTYP         0.969      0.059     16.552      0.000
-    W8BULLYTYP         1.403      0.081     17.393      0.000
-    W8BULLYTYP         1.379      0.105     13.087      0.000
-    W8BULLYTYP         0.746      0.045     16.692      0.000
-    W8BULLYTYP         0.619      0.046     13.482      0.000
+    BULLY0A            1.000      0.000    999.000    999.000
+    BULLY0B            2.671      0.349      7.664      0.000
+    BULLY0C            0.931      0.060     15.649      0.000
+    BULLY0D            1.370      0.087     15.809      0.000
+    BULLY0E            1.445      0.126     11.467      0.000
+    BULLY0F            0.714      0.049     14.720      0.000
+    BULLY0G            0.637      0.051     12.388      0.000
 
  Means
-    F1                 0.162      0.039      4.201      0.000
+    F1                 0.153      0.041      3.732      0.000
 
  Thresholds
-    W8BULLYT$1         1.440      0.029     50.461      0.000
-    W8BULLYT$1         3.070      0.346      8.878      0.000
-    W8BULLYT$1         2.287      0.073     31.539      0.000
-    W8BULLYT$1         2.636      0.105     25.189      0.000
-    W8BULLYT$1         3.456      0.172     20.072      0.000
-    W8BULLYT$1         1.871      0.048     38.981      0.000
-    W8BULLYT$1         2.033      0.050     40.681      0.000
+    BULLY0A$1          1.407      0.032     44.446      0.000
+    BULLY0B$1          2.855      0.328      8.717      0.000
+    BULLY0C$1          2.210      0.074     29.758      0.000
+    BULLY0D$1          2.581      0.114     22.694      0.000
+    BULLY0E$1          3.557      0.206     17.260      0.000
+    BULLY0F$1          1.833      0.053     34.345      0.000
+    BULLY0G$1          2.043      0.057     35.660      0.000
 
  Variances
     F1                 1.000      0.000    999.000    999.000
 
  Residual Variances
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
+    BULLY0A            1.000      0.000    999.000    999.000
+    BULLY0B            1.000      0.000    999.000    999.000
+    BULLY0C            1.000      0.000    999.000    999.000
+    BULLY0D            1.000      0.000    999.000    999.000
+    BULLY0E            1.000      0.000    999.000    999.000
+    BULLY0F            1.000      0.000    999.000    999.000
+    BULLY0G            1.000      0.000    999.000    999.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.299E-02
+       (ratio of smallest to largest eigenvalue)
 
 
 IRT PARAMETERIZATION
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
 
 Group WEB
 
  Item Discriminations
 
  F1       BY
-    W8BULLYTYP         1.000      0.000      0.000      1.000
-    W8BULLYTYP         2.822      0.356      7.934      0.000
-    W8BULLYTYP         0.969      0.059     16.552      0.000
-    W8BULLYTYP         1.403      0.081     17.393      0.000
-    W8BULLYTYP         1.379      0.105     13.087      0.000
-    W8BULLYTYP         0.746      0.045     16.692      0.000
-    W8BULLYTYP         0.619      0.046     13.482      0.000
+    BULLY0A            1.000      0.000      0.000      1.000
+    BULLY0B            2.671      0.349      7.664      0.000
+    BULLY0C            0.931      0.060     15.649      0.000
+    BULLY0D            1.370      0.087     15.809      0.000
+    BULLY0E            1.445      0.126     11.467      0.000
+    BULLY0F            0.714      0.049     14.720      0.000
+    BULLY0G            0.637      0.051     12.388      0.000
 
  Means
     F1                 0.000      0.000      0.000      1.000
 
  Item Difficulties
-    W8BULLYT$1         1.440      0.029     50.461      0.000
-    W8BULLYT$1         1.088      0.028     38.232      0.000
-    W8BULLYT$1         2.361      0.086     27.314      0.000
-    W8BULLYT$1         1.879      0.050     37.240      0.000
-    W8BULLYT$1         2.506      0.085     29.518      0.000
-    W8BULLYT$1         2.507      0.107     23.481      0.000
-    W8BULLYT$1         3.282      0.188     17.473      0.000
+    BULLY0A$1          1.407      0.032     44.446      0.000
+    BULLY0B$1          1.069      0.032     33.113      0.000
+    BULLY0C$1          2.373      0.093     25.566      0.000
+    BULLY0D$1          1.884      0.056     33.934      0.000
+    BULLY0E$1          2.462      0.090     27.317      0.000
+    BULLY0F$1          2.566      0.125     20.521      0.000
+    BULLY0G$1          3.209      0.198     16.209      0.000
 
  Variances
     F1                 1.000      0.000      0.000      1.000
@@ -671,25 +684,25 @@ Group TEL
  Item Discriminations
 
  F1       BY
-    W8BULLYTYP         1.000      0.000      0.000      1.000
-    W8BULLYTYP         2.822      0.356      7.934      0.000
-    W8BULLYTYP         0.969      0.059     16.552      0.000
-    W8BULLYTYP         1.403      0.081     17.393      0.000
-    W8BULLYTYP         1.379      0.105     13.087      0.000
-    W8BULLYTYP         0.746      0.045     16.692      0.000
-    W8BULLYTYP         0.619      0.046     13.482      0.000
+    BULLY0A            1.000      0.000      0.000      1.000
+    BULLY0B            2.671      0.349      7.664      0.000
+    BULLY0C            0.931      0.060     15.649      0.000
+    BULLY0D            1.370      0.087     15.809      0.000
+    BULLY0E            1.445      0.126     11.467      0.000
+    BULLY0F            0.714      0.049     14.720      0.000
+    BULLY0G            0.637      0.051     12.388      0.000
 
  Means
     F1                 0.000      0.000      0.000      1.000
 
  Item Difficulties
-    W8BULLYT$1         1.485      0.060     24.657      0.000
-    W8BULLYT$1         1.133      0.061     18.708      0.000
-    W8BULLYT$1         2.405      0.100     23.939      0.000
-    W8BULLYT$1         1.923      0.072     26.695      0.000
-    W8BULLYT$1         2.550      0.099     25.655      0.000
-    W8BULLYT$1         2.552      0.119     21.457      0.000
-    W8BULLYT$1         3.327      0.194     17.139      0.000
+    BULLY0A$1          1.437      0.066     21.709      0.000
+    BULLY0B$1          1.099      0.066     16.647      0.000
+    BULLY0C$1          2.403      0.109     22.076      0.000
+    BULLY0D$1          1.914      0.080     24.003      0.000
+    BULLY0E$1          2.492      0.105     23.675      0.000
+    BULLY0F$1          2.596      0.137     18.945      0.000
+    BULLY0G$1          3.239      0.206     15.748      0.000
 
  Variances
     F1                 1.000      0.000      0.000      1.000
@@ -699,25 +712,25 @@ Group FTF
  Item Discriminations
 
  F1       BY
-    W8BULLYTYP         1.000      0.000      0.000      1.000
-    W8BULLYTYP         2.822      0.356      7.934      0.000
-    W8BULLYTYP         0.969      0.059     16.552      0.000
-    W8BULLYTYP         1.403      0.081     17.393      0.000
-    W8BULLYTYP         1.379      0.105     13.087      0.000
-    W8BULLYTYP         0.746      0.045     16.692      0.000
-    W8BULLYTYP         0.619      0.046     13.482      0.000
+    BULLY0A            1.000      0.000      0.000      1.000
+    BULLY0B            2.671      0.349      7.664      0.000
+    BULLY0C            0.931      0.060     15.649      0.000
+    BULLY0D            1.370      0.087     15.809      0.000
+    BULLY0E            1.445      0.126     11.467      0.000
+    BULLY0F            0.714      0.049     14.720      0.000
+    BULLY0G            0.637      0.051     12.388      0.000
 
  Means
     F1                 0.000      0.000      0.000      1.000
 
  Item Difficulties
-    W8BULLYT$1         1.278      0.037     34.875      0.000
-    W8BULLYT$1         0.925      0.036     25.407      0.000
-    W8BULLYT$1         2.198      0.088     24.873      0.000
-    W8BULLYT$1         1.716      0.055     31.134      0.000
-    W8BULLYT$1         2.343      0.086     27.111      0.000
-    W8BULLYT$1         2.344      0.109     21.558      0.000
-    W8BULLYT$1         3.120      0.188     16.559      0.000
+    BULLY0A$1          1.254      0.038     32.830      0.000
+    BULLY0B$1          0.916      0.038     23.917      0.000
+    BULLY0C$1          2.220      0.096     23.026      0.000
+    BULLY0D$1          1.731      0.060     28.968      0.000
+    BULLY0E$1          2.309      0.091     25.425      0.000
+    BULLY0F$1          2.413      0.127     18.991      0.000
+    BULLY0G$1          3.056      0.198     15.465      0.000
 
  Variances
     F1                 1.000      0.000      0.000      1.000
@@ -734,107 +747,107 @@ STD Standardization
 Group WEB
 
  F1       BY
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         2.822      0.356      7.934      0.000
-    W8BULLYTYP         0.969      0.059     16.552      0.000
-    W8BULLYTYP         1.403      0.081     17.393      0.000
-    W8BULLYTYP         1.379      0.105     13.087      0.000
-    W8BULLYTYP         0.746      0.045     16.692      0.000
-    W8BULLYTYP         0.619      0.046     13.482      0.000
+    BULLY0A            1.000      0.000    999.000    999.000
+    BULLY0B            2.671      0.349      7.664      0.000
+    BULLY0C            0.931      0.060     15.649      0.000
+    BULLY0D            1.370      0.087     15.809      0.000
+    BULLY0E            1.445      0.126     11.467      0.000
+    BULLY0F            0.714      0.049     14.720      0.000
+    BULLY0G            0.637      0.051     12.388      0.000
 
  Means
     F1                 0.000      0.000    999.000    999.000
 
  Thresholds
-    W8BULLYT$1         1.440      0.029     50.461      0.000
-    W8BULLYT$1         3.070      0.346      8.878      0.000
-    W8BULLYT$1         2.287      0.073     31.539      0.000
-    W8BULLYT$1         2.636      0.105     25.189      0.000
-    W8BULLYT$1         3.456      0.172     20.072      0.000
-    W8BULLYT$1         1.871      0.048     38.981      0.000
-    W8BULLYT$1         2.033      0.050     40.681      0.000
+    BULLY0A$1          1.407      0.032     44.446      0.000
+    BULLY0B$1          2.855      0.328      8.717      0.000
+    BULLY0C$1          2.210      0.074     29.758      0.000
+    BULLY0D$1          2.581      0.114     22.694      0.000
+    BULLY0E$1          3.557      0.206     17.260      0.000
+    BULLY0F$1          1.833      0.053     34.345      0.000
+    BULLY0G$1          2.043      0.057     35.660      0.000
 
  Variances
     F1                 1.000      0.000    999.000    999.000
 
  Residual Variances
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
+    BULLY0A            1.000      0.000    999.000    999.000
+    BULLY0B            1.000      0.000    999.000    999.000
+    BULLY0C            1.000      0.000    999.000    999.000
+    BULLY0D            1.000      0.000    999.000    999.000
+    BULLY0E            1.000      0.000    999.000    999.000
+    BULLY0F            1.000      0.000    999.000    999.000
+    BULLY0G            1.000      0.000    999.000    999.000
 
 Group TEL
 
  F1       BY
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         2.822      0.356      7.934      0.000
-    W8BULLYTYP         0.969      0.059     16.552      0.000
-    W8BULLYTYP         1.403      0.081     17.393      0.000
-    W8BULLYTYP         1.379      0.105     13.087      0.000
-    W8BULLYTYP         0.746      0.045     16.692      0.000
-    W8BULLYTYP         0.619      0.046     13.482      0.000
+    BULLY0A            1.000      0.000    999.000    999.000
+    BULLY0B            2.671      0.349      7.664      0.000
+    BULLY0C            0.931      0.060     15.649      0.000
+    BULLY0D            1.370      0.087     15.809      0.000
+    BULLY0E            1.445      0.126     11.467      0.000
+    BULLY0F            0.714      0.049     14.720      0.000
+    BULLY0G            0.637      0.051     12.388      0.000
 
  Means
-    F1                -0.045      0.061     -0.733      0.464
+    F1                -0.030      0.067     -0.443      0.658
 
  Thresholds
-    W8BULLYT$1         1.440      0.029     50.461      0.000
-    W8BULLYT$1         3.070      0.346      8.878      0.000
-    W8BULLYT$1         2.287      0.073     31.539      0.000
-    W8BULLYT$1         2.636      0.105     25.189      0.000
-    W8BULLYT$1         3.456      0.172     20.072      0.000
-    W8BULLYT$1         1.871      0.048     38.981      0.000
-    W8BULLYT$1         2.033      0.050     40.681      0.000
+    BULLY0A$1          1.407      0.032     44.446      0.000
+    BULLY0B$1          2.855      0.328      8.717      0.000
+    BULLY0C$1          2.210      0.074     29.758      0.000
+    BULLY0D$1          2.581      0.114     22.694      0.000
+    BULLY0E$1          3.557      0.206     17.260      0.000
+    BULLY0F$1          1.833      0.053     34.345      0.000
+    BULLY0G$1          2.043      0.057     35.660      0.000
 
  Variances
     F1                 1.000      0.000    999.000    999.000
 
  Residual Variances
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
+    BULLY0A            1.000      0.000    999.000    999.000
+    BULLY0B            1.000      0.000    999.000    999.000
+    BULLY0C            1.000      0.000    999.000    999.000
+    BULLY0D            1.000      0.000    999.000    999.000
+    BULLY0E            1.000      0.000    999.000    999.000
+    BULLY0F            1.000      0.000    999.000    999.000
+    BULLY0G            1.000      0.000    999.000    999.000
 
 Group FTF
 
  F1       BY
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         2.822      0.356      7.934      0.000
-    W8BULLYTYP         0.969      0.059     16.552      0.000
-    W8BULLYTYP         1.403      0.081     17.393      0.000
-    W8BULLYTYP         1.379      0.105     13.087      0.000
-    W8BULLYTYP         0.746      0.045     16.692      0.000
-    W8BULLYTYP         0.619      0.046     13.482      0.000
+    BULLY0A            1.000      0.000    999.000    999.000
+    BULLY0B            2.671      0.349      7.664      0.000
+    BULLY0C            0.931      0.060     15.649      0.000
+    BULLY0D            1.370      0.087     15.809      0.000
+    BULLY0E            1.445      0.126     11.467      0.000
+    BULLY0F            0.714      0.049     14.720      0.000
+    BULLY0G            0.637      0.051     12.388      0.000
 
  Means
-    F1                 0.162      0.039      4.201      0.000
+    F1                 0.153      0.041      3.732      0.000
 
  Thresholds
-    W8BULLYT$1         1.440      0.029     50.461      0.000
-    W8BULLYT$1         3.070      0.346      8.878      0.000
-    W8BULLYT$1         2.287      0.073     31.539      0.000
-    W8BULLYT$1         2.636      0.105     25.189      0.000
-    W8BULLYT$1         3.456      0.172     20.072      0.000
-    W8BULLYT$1         1.871      0.048     38.981      0.000
-    W8BULLYT$1         2.033      0.050     40.681      0.000
+    BULLY0A$1          1.407      0.032     44.446      0.000
+    BULLY0B$1          2.855      0.328      8.717      0.000
+    BULLY0C$1          2.210      0.074     29.758      0.000
+    BULLY0D$1          2.581      0.114     22.694      0.000
+    BULLY0E$1          3.557      0.206     17.260      0.000
+    BULLY0F$1          1.833      0.053     34.345      0.000
+    BULLY0G$1          2.043      0.057     35.660      0.000
 
  Variances
     F1                 1.000      0.000    999.000    999.000
 
  Residual Variances
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
-    W8BULLYTYP         1.000      0.000    999.000    999.000
+    BULLY0A            1.000      0.000    999.000    999.000
+    BULLY0B            1.000      0.000    999.000    999.000
+    BULLY0C            1.000      0.000    999.000    999.000
+    BULLY0D            1.000      0.000    999.000    999.000
+    BULLY0E            1.000      0.000    999.000    999.000
+    BULLY0F            1.000      0.000    999.000    999.000
+    BULLY0G            1.000      0.000    999.000    999.000
 
 
 R-SQUARE
@@ -844,45 +857,39 @@ Group WEB
     Observed                                        Two-Tailed     Scale
     Variable        Estimate       S.E.  Est./S.E.    P-Value     Factors
 
-    W8BULLYT           0.500      0.000    999.000    999.000      0.707
-    W8BULLYT           0.888      0.025     35.565      0.000      0.334
-    W8BULLYT           0.484      0.030     16.045      0.000      0.718
-    W8BULLYT           0.663      0.026     25.816      0.000      0.580
-    W8BULLYT           0.655      0.035     18.994      0.000      0.587
-    W8BULLYT           0.358      0.028     12.993      0.000      0.801
-    W8BULLYT           0.277      0.030      9.327      0.000      0.850
+    BULLY0A            0.500      0.000    999.000    999.000      0.707
+    BULLY0B            0.877      0.028     31.172      0.000      0.351
+    BULLY0C            0.464      0.032     14.609      0.000      0.732
+    BULLY0D            0.652      0.029     22.736      0.000      0.590
+    BULLY0E            0.676      0.038     17.705      0.000      0.569
+    BULLY0F            0.338      0.030     11.114      0.000      0.814
+    BULLY0G            0.288      0.033      8.706      0.000      0.844
 
 Group TEL
 
     Observed                                        Two-Tailed     Scale
     Variable        Estimate       S.E.  Est./S.E.    P-Value     Factors
 
-    W8BULLYT           0.500      0.000    999.000    999.000      0.707
-    W8BULLYT           0.888      0.025     35.565      0.000      0.334
-    W8BULLYT           0.484      0.030     16.045      0.000      0.718
-    W8BULLYT           0.663      0.026     25.816      0.000      0.580
-    W8BULLYT           0.655      0.035     18.994      0.000      0.587
-    W8BULLYT           0.358      0.028     12.993      0.000      0.801
-    W8BULLYT           0.277      0.030      9.327      0.000      0.850
+    BULLY0A            0.500      0.000    999.000    999.000      0.707
+    BULLY0B            0.877      0.028     31.172      0.000      0.351
+    BULLY0C            0.464      0.032     14.609      0.000      0.732
+    BULLY0D            0.652      0.029     22.736      0.000      0.590
+    BULLY0E            0.676      0.038     17.705      0.000      0.569
+    BULLY0F            0.338      0.030     11.114      0.000      0.814
+    BULLY0G            0.288      0.033      8.706      0.000      0.844
 
 Group FTF
 
     Observed                                        Two-Tailed     Scale
     Variable        Estimate       S.E.  Est./S.E.    P-Value     Factors
 
-    W8BULLYT           0.500      0.000    999.000    999.000      0.707
-    W8BULLYT           0.888      0.025     35.565      0.000      0.334
-    W8BULLYT           0.484      0.030     16.045      0.000      0.718
-    W8BULLYT           0.663      0.026     25.816      0.000      0.580
-    W8BULLYT           0.655      0.035     18.994      0.000      0.587
-    W8BULLYT           0.358      0.028     12.993      0.000      0.801
-    W8BULLYT           0.277      0.030      9.327      0.000      0.850
-
-
-QUALITY OF NUMERICAL RESULTS
-
-     Condition Number for the Information Matrix              0.258E-02
-       (ratio of smallest to largest eigenvalue)
+    BULLY0A            0.500      0.000    999.000    999.000      0.707
+    BULLY0B            0.877      0.028     31.172      0.000      0.351
+    BULLY0C            0.464      0.032     14.609      0.000      0.732
+    BULLY0D            0.652      0.029     22.736      0.000      0.590
+    BULLY0E            0.676      0.038     17.705      0.000      0.569
+    BULLY0F            0.338      0.030     11.114      0.000      0.814
+    BULLY0G            0.288      0.033      8.706      0.000      0.844
 
 
 MODEL MODIFICATION INDICES
@@ -899,19 +906,18 @@ Group WEB
 
 BY Statements
 
-F1       BY W8BULLYT              54.158     0.255      0.255        0.181
+F1       BY BULLY0A               37.322     0.241      0.241        0.170
 
 WITH Statements
 
-W8BULLYT WITH W8BULLYT            67.320     0.634      0.634        0.634
-W8BULLYT WITH W8BULLYT            11.608     0.234      0.234        0.234
-W8BULLYT WITH W8BULLYT            11.784    -0.558     -0.558       -0.558
-W8BULLYT WITH W8BULLYT            30.532    -0.944     -0.944       -0.944
-W8BULLYT WITH W8BULLYT            17.543    -0.616     -0.616       -0.616
+BULLY0B  WITH BULLY0A             49.812     0.584      0.584        0.584
+BULLY0C  WITH BULLY0B             11.479    -0.549     -0.549       -0.549
+BULLY0D  WITH BULLY0B             21.294    -0.847     -0.847       -0.847
+BULLY0F  WITH BULLY0B             14.088    -0.593     -0.593       -0.593
 
 Variances/Residual Variances
 
-W8BULLYT                          40.881    -0.443     -0.443       -0.221
+BULLY0A                           25.814    -0.400     -0.400       -0.200
 
 Group TEL
 
@@ -924,11 +930,11 @@ Group FTF
 ON/BY Statements
 
 F1       ON F1       /
-F1       BY F1                    13.609     0.076      0.076        0.076
+F1       BY F1                    13.724     0.084      0.084        0.084
 
 Variances/Residual Variances
 
-F1                                13.610     0.152      0.152        0.152
+F1                                13.724     0.168      0.168        0.168
 
 
 
@@ -941,21 +947,21 @@ SAMPLE STATISTICS FOR ESTIMATED FACTOR SCORES
            Means
               F1            F1_SE
               ________      ________
-                0.189         0.720
+                0.189         0.712
 
 
            Covariances
               F1            F1_SE
               ________      ________
- F1             0.386
- F1_SE         -0.114         0.040
+ F1             0.399
+ F1_SE         -0.114         0.038
 
 
            Correlations
               F1            F1_SE
               ________      ________
  F1             1.000
- F1_SE         -0.923         1.000
+ F1_SE         -0.922         1.000
 
 
 PLOT INFORMATION
@@ -978,9 +984,9 @@ DIAGRAM INFORMATION
   Diagram output
     c:\users\msassac6\dropbox (the university of manchester)\papers\joe s\uclmm\uclmm_r\mplus\mean no correction\scalar_
 
-     Beginning Time:  09:29:16
-        Ending Time:  09:29:17
-       Elapsed Time:  00:00:01
+     Beginning Time:  08:26:20
+        Ending Time:  08:26:20
+       Elapsed Time:  00:00:00
 
 
 
@@ -993,4 +999,4 @@ Fax: (310) 391-8971
 Web: www.StatModel.com
 Support: Support@StatModel.com
 
-Copyright (c) 1998-2019 Muthen & Muthen
+Copyright (c) 1998-2021 Muthen & Muthen

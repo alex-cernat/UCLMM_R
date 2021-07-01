@@ -1,6 +1,6 @@
-Mplus VERSION 8.3
+Mplus VERSION 8.6
 MUTHEN & MUTHEN
-08/23/2019   2:45 PM
+07/01/2021   7:30 AM
 
 INPUT INSTRUCTIONS
 
@@ -12,9 +12,9 @@ INPUT INSTRUCTIONS
 
   NAMES = audit1 bully0a bully0b bully0c bully0d bully0e bully0f bully0g adult0a
        adult0b adult0c leisa0a leisa0b leisa0c leisa0d leisa0e leisa0f leisb0a leisb0b
-       leisb0c leisb0d samppsu sampstratum mode locus0a locus0b locus0c locus0d
-       ghq12_1 ghq12_2 ghq12_3 ghq12_4 ghq12_5 ghq12_6 ghq12_7 ghq12_8 ghq12_9
-       ghq12_10 ghq12_11 ghq12_12 audit2 audit3 designweight_combin;
+       leisb0c leisb0d designweight samppsu sampstratum mode locus0a locus0b locus0c
+       locus0d ghq_1 ghq_2 ghq_3 ghq_4 ghq_5 ghq_6 ghq_7 ghq_8 ghq_9 ghq_10 ghq_11
+       ghq_12 audit2 audit3 designweight_combin;
 
   MISSING=.;
   USEVARIABLES ARE leisa0a
@@ -323,99 +323,99 @@ UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
 
   Group WEB
     LEISA0A
-      Category 1    0.594         2706.107
-      Category 2    0.145          660.406
-      Category 3    0.162          738.211
-      Category 4    0.099          452.537
+      Category 1    0.597         2719.989
+      Category 2    0.144          655.518
+      Category 3    0.165          753.949
+      Category 4    0.094          427.949
     LEISA0B
-      Category 1    0.063          286.500
-      Category 2    0.395         1802.296
-      Category 3    0.463         2108.415
-      Category 4    0.079          360.789
+      Category 1    0.061          279.302
+      Category 2    0.394         1797.608
+      Category 3    0.467         2129.019
+      Category 4    0.077          352.071
     LEISA0C
-      Category 1    0.006           27.772
-      Category 2    0.100          453.401
-      Category 3    0.515         2347.037
-      Category 4    0.379         1727.634
+      Category 1    0.007           29.837
+      Category 2    0.092          419.370
+      Category 3    0.518         2358.133
+      Category 4    0.384         1748.498
     LEISA0D
-      Category 1    0.221         1009.413
-      Category 2    0.559         2548.323
-      Category 3    0.179          817.603
-      Category 4    0.040          182.364
+      Category 1    0.219          999.450
+      Category 2    0.554         2526.595
+      Category 3    0.185          844.756
+      Category 4    0.041          187.039
     LEISA0E
-      Category 1    0.219          997.021
-      Category 2    0.394         1792.143
-      Category 3    0.257         1169.796
-      Category 4    0.130          591.339
+      Category 1    0.216          983.293
+      Category 2    0.392         1786.904
+      Category 3    0.260         1184.146
+      Category 4    0.132          600.800
     LEISA0F
-      Category 1    0.069          312.230
-      Category 2    0.068          310.627
-      Category 3    0.285         1299.441
-      Category 4    0.578         2630.689
+      Category 1    0.065          293.996
+      Category 2    0.068          308.056
+      Category 3    0.285         1299.944
+      Category 4    0.582         2652.386
 
   Group TEL
     LEISA0A
-      Category 1    0.744          481.883
-      Category 2    0.131           85.139
-      Category 3    0.078           50.627
-      Category 4    0.047           30.351
+      Category 1    0.748          484.742
+      Category 2    0.143           92.714
+      Category 3    0.058           37.577
+      Category 4    0.051           32.967
     LEISA0B
-      Category 1    0.082           53.009
-      Category 2    0.472          305.983
-      Category 3    0.352          228.376
-      Category 4    0.094           60.632
+      Category 1    0.062           40.062
+      Category 2    0.483          312.982
+      Category 3    0.368          238.353
+      Category 4    0.087           56.603
     LEISA0C
-      Category 1    0.011            6.914
-      Category 2    0.149           96.717
-      Category 3    0.439          284.750
-      Category 4    0.401          259.620
+      Category 1    0.012            7.832
+      Category 2    0.159          102.717
+      Category 3    0.461          298.996
+      Category 4    0.368          238.456
     LEISA0D
-      Category 1    0.352          227.864
-      Category 2    0.464          300.891
-      Category 3    0.144           93.151
-      Category 4    0.040           26.095
+      Category 1    0.319          206.496
+      Category 2    0.501          324.441
+      Category 3    0.143           92.671
+      Category 4    0.038           24.392
     LEISA0E
-      Category 1    0.385          249.377
-      Category 2    0.313          202.616
-      Category 3    0.156          101.377
-      Category 4    0.146           94.630
+      Category 1    0.334          216.592
+      Category 2    0.323          209.250
+      Category 3    0.194          125.960
+      Category 4    0.148           96.198
     LEISA0F
-      Category 1    0.070           45.513
-      Category 2    0.041           26.269
-      Category 3    0.153           98.949
-      Category 4    0.737          477.268
+      Category 1    0.063           40.726
+      Category 2    0.049           31.963
+      Category 3    0.182          117.648
+      Category 4    0.706          457.663
 
   Group FTF
     LEISA0A
-      Category 1    0.673         1453.942
-      Category 2    0.084          181.403
-      Category 3    0.098          212.668
-      Category 4    0.144          311.519
+      Category 1    0.693         1497.296
+      Category 2    0.085          184.481
+      Category 3    0.099          213.212
+      Category 4    0.123          264.877
     LEISA0B
-      Category 1    0.057          122.873
-      Category 2    0.361          779.590
-      Category 3    0.427          922.815
-      Category 4    0.155          334.722
+      Category 1    0.052          113.099
+      Category 2    0.389          839.356
+      Category 3    0.426          919.962
+      Category 4    0.133          287.582
     LEISA0C
-      Category 1    0.008           16.765
-      Category 2    0.084          180.653
-      Category 3    0.437          942.997
-      Category 4    0.472         1019.585
+      Category 1    0.008           17.175
+      Category 2    0.095          204.130
+      Category 3    0.471         1016.471
+      Category 4    0.427          922.225
     LEISA0D
-      Category 1    0.265          572.145
-      Category 2    0.491         1059.658
-      Category 3    0.186          402.325
-      Category 4    0.058          125.872
+      Category 1    0.269          580.967
+      Category 2    0.515         1112.826
+      Category 3    0.171          368.512
+      Category 4    0.045           97.695
     LEISA0E
-      Category 1    0.263          567.500
-      Category 2    0.311          672.658
-      Category 3    0.248          536.086
-      Category 4    0.178          383.756
+      Category 1    0.267          576.943
+      Category 2    0.338          731.085
+      Category 3    0.241          520.009
+      Category 4    0.154          331.962
     LEISA0F
-      Category 1    0.064          138.431
-      Category 2    0.039           83.205
-      Category 3    0.140          301.377
-      Category 4    0.758         1636.341
+      Category 1    0.061          130.917
+      Category 2    0.044           95.141
+      Category 3    0.150          324.695
+      Category 4    0.745         1608.853
 
 
 SAMPLE STATISTICS
@@ -427,36 +427,36 @@ SAMPLE STATISTICS
            MEANS/INTERCEPTS/THRESHOLDS
               LEISA0A$      LEISA0A$      LEISA0A$      LEISA0B$      LEISA0B$
               ________      ________      ________      ________      ________
-                0.237         0.639         1.286        -1.531        -0.105
+                0.245         0.645         1.317        -1.544        -0.111
 
 
            MEANS/INTERCEPTS/THRESHOLDS
               LEISA0B$      LEISA0C$      LEISA0C$      LEISA0C$      LEISA0D$
               ________      ________      ________      ________      ________
-                1.411        -2.507        -1.250         0.308        -0.767
+                1.424        -2.481        -1.290         0.296        -0.775
 
 
            MEANS/INTERCEPTS/THRESHOLDS
               LEISA0D$      LEISA0D$      LEISA0E$      LEISA0E$      LEISA0E$
               ________      ________      ________      ________      ________
-                0.774         1.751        -0.775         0.287         1.127
+                0.751         1.739        -0.786         0.274         1.117
 
 
            MEANS/INTERCEPTS/THRESHOLDS
               LEISA0F$      LEISA0F$      LEISA0F$
               ________      ________      ________
-               -1.486        -1.095        -0.196
+               -1.518        -1.116        -0.208
 
 
            CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
               LEISA0A       LEISA0B       LEISA0C       LEISA0D       LEISA0E
               ________      ________      ________      ________      ________
  LEISA0A
- LEISA0B        0.298
- LEISA0C        0.219         0.414
- LEISA0D        0.253         0.523         0.307
- LEISA0E        0.239         0.382         0.264         0.534
- LEISA0F        0.118         0.237         0.385         0.191         0.207
+ LEISA0B        0.314
+ LEISA0C        0.204         0.402
+ LEISA0D        0.255         0.513         0.294
+ LEISA0E        0.238         0.375         0.269         0.534
+ LEISA0F        0.133         0.226         0.377         0.194         0.204
 
 
            CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
@@ -470,36 +470,36 @@ SAMPLE STATISTICS
            MEANS/INTERCEPTS/THRESHOLDS
               LEISA0A$      LEISA0A$      LEISA0A$      LEISA0B$      LEISA0B$
               ________      ________      ________      ________      ________
-                0.655         1.151         1.676        -1.393         0.136
+                0.668         1.233         1.636        -1.540         0.113
 
 
            MEANS/INTERCEPTS/THRESHOLDS
               LEISA0B$      LEISA0C$      LEISA0C$      LEISA0C$      LEISA0D$
               ________      ________      ________      ________      ________
-                1.319        -2.302        -0.995         0.252        -0.381
+                1.357        -2.254        -0.952         0.337        -0.471
 
 
            MEANS/INTERCEPTS/THRESHOLDS
               LEISA0D$      LEISA0D$      LEISA0E$      LEISA0E$      LEISA0E$
               ________      ________      ________      ________      ________
-                0.900         1.748        -0.293         0.517         1.054
+                0.913         1.779        -0.428         0.405         1.043
 
 
            MEANS/INTERCEPTS/THRESHOLDS
               LEISA0F$      LEISA0F$      LEISA0F$
               ________      ________      ________
-               -1.474        -1.222        -0.633
+               -1.531        -1.215        -0.543
 
 
            CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
               LEISA0A       LEISA0B       LEISA0C       LEISA0D       LEISA0E
               ________      ________      ________      ________      ________
  LEISA0A
- LEISA0B        0.259
- LEISA0C        0.252         0.367
- LEISA0D        0.175         0.404         0.293
- LEISA0E        0.233         0.362         0.201         0.405
- LEISA0F        0.072         0.081         0.259         0.149         0.076
+ LEISA0B        0.224
+ LEISA0C        0.236         0.458
+ LEISA0D        0.012         0.449         0.267
+ LEISA0E        0.179         0.382         0.250         0.481
+ LEISA0F        0.095         0.196         0.333         0.171         0.137
 
 
            CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
@@ -513,36 +513,36 @@ SAMPLE STATISTICS
            MEANS/INTERCEPTS/THRESHOLDS
               LEISA0A$      LEISA0A$      LEISA0A$      LEISA0B$      LEISA0B$
               ________      ________      ________      ________      ________
-                0.449         0.698         1.061        -1.581        -0.208
+                0.505         0.768         1.162        -1.622        -0.149
 
 
            MEANS/INTERCEPTS/THRESHOLDS
               LEISA0B$      LEISA0C$      LEISA0C$      LEISA0C$      LEISA0D$
               ________      ________      ________      ________      ________
-                1.015        -2.420        -1.332         0.070        -0.628
+                1.112        -2.411        -1.268         0.184        -0.616
 
 
            MEANS/INTERCEPTS/THRESHOLDS
               LEISA0D$      LEISA0D$      LEISA0E$      LEISA0E$      LEISA0E$
               ________      ________      ________      ________      ________
-                0.692         1.569        -0.635         0.187         0.924
+                0.786         1.693        -0.622         0.268         1.021
 
 
            MEANS/INTERCEPTS/THRESHOLDS
               LEISA0F$      LEISA0F$      LEISA0F$
               ________      ________      ________
-               -1.521        -1.267        -0.699
+               -1.550        -1.255        -0.659
 
 
            CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
               LEISA0A       LEISA0B       LEISA0C       LEISA0D       LEISA0E
               ________      ________      ________      ________      ________
  LEISA0A
- LEISA0B        0.309
- LEISA0C        0.264         0.376
- LEISA0D        0.242         0.433         0.163
- LEISA0E        0.261         0.317         0.126         0.415
- LEISA0F        0.238         0.311         0.392         0.197         0.157
+ LEISA0B        0.270
+ LEISA0C        0.253         0.376
+ LEISA0D        0.191         0.390         0.160
+ LEISA0E        0.264         0.327         0.157         0.424
+ LEISA0F        0.245         0.263         0.371         0.165         0.111
 
 
            CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
@@ -560,21 +560,21 @@ Number of Free Parameters                       48
 
 Chi-Square Test of Model Fit
 
-          Value                            340.291*
+          Value                            394.977*
           Degrees of Freedom                    51
           P-Value                           0.0000
 
 Chi-Square Contribution From Each Group
 
-          WEB                              160.562
-          TEL                               33.531
-          FTF                              146.198
+          WEB                              154.741
+          TEL                               67.402
+          FTF                              172.834
 
 Chi-Square Test for Difference Testing
 
-          Value                             37.121*
+          Value                             23.836*
           Degrees of Freedom                    10
-          P-Value                           0.0001
+          P-Value                           0.0080
 
 *   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
     for chi-square difference testing in the regular way.  MLM, MLR and WLSM
@@ -585,18 +585,18 @@ Chi-Square Test for Difference Testing
 
 RMSEA (Root Mean Square Error Of Approximation)
 
-          Estimate                           0.048
-          90 Percent C.I.                    0.043  0.053
-          Probability RMSEA <= .05           0.736
+          Estimate                           0.052
+          90 Percent C.I.                    0.048  0.057
+          Probability RMSEA <= .05           0.198
 
 CFI/TLI
 
-          CFI                                0.932
-          TLI                                0.940
+          CFI                                0.925
+          TLI                                0.934
 
 Chi-Square Test of Model Fit for the Baseline Model
 
-          Value                           4328.684
+          Value                           4630.385
           Degrees of Freedom                    45
           P-Value                           0.0000
 
@@ -606,7 +606,7 @@ SRMR (Standardized Root Mean Square Residual)
 
 Optimum Function Value for Weighted Least-Squares Estimator
 
-          Value                     0.21862049D-01
+          Value                     0.26600924D-01
 
 
 
@@ -619,37 +619,37 @@ Group WEB
 
  F1       BY
     LEISA0A            1.000      0.000    999.000    999.000
-    LEISA0B            2.070      0.142     14.548      0.000
-    LEISA0C            1.305      0.096     13.610      0.000
-    LEISA0D            2.130      0.155     13.748      0.000
-    LEISA0E            1.606      0.116     13.836      0.000
-    LEISA0F            0.959      0.083     11.526      0.000
+    LEISA0B            2.087      0.139     14.989      0.000
+    LEISA0C            1.377      0.100     13.831      0.000
+    LEISA0D            2.084      0.148     14.084      0.000
+    LEISA0E            1.685      0.118     14.238      0.000
+    LEISA0F            0.973      0.081     11.968      0.000
 
  Means
     F1                 0.000      0.000    999.000    999.000
 
  Thresholds
-    LEISA0A$1          0.326      0.026     12.381      0.000
-    LEISA0A$2          0.714      0.028     25.225      0.000
-    LEISA0A$3          1.287      0.035     36.338      0.000
-    LEISA0B$1         -2.243      0.061    -36.903      0.000
-    LEISA0B$2         -0.148      0.041     -3.609      0.000
-    LEISA0B$3          1.994      0.069     28.747      0.000
-    LEISA0C$1         -2.949      0.072    -41.219      0.000
-    LEISA0C$2         -1.477      0.044    -33.827      0.000
-    LEISA0C$3          0.364      0.037      9.887      0.000
-    LEISA0D$1         -1.082      0.048    -22.699      0.000
-    LEISA0D$2          1.110      0.051     21.810      0.000
-    LEISA0D$3          2.509      0.097     25.802      0.000
-    LEISA0E$1         -0.938      0.038    -24.377      0.000
-    LEISA0E$2          0.363      0.039      9.330      0.000
-    LEISA0E$3          1.425      0.050     28.500      0.000
-    LEISA0F$1         -1.691      0.043    -39.760      0.000
-    LEISA0F$2         -1.206      0.040    -30.153      0.000
-    LEISA0F$3         -0.216      0.031     -6.975      0.000
+    LEISA0A$1          0.357      0.026     13.854      0.000
+    LEISA0A$2          0.747      0.028     27.044      0.000
+    LEISA0A$3          1.324      0.033     39.628      0.000
+    LEISA0B$1         -2.275      0.059    -38.846      0.000
+    LEISA0B$2         -0.156      0.042     -3.705      0.000
+    LEISA0B$3          1.993      0.069     29.019      0.000
+    LEISA0C$1         -2.937      0.071    -41.537      0.000
+    LEISA0C$2         -1.536      0.043    -35.781      0.000
+    LEISA0C$3          0.352      0.038      9.382      0.000
+    LEISA0D$1         -1.066      0.044    -24.445      0.000
+    LEISA0D$2          1.050      0.050     20.999      0.000
+    LEISA0D$3          2.433      0.092     26.458      0.000
+    LEISA0E$1         -0.967      0.038    -25.699      0.000
+    LEISA0E$2          0.350      0.040      8.694      0.000
+    LEISA0E$3          1.425      0.051     27.843      0.000
+    LEISA0F$1         -1.729      0.040    -43.762      0.000
+    LEISA0F$2         -1.227      0.039    -31.321      0.000
+    LEISA0F$3         -0.229      0.031     -7.497      0.000
 
  Variances
-    F1                 0.233      0.029      7.956      0.000
+    F1                 0.220      0.027      8.107      0.000
 
  Residual Variances
     LEISA0A            1.000      0.000    999.000    999.000
@@ -663,37 +663,37 @@ Group TEL
 
  F1       BY
     LEISA0A            1.000      0.000    999.000    999.000
-    LEISA0B            2.070      0.142     14.548      0.000
-    LEISA0C            1.305      0.096     13.610      0.000
-    LEISA0D            2.130      0.155     13.748      0.000
-    LEISA0E            1.606      0.116     13.836      0.000
-    LEISA0F            0.959      0.083     11.526      0.000
+    LEISA0B            2.087      0.139     14.989      0.000
+    LEISA0C            1.377      0.100     13.831      0.000
+    LEISA0D            2.084      0.148     14.084      0.000
+    LEISA0E            1.685      0.118     14.238      0.000
+    LEISA0F            0.973      0.081     11.968      0.000
 
  Means
-    F1                -0.317      0.043     -7.400      0.000
+    F1                -0.250      0.037     -6.711      0.000
 
  Thresholds
-    LEISA0A$1          0.326      0.026     12.381      0.000
-    LEISA0A$2          0.714      0.028     25.225      0.000
-    LEISA0A$3          1.287      0.035     36.338      0.000
-    LEISA0B$1         -2.243      0.061    -36.903      0.000
-    LEISA0B$2         -0.482      0.109     -4.439      0.000
-    LEISA0B$3          1.040      0.122      8.533      0.000
-    LEISA0C$1         -2.949      0.072    -41.219      0.000
-    LEISA0C$2         -1.529      0.101    -15.090      0.000
-    LEISA0C$3         -0.131      0.094     -1.402      0.161
-    LEISA0D$1         -1.082      0.048    -22.699      0.000
-    LEISA0D$2          0.496      0.127      3.909      0.000
-    LEISA0D$3          1.598      0.171      9.367      0.000
-    LEISA0E$1         -0.938      0.038    -24.377      0.000
-    LEISA0E$2          0.101      0.090      1.124      0.261
-    LEISA0E$3          0.733      0.111      6.621      0.000
-    LEISA0F$1         -1.691      0.043    -39.760      0.000
-    LEISA0F$2         -1.610      0.109    -14.779      0.000
-    LEISA0F$3         -0.980      0.089    -11.017      0.000
+    LEISA0A$1          0.357      0.026     13.854      0.000
+    LEISA0A$2          0.747      0.028     27.044      0.000
+    LEISA0A$3          1.324      0.033     39.628      0.000
+    LEISA0B$1         -2.275      0.059    -38.846      0.000
+    LEISA0B$2         -0.373      0.098     -3.825      0.000
+    LEISA0B$3          1.258      0.141      8.907      0.000
+    LEISA0C$1         -2.937      0.071    -41.537      0.000
+    LEISA0C$2         -1.437      0.102    -14.050      0.000
+    LEISA0C$3          0.042      0.084      0.496      0.620
+    LEISA0D$1         -1.066      0.044    -24.445      0.000
+    LEISA0D$2          0.678      0.116      5.844      0.000
+    LEISA0D$3          1.818      0.224      8.122      0.000
+    LEISA0E$1         -0.967      0.038    -25.699      0.000
+    LEISA0E$2          0.068      0.085      0.801      0.423
+    LEISA0E$3          0.844      0.113      7.492      0.000
+    LEISA0F$1         -1.729      0.040    -43.762      0.000
+    LEISA0F$2         -1.551      0.092    -16.912      0.000
+    LEISA0F$3         -0.828      0.089     -9.312      0.000
 
  Variances
-    F1                 0.152      0.029      5.213      0.000
+    F1                 0.167      0.026      6.440      0.000
 
  Residual Variances
     LEISA0A            1.000      0.000    999.000    999.000
@@ -707,37 +707,37 @@ Group FTF
 
  F1       BY
     LEISA0A            1.000      0.000    999.000    999.000
-    LEISA0B            2.070      0.142     14.548      0.000
-    LEISA0C            1.305      0.096     13.610      0.000
-    LEISA0D            2.130      0.155     13.748      0.000
-    LEISA0E            1.606      0.116     13.836      0.000
-    LEISA0F            0.959      0.083     11.526      0.000
+    LEISA0B            2.087      0.139     14.989      0.000
+    LEISA0C            1.377      0.100     13.831      0.000
+    LEISA0D            2.084      0.148     14.084      0.000
+    LEISA0E            1.685      0.118     14.238      0.000
+    LEISA0F            0.973      0.081     11.968      0.000
 
  Means
-    F1                -0.082      0.028     -2.958      0.003
+    F1                -0.105      0.025     -4.218      0.000
 
  Thresholds
-    LEISA0A$1          0.326      0.026     12.381      0.000
-    LEISA0A$2          0.714      0.028     25.225      0.000
-    LEISA0A$3          1.287      0.035     36.338      0.000
-    LEISA0B$1         -2.243      0.061    -36.903      0.000
-    LEISA0B$2         -0.448      0.062     -7.189      0.000
-    LEISA0B$3          1.185      0.073     16.236      0.000
-    LEISA0C$1         -2.949      0.072    -41.219      0.000
-    LEISA0C$2         -1.633      0.065    -24.966      0.000
-    LEISA0C$3         -0.027      0.049     -0.550      0.582
-    LEISA0D$1         -1.082      0.048    -22.699      0.000
-    LEISA0D$2          0.760      0.069     11.059      0.000
-    LEISA0D$3          1.947      0.096     20.313      0.000
-    LEISA0E$1         -0.938      0.038    -24.377      0.000
-    LEISA0E$2          0.095      0.050      1.879      0.060
-    LEISA0E$3          0.989      0.061     16.096      0.000
-    LEISA0F$1         -1.691      0.043    -39.760      0.000
-    LEISA0F$2         -1.448      0.055    -26.561      0.000
-    LEISA0F$3         -0.835      0.049    -17.207      0.000
+    LEISA0A$1          0.357      0.026     13.854      0.000
+    LEISA0A$2          0.747      0.028     27.044      0.000
+    LEISA0A$3          1.324      0.033     39.628      0.000
+    LEISA0B$1         -2.275      0.059    -38.846      0.000
+    LEISA0B$2         -0.414      0.057     -7.239      0.000
+    LEISA0B$3          1.235      0.067     18.300      0.000
+    LEISA0C$1         -2.937      0.071    -41.537      0.000
+    LEISA0C$2         -1.596      0.058    -27.479      0.000
+    LEISA0C$3          0.066      0.048      1.378      0.168
+    LEISA0D$1         -1.066      0.044    -24.445      0.000
+    LEISA0D$2          0.809      0.060     13.534      0.000
+    LEISA0D$3          1.996      0.081     24.749      0.000
+    LEISA0E$1         -0.967      0.038    -25.699      0.000
+    LEISA0E$2          0.147      0.048      3.047      0.002
+    LEISA0E$3          1.058      0.056     18.920      0.000
+    LEISA0F$1         -1.729      0.040    -43.762      0.000
+    LEISA0F$2         -1.452      0.052    -27.893      0.000
+    LEISA0F$3         -0.810      0.043    -18.665      0.000
 
  Variances
-    F1                 0.183      0.024      7.589      0.000
+    F1                 0.164      0.021      7.989      0.000
 
  Residual Variances
     LEISA0A            1.000      0.000    999.000    999.000
@@ -746,6 +746,12 @@ Group FTF
     LEISA0D            1.000      0.000    999.000    999.000
     LEISA0E            1.000      0.000    999.000    999.000
     LEISA0F            1.000      0.000    999.000    999.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.382E-03
+       (ratio of smallest to largest eigenvalue)
 
 
 STANDARDIZED MODEL RESULTS
@@ -759,35 +765,35 @@ STD Standardization
 Group WEB
 
  F1       BY
-    LEISA0A            0.483      0.030     15.912      0.000
-    LEISA0B            0.999      0.044     22.935      0.000
-    LEISA0C            0.630      0.031     20.487      0.000
-    LEISA0D            1.028      0.045     22.775      0.000
-    LEISA0E            0.775      0.035     21.873      0.000
-    LEISA0F            0.463      0.030     15.348      0.000
+    LEISA0A            0.469      0.029     16.215      0.000
+    LEISA0B            0.980      0.041     23.732      0.000
+    LEISA0C            0.646      0.030     21.833      0.000
+    LEISA0D            0.978      0.042     23.493      0.000
+    LEISA0E            0.791      0.035     22.543      0.000
+    LEISA0F            0.457      0.028     16.057      0.000
 
  Means
     F1                 0.000      0.000    999.000    999.000
 
  Thresholds
-    LEISA0A$1          0.326      0.026     12.381      0.000
-    LEISA0A$2          0.714      0.028     25.225      0.000
-    LEISA0A$3          1.287      0.035     36.338      0.000
-    LEISA0B$1         -2.243      0.061    -36.903      0.000
-    LEISA0B$2         -0.148      0.041     -3.609      0.000
-    LEISA0B$3          1.994      0.069     28.747      0.000
-    LEISA0C$1         -2.949      0.072    -41.219      0.000
-    LEISA0C$2         -1.477      0.044    -33.827      0.000
-    LEISA0C$3          0.364      0.037      9.887      0.000
-    LEISA0D$1         -1.082      0.048    -22.699      0.000
-    LEISA0D$2          1.110      0.051     21.810      0.000
-    LEISA0D$3          2.509      0.097     25.802      0.000
-    LEISA0E$1         -0.938      0.038    -24.377      0.000
-    LEISA0E$2          0.363      0.039      9.330      0.000
-    LEISA0E$3          1.425      0.050     28.500      0.000
-    LEISA0F$1         -1.691      0.043    -39.760      0.000
-    LEISA0F$2         -1.206      0.040    -30.153      0.000
-    LEISA0F$3         -0.216      0.031     -6.975      0.000
+    LEISA0A$1          0.357      0.026     13.854      0.000
+    LEISA0A$2          0.747      0.028     27.044      0.000
+    LEISA0A$3          1.324      0.033     39.628      0.000
+    LEISA0B$1         -2.275      0.059    -38.846      0.000
+    LEISA0B$2         -0.156      0.042     -3.705      0.000
+    LEISA0B$3          1.993      0.069     29.019      0.000
+    LEISA0C$1         -2.937      0.071    -41.537      0.000
+    LEISA0C$2         -1.536      0.043    -35.781      0.000
+    LEISA0C$3          0.352      0.038      9.382      0.000
+    LEISA0D$1         -1.066      0.044    -24.445      0.000
+    LEISA0D$2          1.050      0.050     20.999      0.000
+    LEISA0D$3          2.433      0.092     26.458      0.000
+    LEISA0E$1         -0.967      0.038    -25.699      0.000
+    LEISA0E$2          0.350      0.040      8.694      0.000
+    LEISA0E$3          1.425      0.051     27.843      0.000
+    LEISA0F$1         -1.729      0.040    -43.762      0.000
+    LEISA0F$2         -1.227      0.039    -31.321      0.000
+    LEISA0F$3         -0.229      0.031     -7.497      0.000
 
  Variances
     F1                 1.000      0.000    999.000    999.000
@@ -803,35 +809,35 @@ Group WEB
 Group TEL
 
  F1       BY
-    LEISA0A            0.390      0.037     10.425      0.000
-    LEISA0B            0.807      0.066     12.243      0.000
-    LEISA0C            0.509      0.044     11.640      0.000
-    LEISA0D            0.831      0.071     11.681      0.000
-    LEISA0E            0.626      0.053     11.706      0.000
-    LEISA0F            0.374      0.035     10.593      0.000
+    LEISA0A            0.408      0.032     12.880      0.000
+    LEISA0B            0.852      0.058     14.790      0.000
+    LEISA0C            0.562      0.040     14.052      0.000
+    LEISA0D            0.851      0.060     14.171      0.000
+    LEISA0E            0.688      0.049     14.054      0.000
+    LEISA0F            0.397      0.033     11.941      0.000
 
  Means
-    F1                -0.813      0.133     -6.106      0.000
+    F1                -0.613      0.096     -6.410      0.000
 
  Thresholds
-    LEISA0A$1          0.326      0.026     12.381      0.000
-    LEISA0A$2          0.714      0.028     25.225      0.000
-    LEISA0A$3          1.287      0.035     36.338      0.000
-    LEISA0B$1         -2.243      0.061    -36.903      0.000
-    LEISA0B$2         -0.482      0.109     -4.439      0.000
-    LEISA0B$3          1.040      0.122      8.533      0.000
-    LEISA0C$1         -2.949      0.072    -41.219      0.000
-    LEISA0C$2         -1.529      0.101    -15.090      0.000
-    LEISA0C$3         -0.131      0.094     -1.402      0.161
-    LEISA0D$1         -1.082      0.048    -22.699      0.000
-    LEISA0D$2          0.496      0.127      3.909      0.000
-    LEISA0D$3          1.598      0.171      9.367      0.000
-    LEISA0E$1         -0.938      0.038    -24.377      0.000
-    LEISA0E$2          0.101      0.090      1.124      0.261
-    LEISA0E$3          0.733      0.111      6.621      0.000
-    LEISA0F$1         -1.691      0.043    -39.760      0.000
-    LEISA0F$2         -1.610      0.109    -14.779      0.000
-    LEISA0F$3         -0.980      0.089    -11.017      0.000
+    LEISA0A$1          0.357      0.026     13.854      0.000
+    LEISA0A$2          0.747      0.028     27.044      0.000
+    LEISA0A$3          1.324      0.033     39.628      0.000
+    LEISA0B$1         -2.275      0.059    -38.846      0.000
+    LEISA0B$2         -0.373      0.098     -3.825      0.000
+    LEISA0B$3          1.258      0.141      8.907      0.000
+    LEISA0C$1         -2.937      0.071    -41.537      0.000
+    LEISA0C$2         -1.437      0.102    -14.050      0.000
+    LEISA0C$3          0.042      0.084      0.496      0.620
+    LEISA0D$1         -1.066      0.044    -24.445      0.000
+    LEISA0D$2          0.678      0.116      5.844      0.000
+    LEISA0D$3          1.818      0.224      8.122      0.000
+    LEISA0E$1         -0.967      0.038    -25.699      0.000
+    LEISA0E$2          0.068      0.085      0.801      0.423
+    LEISA0E$3          0.844      0.113      7.492      0.000
+    LEISA0F$1         -1.729      0.040    -43.762      0.000
+    LEISA0F$2         -1.551      0.092    -16.912      0.000
+    LEISA0F$3         -0.828      0.089     -9.312      0.000
 
  Variances
     F1                 1.000      0.000    999.000    999.000
@@ -847,35 +853,35 @@ Group TEL
 Group FTF
 
  F1       BY
-    LEISA0A            0.428      0.028     15.178      0.000
-    LEISA0B            0.885      0.041     21.818      0.000
-    LEISA0C            0.558      0.029     19.234      0.000
-    LEISA0D            0.911      0.043     21.018      0.000
-    LEISA0E            0.687      0.034     20.296      0.000
-    LEISA0F            0.410      0.028     14.690      0.000
+    LEISA0A            0.405      0.025     15.977      0.000
+    LEISA0B            0.845      0.036     23.386      0.000
+    LEISA0C            0.557      0.027     20.690      0.000
+    LEISA0D            0.843      0.038     22.211      0.000
+    LEISA0E            0.682      0.030     22.488      0.000
+    LEISA0F            0.394      0.025     15.792      0.000
 
  Means
-    F1                -0.193      0.066     -2.902      0.004
+    F1                -0.260      0.062     -4.228      0.000
 
  Thresholds
-    LEISA0A$1          0.326      0.026     12.381      0.000
-    LEISA0A$2          0.714      0.028     25.225      0.000
-    LEISA0A$3          1.287      0.035     36.338      0.000
-    LEISA0B$1         -2.243      0.061    -36.903      0.000
-    LEISA0B$2         -0.448      0.062     -7.189      0.000
-    LEISA0B$3          1.185      0.073     16.236      0.000
-    LEISA0C$1         -2.949      0.072    -41.219      0.000
-    LEISA0C$2         -1.633      0.065    -24.966      0.000
-    LEISA0C$3         -0.027      0.049     -0.550      0.582
-    LEISA0D$1         -1.082      0.048    -22.699      0.000
-    LEISA0D$2          0.760      0.069     11.059      0.000
-    LEISA0D$3          1.947      0.096     20.313      0.000
-    LEISA0E$1         -0.938      0.038    -24.377      0.000
-    LEISA0E$2          0.095      0.050      1.879      0.060
-    LEISA0E$3          0.989      0.061     16.096      0.000
-    LEISA0F$1         -1.691      0.043    -39.760      0.000
-    LEISA0F$2         -1.448      0.055    -26.561      0.000
-    LEISA0F$3         -0.835      0.049    -17.207      0.000
+    LEISA0A$1          0.357      0.026     13.854      0.000
+    LEISA0A$2          0.747      0.028     27.044      0.000
+    LEISA0A$3          1.324      0.033     39.628      0.000
+    LEISA0B$1         -2.275      0.059    -38.846      0.000
+    LEISA0B$2         -0.414      0.057     -7.239      0.000
+    LEISA0B$3          1.235      0.067     18.300      0.000
+    LEISA0C$1         -2.937      0.071    -41.537      0.000
+    LEISA0C$2         -1.596      0.058    -27.479      0.000
+    LEISA0C$3          0.066      0.048      1.378      0.168
+    LEISA0D$1         -1.066      0.044    -24.445      0.000
+    LEISA0D$2          0.809      0.060     13.534      0.000
+    LEISA0D$3          1.996      0.081     24.749      0.000
+    LEISA0E$1         -0.967      0.038    -25.699      0.000
+    LEISA0E$2          0.147      0.048      3.047      0.002
+    LEISA0E$3          1.058      0.056     18.920      0.000
+    LEISA0F$1         -1.729      0.040    -43.762      0.000
+    LEISA0F$2         -1.452      0.052    -27.893      0.000
+    LEISA0F$3         -0.810      0.043    -18.665      0.000
 
  Variances
     F1                 1.000      0.000    999.000    999.000
@@ -896,42 +902,36 @@ Group WEB
     Observed                                        Two-Tailed     Scale
     Variable        Estimate       S.E.  Est./S.E.    P-Value     Factors
 
-    LEISA0A            0.189      0.019      9.809      0.000      0.901
-    LEISA0B            0.499      0.022     22.905      0.000      0.708
-    LEISA0C            0.284      0.020     14.304      0.000      0.846
-    LEISA0D            0.514      0.022     23.419      0.000      0.697
-    LEISA0E            0.375      0.021     17.503      0.000      0.790
-    LEISA0F            0.176      0.019      9.318      0.000      0.907
+    LEISA0A            0.181      0.018      9.894      0.000      0.905
+    LEISA0B            0.490      0.021     23.254      0.000      0.714
+    LEISA0C            0.295      0.019     15.475      0.000      0.840
+    LEISA0D            0.489      0.021     22.984      0.000      0.715
+    LEISA0E            0.385      0.021     18.323      0.000      0.784
+    LEISA0F            0.173      0.018      9.703      0.000      0.910
 
 Group TEL
 
     Observed                                        Two-Tailed     Scale
     Variable        Estimate       S.E.  Est./S.E.    P-Value     Factors
 
-    LEISA0A            0.132      0.022      6.005      0.000      0.932
-    LEISA0B            0.394      0.039     10.109      0.000      0.778
-    LEISA0C            0.206      0.028      7.327      0.000      0.891
-    LEISA0D            0.408      0.041      9.870      0.000      0.769
-    LEISA0E            0.282      0.035      8.148      0.000      0.848
-    LEISA0F            0.123      0.020      6.038      0.000      0.937
+    LEISA0A            0.143      0.019      7.513      0.000      0.926
+    LEISA0B            0.421      0.033     12.763      0.000      0.761
+    LEISA0C            0.240      0.026      9.245      0.000      0.872
+    LEISA0D            0.420      0.034     12.213      0.000      0.762
+    LEISA0E            0.321      0.031     10.352      0.000      0.824
+    LEISA0F            0.136      0.020      6.912      0.000      0.929
 
 Group FTF
 
     Observed                                        Two-Tailed     Scale
     Variable        Estimate       S.E.  Est./S.E.    P-Value     Factors
 
-    LEISA0A            0.155      0.017      8.978      0.000      0.919
-    LEISA0B            0.439      0.023     19.458      0.000      0.749
-    LEISA0C            0.237      0.019     12.612      0.000      0.873
-    LEISA0D            0.454      0.024     19.233      0.000      0.739
-    LEISA0E            0.321      0.021     14.936      0.000      0.824
-    LEISA0F            0.144      0.017      8.581      0.000      0.925
-
-
-QUALITY OF NUMERICAL RESULTS
-
-     Condition Number for the Information Matrix              0.612E-03
-       (ratio of smallest to largest eigenvalue)
+    LEISA0A            0.141      0.015      9.297      0.000      0.927
+    LEISA0B            0.416      0.021     20.036      0.000      0.764
+    LEISA0C            0.237      0.017     13.557      0.000      0.874
+    LEISA0D            0.416      0.022     19.005      0.000      0.764
+    LEISA0E            0.317      0.019     16.474      0.000      0.826
+    LEISA0F            0.134      0.015      9.120      0.000      0.930
 
 
 MODEL MODIFICATION INDICES
@@ -946,20 +946,18 @@ Minimum M.I. value for printing the modification index    10.000
 Group WEB
 
 
-BY Statements
-
-F1       BY LEISA0A               17.345    -0.338     -0.163       -0.147
-
 WITH Statements
 
-LEISA0D  WITH LEISA0C             12.946    -0.163     -0.163       -0.163
-LEISA0E  WITH LEISA0D             53.197     0.272      0.272        0.272
-LEISA0F  WITH LEISA0C             55.619     0.244      0.244        0.244
-LEISA0F  WITH LEISA0D             16.944    -0.204     -0.204       -0.204
+LEISA0D  WITH LEISA0C             15.637    -0.180     -0.180       -0.180
+LEISA0E  WITH LEISA0B             10.789    -0.147     -0.147       -0.147
+LEISA0E  WITH LEISA0D             49.262     0.272      0.272        0.272
+LEISA0F  WITH LEISA0C             46.489     0.230      0.230        0.230
+LEISA0F  WITH LEISA0D             11.731    -0.170     -0.170       -0.170
 
 Means/Intercepts/Thresholds
 
-[ LEISA0A$ ]                      14.209     0.145      0.145        0.131
+[ LEISA0A$ ]                      11.569    -0.088     -0.088       -0.079
+[ LEISA0A$ ]                      12.508     0.135      0.135        0.122
 
 Group TEL
 
@@ -969,19 +967,15 @@ No modification indices above the minimum value.
 Group FTF
 
 
-BY Statements
-
-F1       BY LEISA0A               12.447     0.300      0.128        0.118
-
 WITH Statements
 
-LEISA0D  WITH LEISA0C             18.399    -0.175     -0.175       -0.175
-LEISA0E  WITH LEISA0C             17.136    -0.154     -0.154       -0.154
-LEISA0F  WITH LEISA0C             21.105     0.141      0.141        0.141
+LEISA0D  WITH LEISA0C             25.609    -0.204     -0.204       -0.204
+LEISA0E  WITH LEISA0C             18.439    -0.162     -0.162       -0.162
+LEISA0F  WITH LEISA0C             38.262     0.193      0.193        0.193
 
 Means/Intercepts/Thresholds
 
-[ LEISA0A$ ]                      20.736    -0.185     -0.185       -0.170
+[ LEISA0A$ ]                      18.108    -0.169     -0.169       -0.157
 
 
 
@@ -994,13 +988,13 @@ SAMPLE STATISTICS FOR ESTIMATED FACTOR SCORES
            Means
               F1            F1_SE
               ________      ________
-               -0.091         0.251
+               -0.065         0.247
 
 
            Covariances
               F1            F1_SE
               ________      ________
- F1             0.153
+ F1             0.134
  F1_SE          0.000         0.000
 
 
@@ -1008,7 +1002,7 @@ SAMPLE STATISTICS FOR ESTIMATED FACTOR SCORES
               F1            F1_SE
               ________      ________
  F1             1.000
- F1_SE         -0.031         1.000
+ F1_SE         -0.011         1.000
 
 
 PLOT INFORMATION
@@ -1032,8 +1026,8 @@ SAVEDATA INFORMATION
     leisa0a_metric.dat
   Save format      Free
 
-     Beginning Time:  14:45:17
-        Ending Time:  14:45:18
+     Beginning Time:  07:30:22
+        Ending Time:  07:30:23
        Elapsed Time:  00:00:01
 
 
@@ -1047,4 +1041,4 @@ Fax: (310) 391-8971
 Web: www.StatModel.com
 Support: Support@StatModel.com
 
-Copyright (c) 1998-2019 Muthen & Muthen
+Copyright (c) 1998-2021 Muthen & Muthen

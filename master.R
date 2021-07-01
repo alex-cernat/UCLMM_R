@@ -43,7 +43,7 @@ map(str_c("./functions/",
 
 # Import data -------------------------------------------------------------
 
-data <- read_dta("./data/paper4data.dta")
+data <- read_dta("./data/paper4data_v2.dta")
 
 data2 <- data %>%
   rename_all(~str_remove_all(., "w8|type|ure")) %>%
@@ -51,7 +51,6 @@ data2 <- data %>%
 
 
 # Make Mplus syntax -------------------------------------------------------
-
 
 
 audit_nm <- str_subset(names(data2), "audit")
@@ -118,8 +117,8 @@ map(all_syntaxes, function(x) {
 
 
 
-# runModels(target = "C:/Users/msassac6/Dropbox (The University of Manchester)/Papers/Joe S/UCLMM/UCLMM_R/mplus/",
-#           showOutput = T, replaceOutfile = "always")
+runModels(target = "C:/Users/msassac6/Dropbox (The University of Manchester)/Papers/Joe S/UCLMM/UCLMM_R/mplus/",
+           showOutput = T, replaceOutfile = "always")
 
 
 
@@ -207,7 +206,7 @@ thr <- thr %>%
             ~ifelse(is.na(.), 1 - lag(.), .))
 
 
-leis_info <- select(data, matches("leisure")) %>%
+leis_info <- select(data, matches("leis")) %>%
   map(attributes)
 
 leis_names <- map(leis_info, function(x) x$label) %>%
@@ -255,7 +254,6 @@ thr %>%
   labs(y = "Predicted probability to answer category",
        x = "Category",
        fill = "Mode")
-
 
 ggsave("./output/leisure_pred_prob.png", dpi = 800)
 
@@ -345,8 +343,8 @@ rbind(lat_stats, lat_stats_nc) %>%
   theme_bw(base_size = 10) +
   labs(x = "Scale",
        y = "Mean estimate compared to Web",
-       shape = "Selection correct",
-       linetype = "Selection correct") +
+       shape = "Adjust selection",
+       linetype = "Adjust selection") +
   coord_flip()
 
 ggsave("./output/means_lv2.png", dpi = 300)
@@ -372,13 +370,12 @@ pq_fit <- mplus_read_fit_list(pqfiles)
 
 
 coefs_free <- c(NA, NA, NA,
-                "leisa0f$3", "leisa0b$3", "leisa0a$1", "leisa0e$1",
-                NA, NA, NA, "leisb0b$2")
+                "leisa0f$3", "leisa0b$3", "leisa0a$1")
 
 pq_fit <- pq_fit %>%
   mutate(Comp = coefs_free)
 
-
+pq_fit
 
 write.csv(pq_fit, file = "./output/fit_table_pq.csv")
 
@@ -390,8 +387,7 @@ write.csv(pq_fit, file = "./output/fit_table_pq.csv")
 
 
 diff_thresholds2 <- rbind(
-  mplus_ind_coef(pqfiles[9])[[2]],
-  mplus_ind_coef(pqfiles[11])[[2]]
+  mplus_ind_coef(pqfiles[6])[[2]]
 )
 
 
@@ -426,7 +422,7 @@ thr <- thr %>%
             ~ifelse(is.na(.), 1 - lag(.), .))
 
 
-leis_info <- select(data, matches("leisure")) %>%
+leis_info <- select(data, matches("leisa")) %>%
   map(attributes)
 
 leis_names <- map(leis_info, function(x) x$label) %>%
@@ -461,7 +457,7 @@ unique(thr$Label)
 
 thr %>%
   filter(var %in%
-           c("LEISA0F", "LEISA0B", "LEISA0A", "LEISA0E", "LEISB0B")) %>%
+           c("LEISA0F", "LEISA0B", "LEISA0A")) %>%
   mutate(Mode2 = case_when(Mode == "f2f" ~ "FTF",
                            Mode == "tel" ~ "TEL",
                            Mode == "web" ~ "WEB"),
@@ -492,7 +488,7 @@ ggsave("./output/leisure_pred_prob_pq.png", dpi = 600)
 
 # graph with means with and without partial equivalence
 
-scal_link <- str_subset(pqfiles[c(5, 10, 9, 11)], "scalar")
+scal_link <- str_subset(pqfiles[c(3, 6)], "scalar")
 
 scal_nms <- str_split(scal_link, "_", simplify = T)[, 2] %>%
   str_c(rep(c("_full", "_pq"), each = 2))
@@ -501,20 +497,22 @@ lat_stats <- map_df(scal_link, mplus_lat_stats)
 
 
 lat_stats <- lat_stats %>%
-  mutate(Variable = rep(scal_nms, each = 6),
+  mutate(Variable = rep(scal_nms, each = 3),
          lci = est - (1.96 * se),
          uci = est + (1.96 * se))
 
 
 
-lat_stats %>%
+lat_stats2 <- lat_stats %>%
   filter(Statistic == "Means") %>%
   select(-Statistic, -se) %>%
   separate(Variable, into = c("Scale", "Model"), sep = "_") %>%
   mutate(Scale = str_to_title(Scale),
          Scale = str_replace(Scale, "Leisure","Leisure "),
          Model = case_when(Model == "full" ~ "Full scalar",
-                           Model == "pq" ~ "Partial equivalence")) %>%
+                           Model == "pq" ~ "Partial equivalence"))
+
+lat_stats2 %>%
   ggplot(aes(Scale, est, color = Model,
              lintype = Group, shape = Group)) +
   geom_point(position = position_dodge(0.4)) +
@@ -525,4 +523,24 @@ lat_stats %>%
   labs(x = "Scale",
        y = "Mean estimate compared to Web")
 
-ggsave("./output/means_lv_pq.png", dpi = 300)
+# ggsave("./output/means_lv_pq.png", dpi = 300)
+write_csv(lat_stats2, "./output/means_pq.csv")
+
+
+
+# redo table 1 only with design weights -----------------------------------
+
+
+
+sens_files <- list.files("./mplus/sensitivity_design_weights/",
+                     pattern = ".out",
+                     full.names = T)
+
+# get fit indices
+sens_fit <- mplus_read_fit_list(sens_files) %>%
+  select(-Comp)
+
+View(sens_fit)
+
+write.csv(sens_fit, file = "./output/sensitivity_fit_table_all.csv")
+

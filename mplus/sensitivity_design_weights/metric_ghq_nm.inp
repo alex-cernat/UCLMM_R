@@ -1,0 +1,293 @@
+TITLE: Your title goes here
+
+DATA: FILE = data.dta;
+
+VARIABLE: 
+
+NAMES = audit1 bully0a bully0b bully0c bully0d bully0e bully0f bully0g adult0a
+     adult0b adult0c leisa0a leisa0b leisa0c leisa0d leisa0e leisa0f leisb0a leisb0b
+     leisb0c leisb0d designweight samppsu sampstratum mode locus0a locus0b locus0c
+     locus0d ghq_1 ghq_2 ghq_3 ghq_4 ghq_5 ghq_6 ghq_7 ghq_8 ghq_9 ghq_10 ghq_11
+     ghq_12 audit2 audit3 designweight_combin; 
+
+MISSING=.;
+USEVARIABLES ARE ghq_1 
+ghq_2 
+ghq_3 
+ghq_4 
+ghq_5 
+ghq_6 
+ghq_7 
+ghq_8 
+ghq_9 
+ghq_10 
+ghq_11 
+ghq_12;
+CATEGORICAL ARE ghq_1 
+ghq_2 
+ghq_3 
+ghq_4 
+ghq_5 
+ghq_6 
+ghq_7 
+ghq_8 
+ghq_9 
+ghq_10 
+ghq_11 
+ghq_12;
+GROUPING IS mode (1=Web 2=Tel 3=Ftf);
+WEIGHT IS designweight;
+
+                STRATIFICATION IS sampstratum;
+
+                CLUSTER IS samppsu;
+
+ANALYSIS: TYPE IS COMPLEX;
+
+                ESTIMATOR = WLSMV;
+
+                ITERATIONS = 100000;
+
+                PARAMETERIZATION = THETA;
+
+DIFFTEST = ghq_1_configural.dat;
+Model:
+
+
+f1 BY ghq_1@1
+ghq_2 (L2)
+ghq_3 (L3)
+ghq_4 (L4)
+ghq_5 (L5)
+ghq_6 (L6)
+ghq_7 (L7)
+ghq_8 (L8)
+ghq_9 (L9)
+ghq_10 (L10)
+ghq_11 (L11)
+ghq_12 (L12)
+;
+
+
+[ghq_1$1] (t_ghq_1_1);
+[ghq_1$2] (t_ghq_1_2);
+[ghq_1$3] (t_ghq_1_3);
+
+[ghq_2$1] (t_ghq_2_1);
+[ghq_2$2] (t_ghq_2_2_Web);
+[ghq_2$3] (t_ghq_2_3_Web);
+
+[ghq_3$1] (t_ghq_3_1);
+[ghq_3$2] (t_ghq_3_2_Web);
+[ghq_3$3] (t_ghq_3_3_Web);
+
+[ghq_4$1] (t_ghq_4_1);
+[ghq_4$2] (t_ghq_4_2_Web);
+[ghq_4$3] (t_ghq_4_3_Web);
+
+[ghq_5$1] (t_ghq_5_1);
+[ghq_5$2] (t_ghq_5_2_Web);
+[ghq_5$3] (t_ghq_5_3_Web);
+
+[ghq_6$1] (t_ghq_6_1);
+[ghq_6$2] (t_ghq_6_2_Web);
+[ghq_6$3] (t_ghq_6_3_Web);
+
+[ghq_7$1] (t_ghq_7_1);
+[ghq_7$2] (t_ghq_7_2_Web);
+[ghq_7$3] (t_ghq_7_3_Web);
+
+[ghq_8$1] (t_ghq_8_1);
+[ghq_8$2] (t_ghq_8_2_Web);
+[ghq_8$3] (t_ghq_8_3_Web);
+
+[ghq_9$1] (t_ghq_9_1);
+[ghq_9$2] (t_ghq_9_2_Web);
+[ghq_9$3] (t_ghq_9_3_Web);
+
+[ghq_10$1] (t_ghq_10_1);
+[ghq_10$2] (t_ghq_10_2_Web);
+[ghq_10$3] (t_ghq_10_3_Web);
+
+[ghq_11$1] (t_ghq_11_1);
+[ghq_11$2] (t_ghq_11_2_Web);
+[ghq_11$3] (t_ghq_11_3_Web);
+
+[ghq_12$1] (t_ghq_12_1);
+[ghq_12$2] (t_ghq_12_2_Web);
+[ghq_12$3] (t_ghq_12_3_Web);
+ghq_1@1;
+ghq_2@1;
+ghq_3@1;
+ghq_4@1;
+ghq_5@1;
+ghq_6@1;
+ghq_7@1;
+ghq_8@1;
+ghq_9@1;
+ghq_10@1;
+ghq_11@1;
+ghq_12@1;
+
+Model Tel:
+
+f1 BY ghq_1@1
+ghq_2 (L2)
+ghq_3 (L3)
+ghq_4 (L4)
+ghq_5 (L5)
+ghq_6 (L6)
+ghq_7 (L7)
+ghq_8 (L8)
+ghq_9 (L9)
+ghq_10 (L10)
+ghq_11 (L11)
+ghq_12 (L12)
+;
+
+
+[ghq_1$1] (t_ghq_1_1);
+[ghq_1$2] (t_ghq_1_2);
+[ghq_1$3] (t_ghq_1_3);
+
+[ghq_2$1] (t_ghq_2_1);
+[ghq_2$2] (t_ghq_2_2_Tel);
+[ghq_2$3] (t_ghq_2_3_Tel);
+
+[ghq_3$1] (t_ghq_3_1);
+[ghq_3$2] (t_ghq_3_2_Tel);
+[ghq_3$3] (t_ghq_3_3_Tel);
+
+[ghq_4$1] (t_ghq_4_1);
+[ghq_4$2] (t_ghq_4_2_Tel);
+[ghq_4$3] (t_ghq_4_3_Tel);
+
+[ghq_5$1] (t_ghq_5_1);
+[ghq_5$2] (t_ghq_5_2_Tel);
+[ghq_5$3] (t_ghq_5_3_Tel);
+
+[ghq_6$1] (t_ghq_6_1);
+[ghq_6$2] (t_ghq_6_2_Tel);
+[ghq_6$3] (t_ghq_6_3_Tel);
+
+[ghq_7$1] (t_ghq_7_1);
+[ghq_7$2] (t_ghq_7_2_Tel);
+[ghq_7$3] (t_ghq_7_3_Tel);
+
+[ghq_8$1] (t_ghq_8_1);
+[ghq_8$2] (t_ghq_8_2_Tel);
+[ghq_8$3] (t_ghq_8_3_Tel);
+
+[ghq_9$1] (t_ghq_9_1);
+[ghq_9$2] (t_ghq_9_2_Tel);
+[ghq_9$3] (t_ghq_9_3_Tel);
+
+[ghq_10$1] (t_ghq_10_1);
+[ghq_10$2] (t_ghq_10_2_Tel);
+[ghq_10$3] (t_ghq_10_3_Tel);
+
+[ghq_11$1] (t_ghq_11_1);
+[ghq_11$2] (t_ghq_11_2_Tel);
+[ghq_11$3] (t_ghq_11_3_Tel);
+
+[ghq_12$1] (t_ghq_12_1);
+[ghq_12$2] (t_ghq_12_2_Tel);
+[ghq_12$3] (t_ghq_12_3_Tel);
+ghq_1@1;
+ghq_2@1;
+ghq_3@1;
+ghq_4@1;
+ghq_5@1;
+ghq_6@1;
+ghq_7@1;
+ghq_8@1;
+ghq_9@1;
+ghq_10@1;
+ghq_11@1;
+ghq_12@1;
+
+Model Ftf:
+
+f1 BY ghq_1@1
+ghq_2 (L2)
+ghq_3 (L3)
+ghq_4 (L4)
+ghq_5 (L5)
+ghq_6 (L6)
+ghq_7 (L7)
+ghq_8 (L8)
+ghq_9 (L9)
+ghq_10 (L10)
+ghq_11 (L11)
+ghq_12 (L12)
+;
+
+
+[ghq_1$1] (t_ghq_1_1);
+[ghq_1$2] (t_ghq_1_2);
+[ghq_1$3] (t_ghq_1_3);
+
+[ghq_2$1] (t_ghq_2_1);
+[ghq_2$2] (t_ghq_2_2_Ftf);
+[ghq_2$3] (t_ghq_2_3_Ftf);
+
+[ghq_3$1] (t_ghq_3_1);
+[ghq_3$2] (t_ghq_3_2_Ftf);
+[ghq_3$3] (t_ghq_3_3_Ftf);
+
+[ghq_4$1] (t_ghq_4_1);
+[ghq_4$2] (t_ghq_4_2_Ftf);
+[ghq_4$3] (t_ghq_4_3_Ftf);
+
+[ghq_5$1] (t_ghq_5_1);
+[ghq_5$2] (t_ghq_5_2_Ftf);
+[ghq_5$3] (t_ghq_5_3_Ftf);
+
+[ghq_6$1] (t_ghq_6_1);
+[ghq_6$2] (t_ghq_6_2_Ftf);
+[ghq_6$3] (t_ghq_6_3_Ftf);
+
+[ghq_7$1] (t_ghq_7_1);
+[ghq_7$2] (t_ghq_7_2_Ftf);
+[ghq_7$3] (t_ghq_7_3_Ftf);
+
+[ghq_8$1] (t_ghq_8_1);
+[ghq_8$2] (t_ghq_8_2_Ftf);
+[ghq_8$3] (t_ghq_8_3_Ftf);
+
+[ghq_9$1] (t_ghq_9_1);
+[ghq_9$2] (t_ghq_9_2_Ftf);
+[ghq_9$3] (t_ghq_9_3_Ftf);
+
+[ghq_10$1] (t_ghq_10_1);
+[ghq_10$2] (t_ghq_10_2_Ftf);
+[ghq_10$3] (t_ghq_10_3_Ftf);
+
+[ghq_11$1] (t_ghq_11_1);
+[ghq_11$2] (t_ghq_11_2_Ftf);
+[ghq_11$3] (t_ghq_11_3_Ftf);
+
+[ghq_12$1] (t_ghq_12_1);
+[ghq_12$2] (t_ghq_12_2_Ftf);
+[ghq_12$3] (t_ghq_12_3_Ftf);
+ghq_1@1;
+ghq_2@1;
+ghq_3@1;
+ghq_4@1;
+ghq_5@1;
+ghq_6@1;
+ghq_7@1;
+ghq_8@1;
+ghq_9@1;
+ghq_10@1;
+ghq_11@1;
+ghq_12@1;
+SAVEDATA: DIFFTEST IS ghq_1_metric.dat;
+OUTPUT: SAMPSTAT; 
+
+MODINDICES; 
+
+STD; 
+
+Plot: type = plot3;
+

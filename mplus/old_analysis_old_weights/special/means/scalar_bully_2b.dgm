@@ -1,0 +1,269 @@
+VERSION 1.1.0
+INPUT
+TITLE:
+ Your title goes here
+
+DATA:
+ FILE = data.dta;
+VARIABLE:
+NAMES = w8audit1 w8bullytype0a w8bullytype0b w8bullytype0c w8bullytype0d
+     w8bullytype0e w8bullytype0f w8bullytype0g w8adult0a w8adult0b w8adult0c
+     w8leisurea0a w8leisurea0b w8leisurea0c w8leisurea0d w8leisurea0e w8leisurea0f
+     w8leisureb0a w8leisureb0b w8leisureb0c w8leisureb0d samppsu sampstratum w8mode
+     w8locus0a w8locus0b w8locus0c w8locus0d w8ghq12_1 w8ghq12_2 w8ghq12_3 w8ghq12_4
+     w8ghq12_5 w8ghq12_6 w8ghq12_7 w8ghq12_8 w8ghq12_9 w8ghq12_10 w8ghq12_11
+     w8ghq12_12 w8audit2 w8audit3 designweight_combin;
+MISSING=.;
+USEVARIABLES ARE w8bullytype0a
+w8bullytype0b
+w8bullytype0c
+w8bullytype0d
+w8bullytype0e
+w8bullytype0f
+w8bullytype0g;
+CATEGORICAL ARE w8bullytype0a
+w8bullytype0b
+w8bullytype0c
+w8bullytype0d
+w8bullytype0e
+w8bullytype0f
+w8bullytype0g;
+GROUPING IS w8mode (1=Web 2=Tel 3=Ftf);
+WEIGHT IS designweight_combin;
+                STRATIFICATION IS sampstratum;
+                CLUSTER IS samppsu;
+ANALYSIS:
+ TYPE IS COMPLEX;
+                ESTIMATOR = WLSMV;
+                ITERATIONS = 100000;
+                PARAMETERIZATION = THETA;
+DIFFTEST = w8bullytype0a_metric.dat;
+OUTPUT:
+ SAMPSTAT;
+MODINDICES;
+STD;
+SAVEDATA:
+ DIFFTEST IS w8bullytype0a_scalar.dat;
+PLOT:
+ type = plot3;
+MODEL:
+f1@1;
+[f1@0];
+f1 BY w8bullytype0a@1
+w8bullytype0b (L2)
+w8bullytype0c (L3)
+w8bullytype0d (L4)
+w8bullytype0e (L5)
+w8bullytype0f (L6)
+w8bullytype0g (L7)
+;
+[w8bullytype0a$1] (t_w8bullytype0a);
+[w8bullytype0b$1] (t_w8bullytype0b);
+[w8bullytype0c$1] (t_w8bullytype0c);
+[w8bullytype0d$1] (t_w8bullytype0d);
+[w8bullytype0e$1] (t_w8bullytype0e);
+[w8bullytype0f$1] (t_w8bullytype0f);
+[w8bullytype0g$1] (t_w8bullytype0g);
+w8bullytype0a@1;
+w8bullytype0b@1;
+w8bullytype0c@1;
+w8bullytype0d@1;
+w8bullytype0e@1;
+w8bullytype0f@1;
+w8bullytype0g@1;
+MODEL TEL:
+f1 BY w8bullytype0a@1
+w8bullytype0b (L2)
+w8bullytype0c (L3)
+w8bullytype0d (L4)
+w8bullytype0e (L5)
+w8bullytype0f (L6)
+w8bullytype0g (L7)
+;
+[w8bullytype0a$1] (t_w8bullytype0a);
+[w8bullytype0b$1] (t_w8bullytype0b);
+[w8bullytype0c$1] (t_w8bullytype0c);
+[w8bullytype0d$1] (t_w8bullytype0d);
+[w8bullytype0e$1] (t_w8bullytype0e);
+[w8bullytype0f$1] (t_w8bullytype0f);
+[w8bullytype0g$1] (t_w8bullytype0g);
+[f1];
+w8bullytype0a@1;
+w8bullytype0b@1;
+w8bullytype0c@1;
+w8bullytype0d@1;
+w8bullytype0e@1;
+w8bullytype0f@1;
+w8bullytype0g@1;
+MODEL FTF:
+f1 BY w8bullytype0a@1
+w8bullytype0b (L2)
+w8bullytype0c (L3)
+w8bullytype0d (L4)
+w8bullytype0e (L5)
+w8bullytype0f (L6)
+w8bullytype0g (L7)
+;
+[w8bullytype0a$1] (t_w8bullytype0a);
+[w8bullytype0b$1] (t_w8bullytype0b);
+[w8bullytype0c$1] (t_w8bullytype0c);
+[w8bullytype0d$1] (t_w8bullytype0d);
+[w8bullytype0e$1] (t_w8bullytype0e);
+[w8bullytype0f$1] (t_w8bullytype0f);
+[w8bullytype0g$1] (t_w8bullytype0g);
+[f1];
+w8bullytype0a@1;
+w8bullytype0b@1;
+w8bullytype0c@1;
+w8bullytype0d@1;
+w8bullytype0e@1;
+w8bullytype0f@1;
+w8bullytype0g@1;
+INPUT_END
+2
+0
+0
+2
+WLSMV
+1
+GENERAL
+3
+WEB
+TEL
+FTF
+7
+1
+0
+w8bullytype0a w8bullytype0b w8bullytype0c w8bullytype0d w8bullytype0e w8bullytype0f w8bullytype0g f1
+1
+-1 -1 -1 -1 -1 -1 -1 0
+0
+1
+f1
+w8bullytype0a w8bullytype0b w8bullytype0c w8bullytype0d w8bullytype0e w8bullytype0f w8bullytype0g
+1 1 f1 w8bullytype0a    1.000    0.000
+1 1 f1 w8bullytype0b    3.143    0.608
+91 1 f1 w8bullytype0b l2
+1 1 f1 w8bullytype0c    0.956    0.081
+91 1 f1 w8bullytype0c l3
+1 1 f1 w8bullytype0d    1.450    0.120
+91 1 f1 w8bullytype0d l4
+1 1 f1 w8bullytype0e    1.682    0.191
+91 1 f1 w8bullytype0e l5
+1 1 f1 w8bullytype0f    0.753    0.063
+91 1 f1 w8bullytype0f l6
+1 1 f1 w8bullytype0g    0.598    0.068
+91 1 f1 w8bullytype0g l7
+4 1 w8bullytype0a    1.000    0.000
+4 1 w8bullytype0b    1.000    0.000
+4 1 w8bullytype0c    1.000    0.000
+4 1 w8bullytype0d    1.000    0.000
+4 1 w8bullytype0e    1.000    0.000
+4 1 w8bullytype0f    1.000    0.000
+4 1 w8bullytype0g    1.000    0.000
+5 1 f1    1.000    0.000
+1 2 f1 w8bullytype0a    1.000    0.000
+1 2 f1 w8bullytype0b    3.143    0.608
+91 2 f1 w8bullytype0b l2
+1 2 f1 w8bullytype0c    0.956    0.081
+91 2 f1 w8bullytype0c l3
+1 2 f1 w8bullytype0d    1.450    0.120
+91 2 f1 w8bullytype0d l4
+1 2 f1 w8bullytype0e    1.682    0.191
+91 2 f1 w8bullytype0e l5
+1 2 f1 w8bullytype0f    0.753    0.063
+91 2 f1 w8bullytype0f l6
+1 2 f1 w8bullytype0g    0.598    0.068
+91 2 f1 w8bullytype0g l7
+4 2 w8bullytype0a    1.000    0.000
+4 2 w8bullytype0b    1.000    0.000
+4 2 w8bullytype0c    1.000    0.000
+4 2 w8bullytype0d    1.000    0.000
+4 2 w8bullytype0e    1.000    0.000
+4 2 w8bullytype0f    1.000    0.000
+4 2 w8bullytype0g    1.000    0.000
+5 2 f1    1.000    0.000
+1 3 f1 w8bullytype0a    1.000    0.000
+1 3 f1 w8bullytype0b    3.143    0.608
+91 3 f1 w8bullytype0b l2
+1 3 f1 w8bullytype0c    0.956    0.081
+91 3 f1 w8bullytype0c l3
+1 3 f1 w8bullytype0d    1.450    0.120
+91 3 f1 w8bullytype0d l4
+1 3 f1 w8bullytype0e    1.682    0.191
+91 3 f1 w8bullytype0e l5
+1 3 f1 w8bullytype0f    0.753    0.063
+91 3 f1 w8bullytype0f l6
+1 3 f1 w8bullytype0g    0.598    0.068
+91 3 f1 w8bullytype0g l7
+4 3 w8bullytype0a    1.000    0.000
+4 3 w8bullytype0b    1.000    0.000
+4 3 w8bullytype0c    1.000    0.000
+4 3 w8bullytype0d    1.000    0.000
+4 3 w8bullytype0e    1.000    0.000
+4 3 w8bullytype0f    1.000    0.000
+4 3 w8bullytype0g    1.000    0.000
+5 3 f1    1.000    0.000
+31 1 f1 w8bullytype0a    1.000    0.000
+31 1 f1 w8bullytype0b    3.143    0.608
+91 1 f1 w8bullytype0b l2
+31 1 f1 w8bullytype0c    0.956    0.081
+91 1 f1 w8bullytype0c l3
+31 1 f1 w8bullytype0d    1.450    0.120
+91 1 f1 w8bullytype0d l4
+31 1 f1 w8bullytype0e    1.682    0.191
+91 1 f1 w8bullytype0e l5
+31 1 f1 w8bullytype0f    0.753    0.063
+91 1 f1 w8bullytype0f l6
+31 1 f1 w8bullytype0g    0.598    0.068
+91 1 f1 w8bullytype0g l7
+34 1 w8bullytype0a    1.000    0.000
+34 1 w8bullytype0b    1.000    0.000
+34 1 w8bullytype0c    1.000    0.000
+34 1 w8bullytype0d    1.000    0.000
+34 1 w8bullytype0e    1.000    0.000
+34 1 w8bullytype0f    1.000    0.000
+34 1 w8bullytype0g    1.000    0.000
+35 1 f1    1.000    0.000
+31 2 f1 w8bullytype0a    1.000    0.000
+31 2 f1 w8bullytype0b    3.143    0.608
+91 2 f1 w8bullytype0b l2
+31 2 f1 w8bullytype0c    0.956    0.081
+91 2 f1 w8bullytype0c l3
+31 2 f1 w8bullytype0d    1.450    0.120
+91 2 f1 w8bullytype0d l4
+31 2 f1 w8bullytype0e    1.682    0.191
+91 2 f1 w8bullytype0e l5
+31 2 f1 w8bullytype0f    0.753    0.063
+91 2 f1 w8bullytype0f l6
+31 2 f1 w8bullytype0g    0.598    0.068
+91 2 f1 w8bullytype0g l7
+34 2 w8bullytype0a    1.000    0.000
+34 2 w8bullytype0b    1.000    0.000
+34 2 w8bullytype0c    1.000    0.000
+34 2 w8bullytype0d    1.000    0.000
+34 2 w8bullytype0e    1.000    0.000
+34 2 w8bullytype0f    1.000    0.000
+34 2 w8bullytype0g    1.000    0.000
+35 2 f1    1.000    0.000
+31 3 f1 w8bullytype0a    1.000    0.000
+31 3 f1 w8bullytype0b    3.143    0.608
+91 3 f1 w8bullytype0b l2
+31 3 f1 w8bullytype0c    0.956    0.081
+91 3 f1 w8bullytype0c l3
+31 3 f1 w8bullytype0d    1.450    0.120
+91 3 f1 w8bullytype0d l4
+31 3 f1 w8bullytype0e    1.682    0.191
+91 3 f1 w8bullytype0e l5
+31 3 f1 w8bullytype0f    0.753    0.063
+91 3 f1 w8bullytype0f l6
+31 3 f1 w8bullytype0g    0.598    0.068
+91 3 f1 w8bullytype0g l7
+34 3 w8bullytype0a    1.000    0.000
+34 3 w8bullytype0b    1.000    0.000
+34 3 w8bullytype0c    1.000    0.000
+34 3 w8bullytype0d    1.000    0.000
+34 3 w8bullytype0e    1.000    0.000
+34 3 w8bullytype0f    1.000    0.000
+34 3 w8bullytype0g    1.000    0.000
+35 3 f1    1.000    0.000
