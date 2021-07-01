@@ -118,8 +118,8 @@ map(all_syntaxes, function(x) {
 
 
 
-runModels(target = "C:/Users/msassac6/Dropbox (The University of Manchester)/Papers/Joe S/UCLMM/UCLMM_R/mplus/",
-          showOutput = T, replaceOutfile = "always")
+# runModels(target = "C:/Users/msassac6/Dropbox (The University of Manchester)/Papers/Joe S/UCLMM/UCLMM_R/mplus/",
+#           showOutput = T, replaceOutfile = "always")
 
 
 
@@ -237,11 +237,17 @@ thr <- thr %>%
          -var, -cat, -Label, -Category) %>%
   mutate(Mode = str_remove(Mode, "prob_"))
 
+count(thr, cat, Category)
+
+
 thr %>%
   mutate(Mode2 = case_when(Mode == "f2f" ~ "FTF",
                            Mode == "tel" ~ "TEL",
-                           Mode == "web" ~ "WEB")) %>%
-  ggplot(aes(fct_rev(Category), Value, fill = Mode2)) +
+                           Mode == "web" ~ "WEB"),
+         cat2 = as.factor(Category),
+         cat2 = fct_reorder(cat2, cat) %>%
+           fct_rev()) %>%
+  ggplot(aes(cat2, Value, fill = Mode2)) +
   geom_bar(stat = "identity", position = "dodge") +
   facet_wrap(~Label, ncol = 2) +
   coord_flip() +
@@ -451,16 +457,27 @@ thr <- thr %>%
   mutate(Mode = str_remove(Mode, "prob_"))
 
 
-
+unique(thr$Label)
 
 thr %>%
-  filter(var %in% c("LEISA0F", "LEISA0B", "LEISA0A", "LEISA0E", "LEISB0B")) %>%
+  filter(var %in%
+           c("LEISA0F", "LEISA0B", "LEISA0A", "LEISA0E", "LEISB0B")) %>%
   mutate(Mode2 = case_when(Mode == "f2f" ~ "FTF",
                            Mode == "tel" ~ "TEL",
-                           Mode == "web" ~ "WEB")) %>%
-  ggplot(aes(fct_rev(Category), Value, fill = Mode2)) +
+                           Mode == "web" ~ "WEB"),
+         lab2 = Label,
+         lab2 = str_replace(lab2,
+                            "Cinema, concerts, theatre or other live performances",
+                            "Cinema, concerts, theatre or \n other live performances"),
+         lab2 = str_replace(lab2,
+                            "Unpaid voluntary work, unpaid help to other people",
+                            "Unpaid voluntary work, unpaid help \nto other people"),
+         cat2 = as.factor(Category),
+         cat2 = fct_reorder(cat2, cat) %>%
+           fct_rev()) %>%
+  ggplot(aes(cat2, Value, fill = Mode2)) +
   geom_bar(stat = "identity", position = "dodge") +
-  facet_wrap(~Label, ncol = 2) +
+  facet_wrap(~lab2, ncol = 2) +
   coord_flip() +
   theme_bw(base_size = 8) +
   labs(y = "Predicted probability to answer category",
