@@ -255,7 +255,7 @@ thr %>%
        x = "Category",
        fill = "Mode")
 
-ggsave("./output/leisure_pred_prob.png", dpi = 800)
+# ggsave("./output/leisure_pred_prob.png", dpi = 800)
 
 
 
@@ -320,7 +320,7 @@ rbind(lat_stats, lat_stats_nc) %>%
        shape = "Selection correct",
        linetype = "Selection correct")
 
-ggsave("./output/means_lv.png", dpi = 300)
+ggsave("./output/means_lv.png", dpi = 300, width = 9)
 
 
 
