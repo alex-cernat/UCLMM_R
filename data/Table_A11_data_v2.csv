@@ -1,0 +1,163 @@
+variable,group,type,mode,est,lb,ub
+Male,W1,refrence,web,51.53,50.22,52.84
+English only,W1,refrence,web,91.21,90.42,91.95
+Religion: None,W1,refrence,web,38.74,37.01,40.49
+Religion: Christian,W1,refrence,web,52.59,50.77,54.4
+Religion: Other,W1,refrence,web,8.68,7.85,9.58
+Paid work,W1,refrence,web,23.21,22.22,24.23
+0 risk factors,W1,refrence,web,53.94,52.77,55.11
+1 risk factor,W1,refrence,web,21.48,20.71,22.27
+2 or more risk factors,W1,refrence,web,24.58,23.62,25.57
+Disability,W1,refrence,web,14.77,13.85,15.73
+White,W1,refrence,web,87.7,86.77,88.57
+Tenure: own,W1,refrence,web,73.25,71.99,74.47
+HH size: 3 or less,W1,refrence,web,22.36,21.61,23.12
+HH size: 4-5,W1,refrence,web,63.92,62.98,64.85
+HH size: 6 or more,W1,refrence,web,13.73,13.05,14.42
+Employment: Full-time,W1,refrence,web,35.85,34.8,36.91
+Employment: Part-time,W1,refrence,web,31.64,30.74,32.57
+Employment: Other,W1,refrence,web,32.51,31.48,33.56
+Male,W8,unadjested,web,40.75,38.89,42.63
+English only,W8,unadjested,web,92.61,91.7,93.43
+Religion: None,W8,unadjested,web,35.65,33.52,37.84
+Religion: Christian,W8,unadjested,web,56.56,54.28,58.8
+Religion: Other,W8,unadjested,web,7.8,6.83,8.9
+Paid work,W8,unadjested,web,24.58,23.04,26.2
+0 risk factors,W8,unadjested,web,63.34,61.6,65.06
+1 risk factor,W8,unadjested,web,19.12,17.8,20.52
+2 or more risk factors,W8,unadjested,web,17.53,16.3,18.84
+Disability,W8,unadjested,web,13.28,12.09,14.57
+White,W8,unadjested,web,89.82,88.75,90.8
+Tenure: own,W8,unadjested,web,82.96,81.54,84.29
+HH size: 3 or less,W8,unadjested,web,20.47,19.26,21.73
+HH size: 4-5,W8,unadjested,web,67.51,65.96,69.02
+HH size: 6 or more,W8,unadjested,web,12.02,10.98,13.16
+Employment: Full-time,W8,unadjested,web,37.9,36.28,39.55
+Employment: Part-time,W8,unadjested,web,34.57,32.96,36.23
+Employment: Other,W8,unadjested,web,27.52,26.01,29.09
+Male,W8,unadjested,tel,55.87,51.65,60.01
+English only,W8,unadjested,tel,89.33,86.63,91.54
+Religion: None,W8,unadjested,tel,32.4,28.18,36.92
+Religion: Christian,W8,unadjested,tel,55.6,51.15,59.96
+Religion: Other,W8,unadjested,tel,12,9.68,14.8
+Paid work,W8,unadjested,tel,26.93,23.34,30.84
+0 risk factors,W8,unadjested,tel,60.51,55.92,64.91
+1 risk factor,W8,unadjested,tel,20.64,17.2,24.56
+2 or more risk factors,W8,unadjested,tel,18.86,15.53,22.7
+Disability,W8,unadjested,tel,17.99,14.92,21.53
+White,W8,unadjested,tel,85.63,82.78,88.08
+Tenure: own,W8,unadjested,tel,85.72,82.42,88.48
+HH size: 3 or less,W8,unadjested,tel,17.17,14.14,20.7
+HH size: 4-5,W8,unadjested,tel,69.51,65.63,73.14
+HH size: 6 or more,W8,unadjested,tel,13.32,10.7,16.46
+Employment: Full-time,W8,unadjested,tel,35.24,31.25,39.45
+Employment: Part-time,W8,unadjested,tel,37.89,33.77,42.2
+Employment: Other,W8,unadjested,tel,26.87,23.23,30.85
+Male,W8,unadjested,f2f,51.67,49.14,54.2
+English only,W8,unadjested,f2f,91.28,89.86,92.52
+Religion: None,W8,unadjested,f2f,39.77,36.86,42.76
+Religion: Christian,W8,unadjested,f2f,51.73,48.74,54.71
+Religion: Other,W8,unadjested,f2f,8.49,7.23,9.95
+Paid work,W8,unadjested,f2f,22.55,20.43,24.81
+0 risk factors,W8,unadjested,f2f,50.86,48.04,53.68
+1 risk factor,W8,unadjested,f2f,22.84,20.69,25.15
+2 or more risk factors,W8,unadjested,f2f,26.3,24.07,28.66
+Disability,W8,unadjested,f2f,16.14,14.27,18.19
+White,W8,unadjested,f2f,87.47,85.96,88.84
+Tenure: own,W8,unadjested,f2f,68.42,65.94,70.81
+HH size: 3 or less,W8,unadjested,f2f,24.14,22.13,26.26
+HH size: 4-5,W8,unadjested,f2f,59.97,57.66,62.24
+HH size: 6 or more,W8,unadjested,f2f,15.89,14.28,17.65
+Employment: Full-time,W8,unadjested,f2f,35.82,33.44,38.28
+Employment: Part-time,W8,unadjested,f2f,29.67,27.46,31.98
+Employment: Other,W8,unadjested,f2f,34.51,32.14,36.96
+Male,W8,adjusted,web,49.52,47.19,51.85
+English only,W8,adjusted,web,91.77,90.49,92.9
+Religion: None,W8,adjusted,web,37.61,35,40.3
+Religion: Christian,W8,adjusted,web,52.93,50.16,55.69
+Religion: Other,W8,adjusted,web,9.46,8.12,10.99
+Paid work,W8,adjusted,web,25.21,23.08,27.47
+0 risk factors,W8,adjusted,web,56.4,53.86,58.92
+1 risk factor,W8,adjusted,web,19.48,17.77,21.32
+2 or more risk factors,W8,adjusted,web,24.11,21.86,26.52
+Disability,W8,adjusted,web,14.45,12.74,16.34
+White,W8,adjusted,web,88.46,87.01,89.76
+Tenure: own,W8,adjusted,web,74.59,72.11,76.92
+HH size: 3 or less,W8,adjusted,web,23.04,21.09,25.12
+HH size: 4-5,W8,adjusted,web,63.39,61.07,65.66
+HH size: 6 or more,W8,adjusted,web,13.56,12.05,15.24
+Employment: Full-time,W8,adjusted,web,36.48,34.3,38.71
+Employment: Part-time,W8,adjusted,web,31.88,29.7,34.15
+Employment: Other,W8,adjusted,web,31.64,29.38,33.99
+Male,W8,adjusted,tel,42.64,37.37,48.07
+English only,W8,adjusted,tel,90.52,87.98,92.58
+Religion: None,W8,adjusted,tel,38.05,32.15,44.34
+Religion: Christian,W8,adjusted,tel,51.98,46,57.9
+Religion: Other,W8,adjusted,tel,9.97,7.78,12.69
+Paid work,W8,adjusted,tel,25.58,20.96,30.82
+0 risk factors,W8,adjusted,tel,60.94,55.12,66.47
+1 risk factor,W8,adjusted,tel,19.31,15.19,24.22
+2 or more risk factors,W8,adjusted,tel,19.75,15.79,24.42
+Disability,W8,adjusted,tel,14.11,11.23,17.57
+White,W8,adjusted,tel,84.44,80.81,87.5
+Tenure: own,W8,adjusted,tel,82.49,77.98,86.24
+HH size: 3 or less,W8,adjusted,tel,20.6,15.88,26.29
+HH size: 4-5,W8,adjusted,tel,67.22,61.64,72.35
+HH size: 6 or more,W8,adjusted,tel,12.18,9.51,15.47
+Employment: Full-time,W8,adjusted,tel,34.13,29.34,39.26
+Employment: Part-time,W8,adjusted,tel,36.73,31.62,42.15
+Employment: Other,W8,adjusted,tel,29.14,24.09,34.77
+Male,W8,adjusted,f2f,51.71,49.08,54.33
+English only,W8,adjusted,f2f,90.91,89.4,92.22
+Religion: None,W8,adjusted,f2f,38.31,35.32,41.4
+Religion: Christian,W8,adjusted,f2f,52.55,49.45,55.63
+Religion: Other,W8,adjusted,f2f,9.14,7.77,10.72
+Paid work,W8,adjusted,f2f,22.8,20.63,25.12
+0 risk factors,W8,adjusted,f2f,52.55,49.57,55.51
+1 risk factor,W8,adjusted,f2f,22.66,20.4,25.09
+2 or more risk factors,W8,adjusted,f2f,24.79,22.58,27.14
+Disability,W8,adjusted,f2f,15.38,13.56,17.41
+White,W8,adjusted,f2f,86.66,85,88.15
+Tenure: own,W8,adjusted,f2f,71.2,68.73,73.56
+HH size: 3 or less,W8,adjusted,f2f,23.97,21.89,26.19
+HH size: 4-5,W8,adjusted,f2f,60.73,58.33,63.09
+HH size: 6 or more,W8,adjusted,f2f,15.3,13.7,17.05
+Employment: Full-time,W8,adjusted,f2f,36.64,34.1,39.31
+Employment: Part-time,W8,adjusted,f2f,30.05,27.71,32.51
+Employment: Other,W8,adjusted,f2f,33.28,30.82,35.84
+Male,W1,refrence,tel,51.53,50.22,52.84
+English only,W1,refrence,tel,91.21,90.42,91.95
+Religion: None,W1,refrence,tel,38.74,37.01,40.49
+Religion: Christian,W1,refrence,tel,52.59,50.77,54.4
+Religion: Other,W1,refrence,tel,8.68,7.85,9.58
+Paid work,W1,refrence,tel,23.21,22.22,24.23
+0 risk factors,W1,refrence,tel,53.94,52.77,55.11
+1 risk factor,W1,refrence,tel,21.48,20.71,22.27
+2 or more risk factors,W1,refrence,tel,24.58,23.62,25.57
+Disability,W1,refrence,tel,14.77,13.85,15.73
+White,W1,refrence,tel,87.7,86.77,88.57
+Tenure: own,W1,refrence,tel,73.25,71.99,74.47
+HH size: 3 or less,W1,refrence,tel,22.36,21.61,23.12
+HH size: 4-5,W1,refrence,tel,63.92,62.98,64.85
+HH size: 6 or more,W1,refrence,tel,13.73,13.05,14.42
+Employment: Full-time,W1,refrence,tel,35.85,34.8,36.91
+Employment: Part-time,W1,refrence,tel,31.64,30.74,32.57
+Employment: Other,W1,refrence,tel,32.51,31.48,33.56
+Male,W1,refrence,f2f,51.53,50.22,52.84
+English only,W1,refrence,f2f,91.21,90.42,91.95
+Religion: None,W1,refrence,f2f,38.74,37.01,40.49
+Religion: Christian,W1,refrence,f2f,52.59,50.77,54.4
+Religion: Other,W1,refrence,f2f,8.68,7.85,9.58
+Paid work,W1,refrence,f2f,23.21,22.22,24.23
+0 risk factors,W1,refrence,f2f,53.94,52.77,55.11
+1 risk factor,W1,refrence,f2f,21.48,20.71,22.27
+2 or more risk factors,W1,refrence,f2f,24.58,23.62,25.57
+Disability,W1,refrence,f2f,14.77,13.85,15.73
+White,W1,refrence,f2f,87.7,86.77,88.57
+Tenure: own,W1,refrence,f2f,73.25,71.99,74.47
+HH size: 3 or less,W1,refrence,f2f,22.36,21.61,23.12
+HH size: 4-5,W1,refrence,f2f,63.92,62.98,64.85
+HH size: 6 or more,W1,refrence,f2f,13.73,13.05,14.42
+Employment: Full-time,W1,refrence,f2f,35.85,34.8,36.91
+Employment: Part-time,W1,refrence,f2f,31.64,30.74,32.57
+Employment: Other,W1,refrence,f2f,32.51,31.48,33.56

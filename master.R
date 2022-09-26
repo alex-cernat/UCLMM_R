@@ -117,8 +117,8 @@ map(all_syntaxes, function(x) {
 
 
 
-runModels(target = "C:/Users/msassac6/Dropbox (The University of Manchester)/Papers/Joe S/UCLMM/UCLMM_R/mplus/",
-           showOutput = T, replaceOutfile = "always")
+# runModels(target = "C:/Users/msassac6/Dropbox (The University of Manchester)/Papers/Joe S/UCLMM/UCLMM_R/mplus/",
+#            showOutput = T, replaceOutfile = "always")
 
 
 
@@ -310,17 +310,20 @@ rbind(lat_stats, lat_stats_nc) %>%
          Variable = str_replace(Variable, "Ghq","GHQ"),
          Variable = str_replace(Variable, "Leisure","Leisure ")) %>%
   ggplot(aes(Variable, est, color = Group)) +
-  geom_point(position = position_dodge(0.7)) +
+  geom_point(size = 2, position = position_dodge(0.7)) +
   geom_errorbar(aes(ymin = lci, ymax = uci),
                 width = 0,
-                position = position_dodge(0.7)) +
+                position = position_dodge(0.7),
+                size = 1.2) +
   theme_bw(base_size = 18) +
   labs(x = "Scale",
        y = "Mean estimate compared to Web",
        shape = "Selection correct",
-       linetype = "Selection correct")
+       linetype = "Selection correct") +
+  coord_flip()
 
 ggsave("./output/means_lv.png", dpi = 300, width = 9)
+ggsave("./output/means_lv.pdf", dpi = 300, width = 9)
 
 
 
@@ -473,15 +476,16 @@ thr %>%
            fct_rev()) %>%
   ggplot(aes(cat2, Value, fill = Mode2)) +
   geom_bar(stat = "identity", position = "dodge") +
-  facet_wrap(~lab2, ncol = 2) +
+  facet_wrap(~lab2, ncol = 1) +
   coord_flip() +
   theme_bw(base_size = 8) +
   labs(y = "Predicted probability to answer category",
-       x = "Category",
+       x = "",
        fill = "Mode")
 
 
 ggsave("./output/leisure_pred_prob_pq.png", dpi = 600)
+ggsave("./output/leisure_pred_prob_pq.pdf", dpi = 600)
 
 
 
